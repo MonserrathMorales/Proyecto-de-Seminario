@@ -1,0 +1,67 @@
+{
+  "fecha": "2026-11-07T16:05:36",
+  "escenario": "aislado",
+  "sistema_operativo": "Windows-11-10.0.26300-SP0",
+  "procesador": "Intel64 Family 6 Model 141 Stepping 1, GenuineIntel",
+  "nucleos_fisicos": 6,
+  "nucleos_logicos": 12,
+  "ram_total_gb": 15.8,
+  "ram_usada_inicio_gb": 9.4,
+  "gpu": {
+    "vram_usada_mb": 0.0,
+    "vram_total_mb": 4096.0,
+    "gpu_uso_pct": 0.0,
+    "gpu_temp_c": 47.91,
+    "gpu_nombre": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "driver": "621.01"
+  },
+  "en_corriente": true,
+  "version_ollama": "0.40.13",
+  "python": "3.13.17",
+  "paquetes": {
+    "ollama": "0.6.3",
+    "pydantic": "2.14.2",
+    "psutil": "7.2.2",
+    "requests": "2.34.2"
+  },
+  "opciones_modelo": {
+    "temperature": 0,
+    "seed": 42,
+    "num_ctx": 4096
+  },
+  "repeticiones": 3,
+  "casos": [
+    "C1_ruta_privado",
+    "C2_ruta_publico",
+    "C3_sin_identificador",
+    "C4_uuid_correo",
+    "C5_cuerpo",
+    "C6_consulta_otro_dueno"
+  ],
+  "configuraciones": [
+    {
+      "modelo": "gemma4:e4b",
+      "razonamiento": false,
+      "familia": "gemma4",
+      "parametros": "7.5B",
+      "cuantizacion": "Q4_K_M",
+      "contexto_maximo": 131072
+    },
+    {
+      "modelo": "qwen3.5:9b",
+      "razonamiento": false,
+      "familia": "qwen35",
+      "parametros": "9.0B",
+      "cuantizacion": "Q4_K_M",
+      "contexto_maximo": 262144
+    },
+    {
+      "modelo": "qwen3.5:4b",
+      "razonamiento": false,
+      "familia": "qwen35",
+      "parametros": "4.2B",
+      "cuantizacion": "Q4_K_M",
+      "contexto_maximo": 262144
+    }
+  ]
+}

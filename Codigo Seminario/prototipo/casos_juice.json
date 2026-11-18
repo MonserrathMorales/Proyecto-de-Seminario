@@ -1,0 +1,336 @@
+{
+  "usuarios": {
+    "A": {
+      "id": 25,
+      "correo": "a.canario@prueba.cl"
+    },
+    "B": {
+      "id": 26,
+      "correo": "b.canario@prueba.cl"
+    }
+  },
+  "casos": [
+    {
+      "id": "J01",
+      "descripcion": "Versión de la aplicación",
+      "sesion": "A",
+      "peticion": "GET /rest/admin/application-version",
+      "respuesta": "200 OK {\"version\":\"20.3.0\"}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J03",
+      "descripcion": "Lista de idiomas",
+      "sesion": "A",
+      "peticion": "GET /rest/languages",
+      "respuesta": "200 OK [{\"key\":\"az_AZ\",\"lang\":\"Azərbaycanca\",\"icons\":[\"az\"],\"shortKey\":\"AZ\",\"percentage\":38,\"gauge\":\"quarter\"},{\"key\":\"id_ID\",\"lang\":\"Bahasa Indonesia\",\"icons\":[\"id\"],\"shortKey\":\"ID\",\"percentage\":14,\"gauge\":\"empty\"},{\"key\":\"ca_ES\",\"lang\":\"Catalan\",\"icons\":[\"es-ct\"],\"shortKey\":\"CA\",\"percentage\":8,\"gauge\":\"empty\"},{\"key\":\"cs_CZ\",\"lang\":\"Česky\",\"icons\":[\"cz\"],\"shortKey\":\"CS\",\"percentage\":43,\"gauge\":\"half\"},{\"key\":\"da_DK\",\"lang\":\"Dansk\",\"icons\":[\"dk\"],\"shortKey\":\"DA\",\"percentage\":56,\"gauge\":\"half\"},{\"key\":\"de_DE\",\"lang\":\"Deutsch\",\"icons\":[\"de\"],\"shortKey\":\"DE\",\"percentage\":72,\"gauge\":\"three-quarters\"},{\"key\":\"et_EE\",\"lang\":\"Eesti\",\"icons\":[\"ee\"],\"shortKey\":\"ET\",\"percentage\":43,\"gauge\":\"half\"},{\"key\":\"en\",\"icons\":[\"gb\",\"us\"],\"shortKey\":\"EN\",\"lang\":\"English\",\"percentage\":100,\"gauge\":\"full\"},{\"key\":\"es_ES\",\"lang\":\"Español\",\"icons\":[\"es\"],\"shortKey\":\"ES\",\"percentage\":54,\"gauge\":\"half\"},{\"key\":\"fr_FR\",\"lang\":\"Français\",\"icons\":[\"fr\"],\"shortKey\":\"FR\",\"percentage\":53,\"gauge\":\"half\"},{\"key\":\"ga_IE\",\"lang\":\"Gaeilge\",\"icons\":[\"ie\"],\"shortKey\":\"GA\",\"percentage\":0,\"gauge\":\"empty\"},{\"key\":\"it_IT\",\"lang\":\"Italiano\",\"icons\":[\"it\"],\"shortKey\":\"IT\",\"percentage\":35,\"gauge\":\"quarter\"},{\"key\":\"pl_PL\",\"lang\":\"Język Polski\",\"icons\":[\"pl\"],\"shortKey\":\"PL\",\"percentage\":93,\"gauge\":\"full\"},{\"key\":\"lv_LV\",\"lang\":\"Latvijas\",\"icons\":[\"lv\"],\"shortKey\":\"LV\",\"percentage\":15,\"gauge\":\"empty\"},{\"key\":\"hu_HU\",\"lang\":\"Magyar\",\"icons\":[\"hu\"],\"shortKey\":\"HU\",\"percentage\":5,\"gauge\":\"empty\"},{\"key\":\"nl_NL\",\"lang\":\"Neder …(recortada)",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J04",
+      "descripcion": "Caso dudoso: filtro por nombre sobre el catálogo público de desafíos",
+      "sesion": "A",
+      "peticion": "GET /api/Challenges/?name=Score%20Board",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"id\":75,\"key\":\"scoreBoardChallenge\",\"name\":\"Score Board\",\"category\":\"Miscellaneous\",\"tags\":\"Tutorial,Code Analysis,With Coding Challenge\",\"description\":\"Find the carefully hidden 'Score Board' page.\",\"difficulty\":1,\"mitigationUrl\":null,\"solved\":false,\"disabledEnv\":null,\"tutorialOrder\":1,\"codingChallengeStatus\":0,\"hasCodingChallenge\":true,\"createdAt\":\"2026-11-13T22:57:16.095Z\",\"updatedAt\":\"2026-11-13T22:57:16.095Z\",\"ChallengeDependencies\":[]}]}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J06",
+      "descripcion": "Datos de la sesión actual",
+      "sesion": "A",
+      "peticion": "GET /rest/user/whoami",
+      "respuesta": "200 OK {\"user\":{}}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J08",
+      "descripcion": "Búsqueda de productos; q es un filtro",
+      "sesion": "A",
+      "peticion": "GET /rest/products/search?q=",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"alternateImages\":[{\"file\":\"apple_juice-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"apple_juice-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"apple_juice-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13 22:57:16.146 +00:00\",\"updatedAt\":\"2026-11-13 22:57:16.146 +00:00\",\"deletedAt\":null},{\"id\":24,\"name\":\"Apple Pomace\",\"description\":\"Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href=\\\"/#recycle\\\">sent back to us</a> for recycling.\",\"price\":0.89,\"deluxePrice\":0.89,\"image\":\"apple_pressings.jpg\",\"alternateImages\":[{\"file\":\"apple_pressings-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"apple_pressings-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"apple_pressings-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13 22:57:16.149 +00:00\",\"updatedAt\":\"2026-11-13 22:57:16.149 +00:00\",\"deletedAt\":null},{\"id\":6,\"name\":\"Banana Juice (1000ml)\",\"description\":\"Monkeys love it the most.\",\"price\":1.99,\"deluxePrice\":1.99,\"image\":\"banana_juice.jpg\",\"alternateImages\":[{\"file\":\"banana_juice-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"banana_juice-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"banana_juice-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13 22:57:16.146 …(recortada)",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J09",
+      "descripcion": "Canasta propia; id en la ruta, UserId 25 (A)",
+      "sesion": "A",
+      "peticion": "GET /rest/basket/6",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"id\":6,\"coupon\":null,\"UserId\":25,\"createdAt\":\"2026-11-13T22:58:06.517Z\",\"updatedAt\":\"2026-11-13T22:58:06.517Z\",\"Products\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"alternateImages\":[{\"file\":\"apple_juice-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"apple_juice-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"apple_juice-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13T22:57:16.146Z\",\"updatedAt\":\"2026-11-13T22:57:16.146Z\",\"deletedAt\":null,\"BasketItem\":{\"ProductId\":1,\"BasketId\":6,\"id\":9,\"quantity\":1,\"createdAt\":\"2026-11-13T22:58:06.606Z\",\"updatedAt\":\"2026-11-13T22:58:06.606Z\"}}]}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "6",
+        "ubicacion": "ruta",
+        "visibilidad": "privado",
+        "cuenta_duena": "A"
+      }
+    },
+    {
+      "id": "J10",
+      "descripcion": "Lista de existencias de todo el catálogo",
+      "sesion": "A",
+      "peticion": "GET /api/Quantitys/",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"ProductId\":1,\"id\":1,\"quantity\":82,\"limitPerUser\":5,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":2,\"id\":2,\"quantity\":95,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":3,\"id\":3,\"quantity\":53,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":4,\"id\":4,\"quantity\":65,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":5,\"id\":5,\"quantity\":67,\"limitPerUser\":5,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":6,\"id\":6,\"quantity\":94,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":7,\"id\":7,\"quantity\":58,\"limitPerUser\":5,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":8,\"id\":8,\"quantity\":95,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":9,\"id\":9,\"quantity\":49,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":10,\"id\":10,\"quantity\":92,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T22:57:16.636Z\"},{\"ProductId\":11,\"id\":11,\"quantity\":65,\"limitPerUser\":null,\"createdAt\":\"2026-11-13T22:57:16.636Z\",\"updatedAt\":\"2026-11-13T2 …(recortada)",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J11",
+      "descripcion": "Direcciones de la sesión actual; la lista no lleva id en la petición",
+      "sesion": "A",
+      "peticion": "GET /api/Addresss",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"UserId\":25,\"id\":7,\"fullName\":\"Titular Canario-A-8B06B4\",\"mobileNum\":912345678,\"zipCode\":\"2340000\",\"streetAddress\":\"Calle Canario-A-8B06B4\",\"city\":\"Valparaíso\",\"state\":\"Valparaíso\",\"country\":\"Chile\",\"createdAt\":\"2026-11-13T22:58:06.541Z\",\"updatedAt\":\"2026-11-13T22:58:06.541Z\"}]}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J12",
+      "descripcion": "Historial de pedidos de la sesión actual",
+      "sesion": "A",
+      "peticion": "GET /rest/order-history",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[]}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J20",
+      "descripcion": "Caso dudoso: inicio de sesión; el correo es una credencial, no una referencia a un objeto",
+      "sesion": "B",
+      "peticion": "POST /rest/user/login  cuerpo: {\"email\":\"b.canario@prueba.cl\",\"password\":\"Prueba-2026!\"}",
+      "respuesta": "200 OK {\"authentication\":{\"token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJkYXRhIjp7ImlkIjoyNiwidXNlcm5hbWUiOiIiLCJlbWFpbCI6ImIuY2FuYXJpb0BwcnVlYmEuY2wiLCJwYXNzd29yZCI6ImQyNzk4OGNlYzZkMDBiNjQzMjdhYjJlOTNhMjNiZWRjIiwicm9sZSI6ImN1c3RvbWVyIiwiZGVsdXhlVG9rZW4iOiIiLCJsYXN0TG9naW5JcCI6IjAuMC4wLjAiLCJwcm9maWxlSW1hZ2UiOiIvYXNzZXRzL3B1YmxpYy9pbWFnZXMvdXBsb2Fkcy9kZWZhdWx0LnN2ZyIsInRvdHBTZWNyZXQiOiIiLCJpc0FjdGl2ZSI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyNi0xMS0xMyAyMjo1ODowNi42NTAgKzAwOjAwIiwidXBkYXRlZEF0IjoiMjAyNi0xMS0xMyAyMjo1ODowNi42NTAgKzAwOjAwIiwiZGVsZXRlZEF0IjpudWxsfSwiYmlkIjo3LCJpYXQiOjE3OTQ2MTA3MDl9.vGh3mcPaUDkCJOXTNlLUffFT2NAMwZDmBdjxTB24maB62w5i1Auk-DQI1tbsXatxQNdmUdyYJaJejM3MOMinP7KaS9intpvONrSZqtkM7xG_luCNw-f0ftWGmyWkReKHZFHkYDPxYBj-KlRUYjdRwH5prtufPzgzKhdKnxjzLEM\",\"bid\":7,\"umail\":\"b.canario@prueba.cl\"}}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J21",
+      "descripcion": "Canasta propia; id en la ruta, UserId 26 (B)",
+      "sesion": "B",
+      "peticion": "GET /rest/basket/7",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"id\":7,\"coupon\":null,\"UserId\":26,\"createdAt\":\"2026-11-13T22:58:06.708Z\",\"updatedAt\":\"2026-11-13T22:58:06.708Z\",\"Products\":[{\"id\":1,\"name\":\"Apple Juice (1000ml)\",\"description\":\"The all-time classic.\",\"price\":1.99,\"deluxePrice\":0.99,\"image\":\"apple_juice.jpg\",\"alternateImages\":[{\"file\":\"apple_juice-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"apple_juice-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"apple_juice-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13T22:57:16.146Z\",\"updatedAt\":\"2026-11-13T22:57:16.146Z\",\"deletedAt\":null,\"BasketItem\":{\"ProductId\":1,\"BasketId\":7,\"id\":10,\"quantity\":1,\"createdAt\":\"2026-11-13T22:58:06.775Z\",\"updatedAt\":\"2026-11-13T22:58:06.775Z\"}}]}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "7",
+        "ubicacion": "ruta",
+        "visibilidad": "privado",
+        "cuenta_duena": "B"
+      }
+    },
+    {
+      "id": "J26",
+      "descripcion": "Tarjetas de la sesión actual; la lista no lleva id en la petición",
+      "sesion": "B",
+      "peticion": "GET /api/Cards",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"UserId\":26,\"id\":8,\"fullName\":\"Titular B\",\"cardNum\":\"************4368\",\"expMonth\":12,\"expYear\":2090}]}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J27",
+      "descripcion": "Dirección propia con dato canario; UserId 25 (A)",
+      "sesion": "A",
+      "peticion": "GET /api/Addresss/7",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"UserId\":25,\"id\":7,\"fullName\":\"Titular Canario-A-8B06B4\",\"mobileNum\":912345678,\"zipCode\":\"2340000\",\"streetAddress\":\"Calle Canario-A-8B06B4\",\"city\":\"Valparaíso\",\"state\":\"Valparaíso\",\"country\":\"Chile\",\"createdAt\":\"2026-11-13T22:58:06.541Z\",\"updatedAt\":\"2026-11-13T22:58:06.541Z\"}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "7",
+        "ubicacion": "ruta",
+        "visibilidad": "privado",
+        "cuenta_duena": "A"
+      }
+    },
+    {
+      "id": "J29",
+      "descripcion": "Perfil del usuario; id y correo de A",
+      "sesion": "A",
+      "peticion": "GET /api/Users/25",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"id\":25,\"username\":\"\",\"email\":\"a.canario@prueba.cl\",\"role\":\"customer\",\"deluxeToken\":\"\",\"lastLoginIp\":\"0.0.0.0\",\"profileImage\":\"/assets/public/images/uploads/default.svg\",\"isActive\":true,\"createdAt\":\"2026-11-13T22:58:06.453Z\",\"updatedAt\":\"2026-11-13T22:58:06.453Z\",\"deletedAt\":null}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "25",
+        "ubicacion": "ruta",
+        "visibilidad": "privado",
+        "cuenta_duena": "A"
+      }
+    },
+    {
+      "id": "J30",
+      "descripcion": "Producto del catálogo",
+      "sesion": "A",
+      "peticion": "GET /api/Products/3",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"id\":3,\"name\":\"Eggfruit Juice (500ml)\",\"description\":\"Now with even more exotic flavour.\",\"price\":8.99,\"deluxePrice\":8.99,\"image\":\"eggfruit_juice.jpg\",\"alternateImages\":[{\"file\":\"eggfruit_juice-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"eggfruit_juice-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"eggfruit_juice-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13T22:57:16.146Z\",\"updatedAt\":\"2026-11-13T22:57:16.146Z\",\"deletedAt\":null}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "3",
+        "ubicacion": "ruta",
+        "visibilidad": "publico",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J33",
+      "descripcion": "Producto del catálogo seleccionado con ?id=",
+      "sesion": "A",
+      "peticion": "GET /api/Products/?id=3",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"id\":3,\"name\":\"Eggfruit Juice (500ml)\",\"description\":\"Now with even more exotic flavour.\",\"price\":8.99,\"deluxePrice\":8.99,\"image\":\"eggfruit_juice.jpg\",\"alternateImages\":[{\"file\":\"eggfruit_juice-1x.avif\",\"format\":\"image/avif\",\"density\":\"1x\"},{\"file\":\"eggfruit_juice-2x.avif\",\"format\":\"image/avif\",\"density\":\"2x\"},{\"file\":\"eggfruit_juice-3x.avif\",\"format\":\"image/avif\",\"density\":\"3x\"}],\"createdAt\":\"2026-11-13T22:57:16.146Z\",\"updatedAt\":\"2026-11-13T22:57:16.146Z\",\"deletedAt\":null}]}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "3",
+        "ubicacion": "consulta",
+        "visibilidad": "publico",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J35",
+      "descripcion": "BasketId en el cuerpo (ProductId es catálogo); la respuesta no trae UserId ni correo, el dueño no se puede deducir",
+      "sesion": "A",
+      "peticion": "POST /api/BasketItems  cuerpo: {\"ProductId\": 2, \"BasketId\": \"6\", \"quantity\": 1}",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"id\":11,\"ProductId\":2,\"BasketId\":\"6\",\"quantity\":1,\"updatedAt\":\"2026-11-13T22:59:00.436Z\",\"createdAt\":\"2026-11-13T22:59:00.436Z\"}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "6",
+        "ubicacion": "cuerpo",
+        "visibilidad": "privado",
+        "cuenta_duena": "desconocida"
+      }
+    },
+    {
+      "id": "J36",
+      "descripcion": "Generación de un captcha",
+      "sesion": "A",
+      "peticion": "GET /rest/captcha/",
+      "respuesta": "200 OK {\"captchaId\":0,\"captcha\":\"8-2-6\",\"answer\":\"0\"}",
+      "esperado": {
+        "contiene_identificador": false,
+        "valor": null,
+        "ubicacion": "ninguna",
+        "visibilidad": "no_aplica",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J40",
+      "descripcion": "Tarjeta propia; UserId 26 (B)",
+      "sesion": "B",
+      "peticion": "GET /api/Cards/8",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"UserId\":26,\"id\":8,\"fullName\":\"Titular B\",\"cardNum\":\"************4368\",\"expMonth\":12,\"expYear\":2090}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "8",
+        "ubicacion": "ruta",
+        "visibilidad": "privado",
+        "cuenta_duena": "B"
+      }
+    },
+    {
+      "id": "J43",
+      "descripcion": "Reseñas públicas del producto 3",
+      "sesion": "B",
+      "peticion": "GET /rest/products/3/reviews",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":[{\"message\":\"I bought it, would buy again. 5/7\",\"author\":\"admin@juice-sh.op\",\"product\":3,\"likesCount\":0,\"likedBy\":[],\"_id\":\"BGfDa553bT4cr6Jt2\"}]}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "3",
+        "ubicacion": "ruta",
+        "visibilidad": "publico",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J44",
+      "descripcion": "Método de despacho del catálogo",
+      "sesion": "B",
+      "peticion": "GET /api/Deliverys/1",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"id\":1,\"name\":\"One Day Delivery\",\"price\":0.99,\"eta\":1,\"icon\":\"fas fa-rocket\"}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "1",
+        "ubicacion": "ruta",
+        "visibilidad": "publico",
+        "cuenta_duena": "ninguna"
+      }
+    },
+    {
+      "id": "J49",
+      "descripcion": "UserId de B en el cuerpo al crear un comentario",
+      "sesion": "B",
+      "peticion": "POST /api/Feedbacks  cuerpo: {\"captchaId\": 1, \"captcha\": \"17\", \"comment\": \"Comentario de prueba (b.canario@prueba.cl)\", \"rating\": 3, \"UserId\": 26}",
+      "respuesta": "201 Created {\"status\":\"success\",\"data\":{\"id\":10,\"comment\":\"Comentario de prueba (b.canario@prueba.cl)\",\"rating\":3,\"UserId\":26,\"updatedAt\":\"2026-11-13T22:59:01.024Z\",\"createdAt\":\"2026-11-13T22:59:01.024Z\"}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "26",
+        "ubicacion": "cuerpo",
+        "visibilidad": "privado",
+        "cuenta_duena": "B"
+      }
+    },
+    {
+      "id": "J50",
+      "descripcion": "Modificación de un ítem de canasta; la respuesta trae BasketId pero no UserId ni correo",
+      "sesion": "B",
+      "peticion": "PUT /api/BasketItems/12  cuerpo: {\"quantity\": 2}",
+      "respuesta": "200 OK {\"status\":\"success\",\"data\":{\"ProductId\":2,\"BasketId\":7,\"id\":12,\"quantity\":2,\"createdAt\":\"2026-11-13T22:59:00.898Z\",\"updatedAt\":\"2026-11-13T22:59:01.120Z\"}}",
+      "esperado": {
+        "contiene_identificador": true,
+        "valor": "12",
+        "ubicacion": "ruta",
+        "visibilidad": "privado",
+        "cuenta_duena": "desconocida"
+      }
+    }
+  ]
+}

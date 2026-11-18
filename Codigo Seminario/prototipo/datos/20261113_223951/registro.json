@@ -1,0 +1,32 @@
+{
+  "ejecucion": "20261113_223951",
+  "error": null,
+  "etapas": [
+    {
+      "etapa": "explorador",
+      "inicio": "2026-11-13T22:39:51",
+      "duracion_s": 84.9,
+      "resultado": "ok",
+      "conservadas": 49,
+      "descartadas": {
+        "recurso_estatico": 133,
+        "fuera_del_alcance": 2,
+        "sin_contenido": 24,
+        "duplicada": 4,
+        "websocket": 3
+      },
+      "por_sesion": {
+        "A": 18,
+        "B": 18,
+        "anonima": 13
+      },
+      "inventario": 10
+    },
+    {
+      "etapa": "cerrar",
+      "inicio": "2026-11-13T22:41:16",
+      "duracion_s": 0.0,
+      "resultado": "ok"
+    }
+  ]
+}

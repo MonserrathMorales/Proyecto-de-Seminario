@@ -1,0 +1,343 @@
+﻿fecha_hora,escenario,modelo,razonamiento,familia,parametros,cuantizacion,contexto_maximo,num_ctx,caso,repeticion,carga_inicial_s,ram_sistema_base_gb,vram_base_gb,en_corriente,tiempo_total_s,tokens_prompt,lectura_prompt_s,tokens_salida,generacion_s,tokens_por_s_prompt,tokens_por_s_salida,tokens_razonamiento_aprox,json_valido,aciertos_campos,total_campos,correcta,campos_fallidos,modelo_mem_total_gb,modelo_mem_gpu_gb,modelo_mem_ram_gb,pct_en_gpu,contexto_cargado,ram_sistema_max_gb,ram_sistema_max_pct,ram_ollama_max_gb,vram_usada_max_gb,gpu_uso_max_pct,gpu_temp_max_c,respuesta
+2026-11-07T16:05:55,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C1_ruta_privado,1,16.56,9.4,0.0,True,6.85,661,1.65,93,4.8,400.6,19.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.44,91.4,0.05,2.62,79.0,52.12,"{""contiene_identificador"": true, ""parametro"": ""1043"", ""valor"": ""1043"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '1043' en la ruta identifica un pedido concreto. El cliente_id en la respuesta (17) confirma que pertenece al usuario A.""}"
+2026-11-07T16:06:02,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C2_ruta_publico,1,16.56,9.4,0.0,True,5.43,640,0.55,82,4.56,1167.3,18.0,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.4,91.2,0.05,2.62,86.0,53.62,"{""contiene_identificador"": true, ""parametro"": ""8"", ""valor"": ""8"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '8' en la ruta identifica un producto concreto. Dado que es un producto en un endpoint de catálogo, se considera público.""}"
+2026-11-07T16:06:07,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C3_sin_identificador,1,16.56,9.4,0.0,True,4.75,652,0.54,81,3.87,1213.7,20.9,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,87.0,54.97,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición solo contiene parámetros de paginación ('pagina' y 'tamano'), los cuales no son identificadores de objetos concretos.""}"
+2026-11-07T16:06:12,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C4_uuid_correo,1,16.56,9.4,0.0,True,9.35,708,0.59,162,8.42,1197.2,19.2,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,88.0,55.94,"{""contiene_identificador"": true, ""parametro"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"", ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El UUID en la ruta identifica un documento concreto. La respuesta confirma que el propietario es 'b@tienda.cl', lo que lo clasifica como privado y perteneciente a la cuenta B.""}"
+2026-11-07T16:06:21,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C5_cuerpo,1,16.56,9.4,0.0,True,5.82,669,0.61,96,4.88,1102.0,19.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.39,91.1,0.05,2.62,74.0,58.25,"{""contiene_identificador"": true, ""parametro"": ""direccion_id"", ""valor"": ""77"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'direccion_id' en el cuerpo de la petición identifica un recurso concreto (una dirección) que pertenece al usuario A (usuario_id: 17) en la respuesta.""}"
+2026-11-07T16:06:27,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C6_consulta_otro_dueno,1,16.56,9.4,0.0,True,4.78,646,0.54,79,3.88,1191.9,20.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.4,91.2,0.05,2.62,36.0,58.56,"{""contiene_identificador"": true, ""parametro"": ""cliente"", ""valor"": ""23"", ""ubicacion"": ""consulta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'cliente=23' en la consulta selecciona un carrito específico asociado al usuario B (ID 23).""}"
+2026-11-07T16:06:32,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C1_ruta_privado,2,16.56,9.4,0.0,True,5.69,661,0.54,93,4.82,1216.9,19.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,87.0,57.47,"{""contiene_identificador"": true, ""parametro"": ""1043"", ""valor"": ""1043"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '1043' en la ruta identifica un pedido concreto. El cliente_id en la respuesta (17) confirma que pertenece al usuario A.""}"
+2026-11-07T16:06:37,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C2_ruta_publico,2,16.56,9.4,0.0,True,5.67,640,0.57,82,4.76,1131.2,17.2,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,54.0,57.91,"{""contiene_identificador"": true, ""parametro"": ""8"", ""valor"": ""8"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '8' en la ruta identifica un producto concreto. Dado que es un producto en un endpoint de catálogo, se considera público.""}"
+2026-11-07T16:06:43,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C3_sin_identificador,2,16.56,9.4,0.0,True,5.16,652,0.57,81,4.01,1149.8,20.2,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,81.0,58.09,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición solo contiene parámetros de paginación ('pagina' y 'tamano'), los cuales no son identificadores de objetos concretos.""}"
+2026-11-07T16:06:48,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C4_uuid_correo,2,16.56,9.4,0.0,True,9.64,708,0.71,162,8.41,997.8,19.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,91.0,60.44,"{""contiene_identificador"": true, ""parametro"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"", ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El UUID en la ruta identifica un documento concreto. La respuesta confirma que el propietario es 'b@tienda.cl', lo que lo clasifica como privado y perteneciente a la cuenta B.""}"
+2026-11-07T16:06:58,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C5_cuerpo,2,16.56,9.4,0.0,True,6.04,669,0.68,96,4.98,984.6,19.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.37,91.0,0.05,2.62,89.0,59.75,"{""contiene_identificador"": true, ""parametro"": ""direccion_id"", ""valor"": ""77"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'direccion_id' en el cuerpo de la petición identifica un recurso concreto (una dirección) que pertenece al usuario A (usuario_id: 17) en la respuesta.""}"
+2026-11-07T16:07:04,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C6_consulta_otro_dueno,2,16.56,9.4,0.0,True,4.84,646,0.55,79,3.93,1170.2,20.1,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.38,91.1,0.05,2.62,41.0,60.59,"{""contiene_identificador"": true, ""parametro"": ""cliente"", ""valor"": ""23"", ""ubicacion"": ""consulta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'cliente=23' en la consulta selecciona un carrito específico asociado al usuario B (ID 23).""}"
+2026-11-07T16:07:09,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C1_ruta_privado,3,16.56,9.4,0.0,True,5.58,661,0.54,93,4.73,1232.1,19.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.4,91.2,0.05,2.62,87.0,60.94,"{""contiene_identificador"": true, ""parametro"": ""1043"", ""valor"": ""1043"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '1043' en la ruta identifica un pedido concreto. El cliente_id en la respuesta (17) confirma que pertenece al usuario A.""}"
+2026-11-07T16:07:14,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C2_ruta_publico,3,16.56,9.4,0.0,True,5.4,640,0.53,82,4.54,1209.9,18.1,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.4,91.2,0.05,2.62,85.0,61.59,"{""contiene_identificador"": true, ""parametro"": ""8"", ""valor"": ""8"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '8' en la ruta identifica un producto concreto. Dado que es un producto en un endpoint de catálogo, se considera público.""}"
+2026-11-07T16:07:20,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C3_sin_identificador,3,16.56,9.4,0.0,True,4.76,652,0.53,81,3.92,1219.7,20.7,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,14.42,91.3,0.05,2.62,21.0,61.41,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición solo contiene parámetros de paginación ('pagina' y 'tamano'), los cuales no son identificadores de objetos concretos.""}"
+2026-11-07T16:07:24,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C4_uuid_correo,3,16.56,9.4,0.0,True,9.55,708,0.6,162,8.36,1185.1,19.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.41,91.3,0.05,2.62,86.0,61.81,"{""contiene_identificador"": true, ""parametro"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"", ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El UUID en la ruta identifica un documento concreto. La respuesta confirma que el propietario es 'b@tienda.cl', lo que lo clasifica como privado y perteneciente a la cuenta B.""}"
+2026-11-07T16:07:34,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C5_cuerpo,3,16.56,9.4,0.0,True,6.06,669,0.72,96,4.87,925.3,19.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.37,91.0,0.05,2.62,95.0,62.06,"{""contiene_identificador"": true, ""parametro"": ""direccion_id"", ""valor"": ""77"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'direccion_id' en el cuerpo de la petición identifica un recurso concreto (una dirección) que pertenece al usuario A (usuario_id: 17) en la respuesta.""}"
+2026-11-07T16:07:40,aislado,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,C6_consulta_otro_dueno,3,16.56,9.4,0.0,True,4.74,646,0.54,79,3.87,1188.1,20.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,14.39,91.1,0.05,2.62,87.0,62.31,"{""contiene_identificador"": true, ""parametro"": ""cliente"", ""valor"": ""23"", ""ubicacion"": ""consulta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'cliente=23' en la consulta selecciona un carrito específico asociado al usuario B (ID 23).""}"
+2026-11-07T16:08:03,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C1_ruta_privado,1,12.83,8.85,0.0,True,28.2,663,2.04,140,25.69,324.6,5.4,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,13.64,86.4,0.05,2.51,95.0,64.19,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1043"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición GET a /api/pedidos/1043 incluye el parámetro 'id' con valor '1043' en la ruta de la URL, seleccionando un pedido específico. La respuesta confirma que el pedido pertenece al usuario A (cliente_id: 17), por lo tanto es un objeto privado.""
+}"
+2026-11-07T16:08:31,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C2_ruta_publico,1,12.83,8.85,0.0,True,27.93,644,1.37,141,25.95,470.3,5.4,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,13.63,86.3,0.05,2.51,99.0,64.59,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición accede a un producto con id=8. Los productos en un catálogo suelen ser públicos y no pertenecen a un usuario específico (no son privados como pedidos o carritos), por lo que la visibilidad es 'publico' y la cuenta dueña es 'ninguna'. El valor '8' es un identificador de objeto.""
+}"
+2026-11-07T16:08:59,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C3_sin_identificador,1,12.83,8.85,0.0,True,24.22,654,1.27,122,22.43,513.7,5.4,0,True,3,5,False,ubicacion='consulta' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),5.83,1.55,4.28,26.6,4096,13.64,86.4,0.05,2.51,78.0,65.22,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición consulta una lista de productos públicos. Los parámetros 'pagina' y 'tamano' son filtros de paginación, no identificadores de un objeto específico. No hay ningún ID en la URL ni en el cuerpo que seleccione un registro concreto.""
+}"
+2026-11-07T16:09:23,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C4_uuid_correo,1,12.83,8.85,0.0,True,42.75,709,1.86,191,40.22,382.1,4.7,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,12.55,79.5,0.05,2.51,96.0,65.06,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La URL contiene un UUID en la ruta que selecciona un documento específico. La respuesta indica que el propietario es 'b@tienda.cl', lo cual coincide con el usuario B de la sesión actual, por lo tanto el objeto pertenece a la cuenta B.""
+}"
+2026-11-07T16:10:06,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C5_cuerpo,1,12.83,8.85,0.0,True,24.32,667,1.27,120,22.42,524.3,5.4,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,10.58,67.0,0.06,2.51,71.0,67.97,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""direccion_id"",
+  ""valor"": ""77"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición actualiza una dirección específica identificada por 'direccion_id' 77. La respuesta confirma que el objeto pertenece al usuario A (usuario_id: 17), por lo tanto es un identificador de objeto privado.""
+}"
+2026-11-07T16:10:30,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C6_consulta_otro_dueno,1,12.83,8.85,0.0,True,25.21,647,1.29,128,23.57,503.2,5.4,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.7,61.5,0.05,2.51,97.0,66.25,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""cliente"",
+  ""valor"": ""23"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La petición incluye el parámetro 'cliente=23' en la consulta, seleccionando un carrito específico (id 23) que pertenece al usuario B. Dado que la sesión actual es del usuario A, esto representa una solicitud de acceso a un recurso privado de otro usuario.""
+}"
+2026-11-07T16:10:55,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C1_ruta_privado,2,12.83,8.85,0.0,True,23.98,663,1.28,123,22.33,516.9,5.5,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.68,61.3,0.05,2.51,96.0,65.44,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1043"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición accede a un pedido específico (id=1043) en la ruta de la URL. La respuesta confirma que el pedido pertenece al usuario A (cliente_id=17), por lo tanto es un objeto privado del usuario A.""
+}"
+2026-11-07T16:11:19,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C2_ruta_publico,2,12.83,8.85,0.0,True,28.03,644,1.3,143,26.33,497.1,5.4,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.67,61.2,0.05,2.51,95.0,66.38,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición accede a un producto con id=8. Los productos en un catálogo son típicamente recursos públicos accesibles por cualquier usuario, no pertenecen a una cuenta específica (A o B), por lo que la visibilidad es 'publico' y la cuenta dueña es 'ninguna'. El identificador selecciona un registro concreto del catálogo.""
+}"
+2026-11-07T16:11:47,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C3_sin_identificador,2,12.83,8.85,0.0,True,23.79,654,1.25,121,21.95,521.1,5.5,0,True,3,5,False,ubicacion='consulta' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),5.83,1.55,4.28,26.6,4096,9.65,61.1,0.05,2.51,82.0,67.09,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición consulta una lista de productos públicos. Los parámetros 'pagina' y 'tamano' son de paginación, no identificadores de objetos específicos. No hay un ID de producto ni otro identificador de recurso en la URL o el cuerpo.""
+}"
+2026-11-07T16:12:11,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C4_uuid_correo,2,12.83,8.85,0.0,True,37.77,709,1.32,191,36.12,535.8,5.3,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.65,61.1,0.05,2.51,96.0,68.09,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La URL contiene un UUID en la ruta que selecciona un documento específico. La respuesta indica que el propietario es 'b@tienda.cl', lo cual coincide con el usuario B de la sesión actual, por lo tanto el objeto pertenece a la cuenta B.""
+}"
+2026-11-07T16:12:49,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C5_cuerpo,2,12.83,8.85,0.0,True,23.32,667,1.3,120,21.55,513.1,5.6,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.64,61.1,0.05,2.51,96.0,67.03,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""direccion_id"",
+  ""valor"": ""77"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición actualiza una dirección específica identificada por 'direccion_id' 77. La respuesta confirma que el objeto pertenece al usuario A (usuario_id: 17), por lo tanto es un identificador de objeto privado.""
+}"
+2026-11-07T16:13:12,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C6_consulta_otro_dueno,2,12.83,8.85,0.0,True,25.11,647,1.33,128,23.37,487.1,5.5,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.64,61.1,0.05,2.51,98.0,66.62,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""cliente"",
+  ""valor"": ""23"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La petición incluye el parámetro 'cliente=23' en la consulta, seleccionando un carrito específico (id 23) que pertenece al usuario B. Dado que la sesión actual es del usuario A, esto representa una solicitud de acceso a un recurso privado de otro usuario.""
+}"
+2026-11-07T16:13:37,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C1_ruta_privado,3,12.83,8.85,0.0,True,24.41,663,1.25,123,22.69,529.4,5.4,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.65,61.1,0.05,2.51,96.0,67.03,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1043"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición accede a un pedido específico (id=1043) en la ruta de la URL. La respuesta confirma que el pedido pertenece al usuario A (cliente_id=17), por lo tanto es un objeto privado del usuario A.""
+}"
+2026-11-07T16:14:02,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C2_ruta_publico,3,12.83,8.85,0.0,True,28.07,644,1.33,143,26.2,484.4,5.5,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.64,61.1,0.05,2.51,97.0,66.84,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición accede a un producto con id=8. Los productos en un catálogo son típicamente recursos públicos accesibles por cualquier usuario, no pertenecen a una cuenta específica (A o B), por lo que la visibilidad es 'publico' y la cuenta dueña es 'ninguna'. El identificador selecciona un registro concreto del catálogo.""
+}"
+2026-11-07T16:14:30,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C3_sin_identificador,3,12.83,8.85,0.0,True,23.61,654,1.33,121,21.96,491.6,5.5,0,True,3,5,False,ubicacion='consulta' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),5.83,1.55,4.28,26.6,4096,9.64,61.0,0.05,2.51,100.0,66.78,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición consulta una lista de productos públicos. Los parámetros 'pagina' y 'tamano' son de paginación, no identificadores de objetos específicos. No hay un ID de producto ni otro identificador de recurso en la URL o el cuerpo.""
+}"
+2026-11-07T16:14:53,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C4_uuid_correo,3,12.83,8.85,0.0,True,37.82,709,1.3,191,36.17,547.4,5.3,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.63,61.0,0.05,2.51,97.0,67.56,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La URL contiene un UUID en la ruta que selecciona un documento específico. La respuesta indica que el propietario es 'b@tienda.cl', lo cual coincide con el usuario B de la sesión actual, por lo tanto el objeto pertenece a la cuenta B.""
+}"
+2026-11-07T16:15:31,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C5_cuerpo,3,12.83,8.85,0.0,True,23.32,667,1.27,120,21.73,525.6,5.5,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.62,61.0,0.05,2.51,96.0,67.06,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""direccion_id"",
+  ""valor"": ""77"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición actualiza una dirección específica identificada por 'direccion_id' 77. La respuesta confirma que el objeto pertenece al usuario A (usuario_id: 17), por lo tanto es un identificador de objeto privado.""
+}"
+2026-11-07T16:15:55,aislado,qwen3.5:9b,False,qwen35,9.0B,Q4_K_M,262144,4096,C6_consulta_otro_dueno,3,12.83,8.85,0.0,True,24.98,647,1.31,128,23.34,495.6,5.5,0,True,5,5,True,,5.83,1.55,4.28,26.6,4096,9.61,60.9,0.05,2.51,97.0,66.41,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""cliente"",
+  ""valor"": ""23"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La petición incluye el parámetro 'cliente=23' en la consulta, seleccionando un carrito específico (id 23) que pertenece al usuario B. Dado que la sesión actual es del usuario A, esto representa una solicitud de acceso a un recurso privado de otro usuario.""
+}"
+2026-11-07T16:16:32,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C1_ruta_privado,1,7.65,4.87,0.0,True,9.93,663,1.03,134,8.56,640.8,15.6,0,True,3,5,False,valor='CLP' (esperado '1043') | ubicacion='consulta' (esperado 'ruta'),3.49,1.75,1.74,50.2,4096,7.14,45.2,0.05,2.48,37.0,64.22,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""moneda"",
+  ""valor"": ""CLP"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro 'moneda' es un filtro de consulta, no un identificador de objeto. Sin embargo, la respuesta contiene el campo 'cliente_id' con valor 17, que corresponde al usuario A (id 17), indicando que el objeto devuelto pertenece a la cuenta duena A.""
+}"
+2026-11-07T16:16:42,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C2_ruta_publico,1,7.65,4.87,0.0,True,8.22,644,0.61,118,7.29,1059.6,16.2,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.04,44.6,0.05,2.48,94.0,64.41,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un producto concreto del catálogo. Al tratarse de productos, son visibles para cualquier usuario (visibilidad pública) y no pertenecen a una cuenta específica (cuenta duena ninguna).""
+}"
+2026-11-07T16:16:51,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C3_sin_identificador,1,7.65,4.87,0.0,True,8.67,654,0.65,121,7.64,1005.6,15.8,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,7.05,44.7,0.05,2.48,43.0,64.69,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición contiene parámetros de paginación (pagina, tamano) pero no un identificador único que seleccione un registro concreto. El objeto devuelto en la respuesta es público (catálogo de productos) y pertenece a ninguna cuenta duena específica.""
+}"
+2026-11-07T16:16:59,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C4_uuid_correo,1,7.65,4.87,0.0,True,9.98,709,0.78,139,8.88,911.2,15.6,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.09,44.9,0.05,2.48,68.0,65.53,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un documento específico. La respuesta indica que el propietario es 'b@tienda.cl', correspondiente al usuario B.""
+}"
+2026-11-07T16:17:09,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C5_cuerpo,1,7.65,4.87,0.0,True,8.9,667,0.68,126,7.91,987.2,15.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,44.9,0.05,2.48,81.0,66.03,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""direccion_id"",
+  ""valor"": ""77"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro direccion_id selecciona un registro concreto (dirección). El valor 77 corresponde al usuario A (id 17) según la respuesta que incluye usuario_id: 17, por lo tanto es privado y de cuenta duena A.""
+}"
+2026-11-07T16:17:18,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C6_consulta_otro_dueno,1,7.65,4.87,0.0,True,8.69,647,0.58,125,7.79,1106.3,16.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,44.9,0.05,2.48,93.0,66.72,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""cliente"",
+  ""valor"": ""23"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'cliente' con valor '23' selecciona un registro concreto (carrito) que pertenece al usuario B (id 23), diferenciándose de los filtros o paginación. La respuesta confirma la existencia del objeto con id 23.""
+}"
+2026-11-07T16:17:27,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C1_ruta_privado,2,7.65,4.87,0.0,True,9.41,663,0.65,130,8.18,1012.7,15.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,44.9,0.05,2.48,37.0,66.97,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1043"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto de pedidos. El valor 1043 corresponde al cliente_id 17, que pertenece al usuario A (según los datos de la respuesta), por lo tanto es un identificador privado de cuenta A.""
+}"
+2026-11-07T16:17:36,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C2_ruta_publico,2,7.65,4.87,0.0,True,8.45,644,0.64,118,7.34,1003.0,16.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,44.9,0.05,2.48,70.0,66.5,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un producto concreto del catálogo. Al tratarse de productos, son visibles para cualquier usuario (visibilidad pública) y no pertenecen a una cuenta específica (cuenta duena ninguna).""
+}"
+2026-11-07T16:17:45,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C3_sin_identificador,2,7.65,4.87,0.0,True,7.65,654,0.62,107,6.53,1051.3,16.4,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,7.1,45.0,0.05,2.48,94.0,66.75,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición contiene parámetros de paginación (pagina, tamano) pero no un identificador único de objeto. La respuesta muestra un catálogo de productos públicos accesible por cualquier usuario.""
+}"
+2026-11-07T16:17:52,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C4_uuid_correo,2,7.65,4.87,0.0,True,9.78,709,0.6,139,8.88,1174.7,15.7,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,45.0,0.05,2.48,32.0,67.38,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un documento específico. La respuesta indica que el propietario es 'b@tienda.cl', correspondiente al usuario B.""
+}"
+2026-11-07T16:18:02,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C5_cuerpo,2,7.65,4.87,0.0,True,8.8,667,0.61,126,7.86,1084.7,16.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,44.9,0.05,2.48,38.0,67.34,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""direccion_id"",
+  ""valor"": ""77"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro direccion_id selecciona un registro concreto (dirección). El valor 77 corresponde al usuario A (id 17) según la respuesta que incluye usuario_id: 17, por lo tanto es privado y de cuenta duena A.""
+}"
+2026-11-07T16:18:11,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C6_consulta_otro_dueno,2,7.65,4.87,0.0,True,8.75,647,0.59,125,7.8,1096.6,16.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,44.9,0.05,2.48,93.0,67.34,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""cliente"",
+  ""valor"": ""23"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'cliente' con valor '23' selecciona un registro concreto (carrito) que pertenece al usuario B (id 23), diferenciándose de los filtros o paginación. La respuesta confirma la existencia del objeto con id 23.""
+}"
+2026-11-07T16:18:20,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C1_ruta_privado,3,7.65,4.87,0.0,True,9.36,663,0.64,130,8.14,1038.1,16.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,45.0,0.05,2.48,93.0,66.81,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1043"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto de pedidos. El valor 1043 corresponde al cliente_id 17, que pertenece al usuario A (según los datos de la respuesta), por lo tanto es un identificador privado de cuenta A.""
+}"
+2026-11-07T16:18:29,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C2_ruta_publico,3,7.65,4.87,0.0,True,8.48,644,0.63,118,7.32,1015.7,16.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.1,45.0,0.05,2.48,56.0,66.84,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un producto concreto del catálogo. Al tratarse de productos, son visibles para cualquier usuario (visibilidad pública) y no pertenecen a una cuenta específica (cuenta duena ninguna).""
+}"
+2026-11-07T16:18:37,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C3_sin_identificador,3,7.65,4.87,0.0,True,7.6,654,0.6,107,6.47,1097.9,16.5,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,7.09,44.9,0.05,2.48,76.0,67.81,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición contiene parámetros de paginación (pagina, tamano) pero no un identificador único de objeto. La respuesta muestra un catálogo de productos públicos accesible por cualquier usuario.""
+}"
+2026-11-07T16:18:45,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C4_uuid_correo,3,7.65,4.87,0.0,True,9.76,709,0.6,139,8.84,1185.4,15.7,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.09,44.9,0.05,2.48,41.0,67.97,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un documento específico. La respuesta indica que el propietario es 'b@tienda.cl', correspondiente al usuario B.""
+}"
+2026-11-07T16:18:55,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C5_cuerpo,3,7.65,4.87,0.0,True,8.86,667,0.62,126,7.92,1079.6,15.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.09,44.9,0.05,2.48,40.0,67.38,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""direccion_id"",
+  ""valor"": ""77"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro direccion_id selecciona un registro concreto (dirección). El valor 77 corresponde al usuario A (id 17) según la respuesta que incluye usuario_id: 17, por lo tanto es privado y de cuenta duena A.""
+}"
+2026-11-07T16:19:04,aislado,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,C6_consulta_otro_dueno,3,7.65,4.87,0.0,True,8.73,647,0.57,125,7.85,1135.8,15.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,7.09,44.9,0.05,2.48,57.0,67.84,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""cliente"",
+  ""valor"": ""23"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'cliente' con valor '23' selecciona un registro concreto (carrito) que pertenece al usuario B (id 23), diferenciándose de los filtros o paginación. La respuesta confirma la existencia del objeto con id 23.""
+}"

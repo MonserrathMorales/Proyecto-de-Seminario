@@ -1,0 +1,21 @@
+{
+  "aplicacion": "OWASP Juice Shop",
+  "url_base": "http://localhost:3000",
+  "prefijos_api": ["/rest/", "/api/"],
+  "pantallas": [
+    "/#/search",
+    "/#/basket",
+    "/#/address/saved",
+    "/#/address/edit/{direccion}",
+    "/#/order-history",
+    "/#/saved-payment-methods",
+    "/#/wallet",
+    "/#/contact",
+    "/#/about"
+  ],
+  "cuentas": [
+    {"nombre": "A", "correo": "a.canario@prueba.cl", "clave": "Prueba-2026!"},
+    {"nombre": "B", "correo": "b.canario@prueba.cl", "clave": "Prueba-2026!"}
+  ],
+  "proxy": "http://127.0.0.1:8080"
+}

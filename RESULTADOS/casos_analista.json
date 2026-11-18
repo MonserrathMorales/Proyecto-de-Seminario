@@ -1,0 +1,56 @@
+{
+  "usuarios": {
+    "A": {"id": 17, "correo": "a@tienda.cl"},
+    "B": {"id": 23, "correo": "b@tienda.cl"}
+  },
+  "casos": [
+    {
+      "id": "C1_ruta_privado",
+      "descripcion": "Identificador numérico en la ruta; el pedido pertenece a la sesión actual",
+      "sesion": "A",
+      "peticion": "GET /api/pedidos/1043?moneda=CLP",
+      "respuesta": "200 OK {\"id\": 1043, \"cliente_id\": 17, \"direccion\": \"Calle Canario-A-7F3\", \"total\": 15990}",
+      "esperado": {"contiene_identificador": true, "valor": "1043", "ubicacion": "ruta", "visibilidad": "privado", "cuenta_duena": "A"}
+    },
+    {
+      "id": "C2_ruta_publico",
+      "descripcion": "Identificador en la ruta de un objeto público (catálogo)",
+      "sesion": "A",
+      "peticion": "GET /api/productos/8",
+      "respuesta": "200 OK {\"id\": 8, \"nombre\": \"Jugo de manzana\", \"precio\": 1990, \"stock\": 42}",
+      "esperado": {"contiene_identificador": true, "valor": "8", "ubicacion": "ruta", "visibilidad": "publico", "cuenta_duena": "ninguna"}
+    },
+    {
+      "id": "C3_sin_identificador",
+      "descripcion": "Solo parámetros de paginación; no hay identificador de objeto",
+      "sesion": "A",
+      "peticion": "GET /api/productos?pagina=2&tamano=20",
+      "respuesta": "200 OK {\"pagina\": 2, \"total_paginas\": 5, \"items\": [{\"id\": 21, \"nombre\": \"Jugo de pera\"}]}",
+      "esperado": {"contiene_identificador": false, "valor": null, "ubicacion": "ninguna", "visibilidad": "no_aplica", "cuenta_duena": "ninguna"}
+    },
+    {
+      "id": "C4_uuid_correo",
+      "descripcion": "UUID en la ruta; el dueño se deduce por el correo",
+      "sesion": "B",
+      "peticion": "GET /api/documentos/3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90",
+      "respuesta": "200 OK {\"uuid\": \"3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90\", \"propietario\": \"b@tienda.cl\", \"titulo\": \"Boleta octubre\"}",
+      "esperado": {"contiene_identificador": true, "valor": "3f2b9c1e-7a4d-4e8b-9c2f-5d1a6b7e8f90", "ubicacion": "ruta", "visibilidad": "privado", "cuenta_duena": "B"}
+    },
+    {
+      "id": "C5_cuerpo",
+      "descripcion": "Identificador enviado en el cuerpo de la petición",
+      "sesion": "A",
+      "peticion": "PUT /api/perfil/direccion  cuerpo: {\"direccion_id\": 77, \"calle\": \"Av. Brasil 2950\"}",
+      "respuesta": "200 OK {\"direccion_id\": 77, \"usuario_id\": 17, \"calle\": \"Av. Brasil 2950\"}",
+      "esperado": {"contiene_identificador": true, "valor": "77", "ubicacion": "cuerpo", "visibilidad": "privado", "cuenta_duena": "A"}
+    },
+    {
+      "id": "C6_consulta_otro_dueno",
+      "descripcion": "Identificador en la consulta; el objeto pertenece a otra cuenta",
+      "sesion": "A",
+      "peticion": "GET /api/carritos?cliente=23",
+      "respuesta": "200 OK {\"cliente_id\": 23, \"productos\": [{\"id\": 8, \"cantidad\": 2}], \"total\": 3980}",
+      "esperado": {"contiene_identificador": true, "valor": "23", "ubicacion": "consulta", "visibilidad": "privado", "cuenta_duena": "B"}
+    }
+  ]
+}

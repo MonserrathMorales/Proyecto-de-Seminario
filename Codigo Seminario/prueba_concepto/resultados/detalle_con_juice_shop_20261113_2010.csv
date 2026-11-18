@@ -1,0 +1,723 @@
+﻿fecha_hora,escenario,modelo,razonamiento,familia,parametros,cuantizacion,contexto_maximo,num_ctx,caso,repeticion,carga_inicial_s,ram_sistema_base_gb,vram_base_gb,en_corriente,tiempo_total_s,tokens_prompt,lectura_prompt_s,tokens_salida,generacion_s,tokens_por_s_prompt,tokens_por_s_salida,tokens_razonamiento_aprox,json_valido,aciertos_campos,total_campos,correcta,campos_fallidos,modelo_mem_total_gb,modelo_mem_gpu_gb,modelo_mem_ram_gb,pct_en_gpu,contexto_cargado,ram_sistema_max_gb,ram_sistema_max_pct,ram_ollama_max_gb,vram_usada_max_gb,gpu_uso_max_pct,gpu_temp_max_c,respuesta
+2026-11-13T20:11:25,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J01,1,66.47,7.75,0.3,True,35.18,625,30.28,74,4.46,20.6,16.6,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.1,83.0,0.05,2.92,82.0,49.84,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición no contiene ningún parámetro que seleccione un registro concreto. Es una solicitud de información general del sistema.""}"
+2026-11-13T20:12:00,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J03,1,66.47,7.75,0.3,True,5.98,1072,0.85,81,4.48,1265.4,18.1,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.04,82.6,0.05,2.92,93.0,52.0,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/languages no contiene ningún identificador de objeto. Devuelve una lista de idiomas disponibles, que es información pública.""}"
+2026-11-13T20:12:06,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J04,1,66.47,7.75,0.3,True,6.91,766,1.17,90,5.09,656.0,17.7,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.1,83.0,0.05,2.92,91.0,53.72,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un GET a un endpoint de lista ('/api/Challenges/'). El parámetro 'name' es un filtro de búsqueda, no un identificador de un recurso concreto.""}"
+2026-11-13T20:12:13,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J06,1,66.47,7.75,0.3,True,6.96,619,0.68,89,5.84,910.6,15.2,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.11,83.0,0.05,2.92,42.0,51.72,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""A"", ""justificacion"": ""La petición es un endpoint de información de sesión ('whoami') y no contiene parámetros que identifiquen un recurso específico (como un ID de usuario, pedido o documento).""}"
+2026-11-13T20:12:20,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J08,1,66.47,7.75,0.3,True,7.93,1198,1.11,107,6.12,1074.8,17.5,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.12,83.1,0.05,2.92,90.0,55.09,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es una búsqueda de productos (GET /rest/products/search?q=) y no contiene un identificador de objeto específico (como un ID de pedido o usuario). Los IDs en la respuesta son de productos, que son recursos públicos en un catálogo.""}"
+2026-11-13T20:12:28,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J09,1,66.47,7.75,0.3,True,6.98,952,0.78,85,5.44,1225.9,15.6,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.24,83.9,0.05,2.92,37.0,55.94,"{""contiene_identificador"": true, ""parametro"": ""6"", ""valor"": ""6"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '6' en la ruta identifica un carrito específico (BasketId), y la respuesta indica que pertenece al usuario A (UserId: 25).""}"
+2026-11-13T20:12:35,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J10,1,66.47,7.75,0.3,True,7.31,1431,1.39,108,5.49,1030.6,19.7,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.26,84.0,0.06,2.92,94.0,60.56,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición GET /api/Quantitys/ no contiene parámetros de identificación en la ruta, consulta o cuerpo. La respuesta muestra una lista de cantidades de productos, que parece ser un catálogo público.""
+}"
+2026-11-13T20:12:42,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J11,1,66.47,7.75,0.3,True,6.95,756,0.66,104,5.76,1140.7,18.1,0,True,3,5,False,visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='A' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.28,84.1,0.06,2.92,89.0,58.06,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""La petición GET /api/Addresss no contiene parámetros de identificación de objeto. La respuesta muestra una lista de direcciones asociadas al usuario A (UserId: 25), pero la solicitud en sí no utiliza un ID específico para acceder a un recurso concreto.""}"
+2026-11-13T20:12:49,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J12,1,66.47,7.75,0.3,True,8.25,621,0.71,98,7.11,879.5,13.8,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.31,84.3,0.06,2.92,45.0,56.25,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un GET a un endpoint de historial de pedidos sin parámetros de identificación explícitos. La respuesta indica que no hay datos, lo cual es consistente con una consulta general o sin filtros de objeto específico.""}"
+2026-11-13T20:12:57,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J20,1,66.47,7.75,0.3,True,6.97,1149,1.28,87,5.24,900.3,16.6,0,True,4,5,False,ubicacion='cuerpo' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.28,84.1,0.06,2.92,67.0,64.53,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""cuerpo"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un login y no contiene identificadores de objetos específicos (como ID de pedido o usuario) en la solicitud. El cuerpo solo contiene credenciales.""}"
+2026-11-13T20:13:04,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J21,1,66.47,7.75,0.3,True,6.94,953,1.15,85,5.2,826.7,16.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.35,84.6,0.06,2.92,86.0,60.25,"{""contiene_identificador"": true, ""parametro"": ""7"", ""valor"": ""7"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El valor '7' en la ruta identifica un carrito específico (BasketId), y la respuesta indica que pertenece al usuario B (UserId: 26).""}"
+2026-11-13T20:13:11,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J26,1,66.47,7.75,0.3,True,6.79,656,0.55,101,5.52,1191.1,18.3,0,True,0,5,False,contiene_identificador=True (esperado False) | valor='8' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='B' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.34,84.5,0.06,2.92,87.0,59.94,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""8"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El campo 'id' en la respuesta JSON (8) identifica una tarjeta específica, y dado que la sesión es del usuario B (id 26), se asume que este objeto es privado y pertenece a la cuenta B.""}"
+2026-11-13T20:13:18,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J27,1,66.47,7.75,0.3,True,5.94,757,0.82,85,4.64,927.7,18.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.35,84.6,0.06,2.92,91.0,59.59,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""7"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto (una dirección) y la respuesta indica que pertenece al usuario A (UserId: 25).""}"
+2026-11-13T20:13:24,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J29,1,66.47,7.75,0.3,True,4.88,739,0.65,72,3.72,1132.5,19.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.36,84.6,0.06,2.92,84.0,59.75,"{""contiene_identificador"": true, ""parametro"": ""25"", ""valor"": ""25"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '25' en la ruta identifica de forma única al usuario A.""}"
+2026-11-13T20:13:29,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J30,1,66.47,7.75,0.3,True,6.21,810,0.67,86,5.15,1215.6,16.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.39,84.8,0.06,2.92,89.0,59.22,"{""contiene_identificador"": true, ""parametro"": ""3"", ""valor"": ""3"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '3' en la ruta identifica un producto concreto (ID del producto). Dado que es un endpoint de productos, se asume que es público.""}"
+2026-11-13T20:13:35,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J33,1,66.47,7.75,0.3,True,6.32,812,0.66,93,5.23,1230.4,17.8,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.39,84.8,0.06,2.92,91.0,60.0,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""3"", ""ubicacion"": ""consulta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El parámetro 'id' en la consulta selecciona un producto concreto (ID 3). Dado que la respuesta es un listado de productos sin información de usuario específica, se clasifica como público.""}"
+2026-11-13T20:13:41,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J35,1,66.47,7.75,0.3,True,5.81,715,0.62,91,4.61,1145.5,19.8,0,True,4,5,False,cuenta_duena='A' (esperado 'desconocida'),0.33,0.33,0.0,100.0,4096,13.37,84.7,0.06,2.92,86.0,59.72,"{""contiene_identificador"": true, ""parametro"": ""BasketId"", ""valor"": ""6"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'BasketId' en el cuerpo de la petición identifica un carrito específico. Dado que la sesión es del usuario A, se asume que este carrito pertenece a A.""}"
+2026-11-13T20:13:47,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J36,1,66.47,7.75,0.3,True,6.45,630,0.65,94,5.38,964.0,17.5,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.38,84.8,0.06,2.92,93.0,59.69,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/captcha/ no contiene ningún parámetro que identifique un recurso específico (como un ID de pedido, usuario, etc.). El captcha es un recurso público y genérico.""}"
+2026-11-13T20:13:54,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J40,1,66.47,7.75,0.3,True,5.9,658,0.58,85,4.65,1139.6,18.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.37,84.7,0.06,2.92,88.0,59.69,"{""contiene_identificador"": true, ""parametro"": ""8"", ""valor"": ""8"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El valor '8' en la ruta identifica una tarjeta específica (Card ID), y la respuesta confirma que pertenece al usuario B (UserId: 26).""}"
+2026-11-13T20:14:00,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J43,1,66.47,7.75,0.3,True,5.95,678,0.61,86,4.86,1107.3,17.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.4,84.9,0.06,2.92,93.0,61.0,"{""contiene_identificador"": true, ""parametro"": ""3"", ""valor"": ""3"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '3' en la ruta identifica un producto específico (product ID), que es un objeto concreto, aunque la reseña en sí misma sea pública.""}"
+2026-11-13T20:14:06,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J44,1,66.47,7.75,0.3,True,5.96,649,0.54,84,5.01,1209.2,16.8,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.39,84.8,0.06,2.92,87.0,60.22,"{""contiene_identificador"": true, ""parametro"": ""1"", ""valor"": ""1"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '1' en la ruta identifica un delivery concreto. Dado que la respuesta no contiene información de usuario específica, se clasifica como público.""}"
+2026-11-13T20:14:12,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J49,1,66.47,7.75,0.3,True,6.1,754,0.61,95,5.08,1229.7,18.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.38,84.8,0.06,2.92,89.0,60.84,"{""contiene_identificador"": true, ""parametro"": ""UserId"", ""valor"": ""26"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'UserId' en el cuerpo de la petición contiene el ID del usuario (26), que es un identificador de objeto que selecciona un registro concreto (el usuario que realiza el feedback).""}"
+2026-11-13T20:14:18,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J50,1,66.47,7.75,0.3,True,5.74,705,0.61,83,4.51,1159.7,18.4,0,True,4,5,False,cuenta_duena='B' (esperado 'desconocida'),0.33,0.33,0.0,100.0,4096,13.39,84.8,0.06,2.92,88.0,60.28,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""12"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'id' en la ruta identifica un ítem específico del carrito (BasketItem), que es un recurso privado asociado al usuario B.""}"
+2026-11-13T20:14:23,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J01,2,66.47,7.75,0.3,True,6.85,625,0.72,87,5.56,869.6,15.6,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.38,84.8,0.06,2.92,91.0,61.22,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición no contiene ningún parámetro que identifique un recurso específico (como un ID de pedido o usuario). La ruta es genérica y devuelve una versión de la aplicación.""}"
+2026-11-13T20:14:30,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J03,2,66.47,7.75,0.3,True,6.36,1072,0.87,93,5.07,1233.3,18.4,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.39,84.8,0.06,2.92,35.0,60.97,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/languages no contiene ningún identificador de objeto. La respuesta es una lista de idiomas, que es información pública y no está ligada a un recurso específico de un usuario.""}"
+2026-11-13T20:14:37,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J04,2,66.47,7.75,0.3,True,5.82,766,0.66,90,4.61,1163.2,19.5,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.39,84.8,0.06,2.92,87.0,61.34,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un GET a un endpoint de lista ('/api/Challenges/') y el parámetro 'name' es un filtro de búsqueda, no un identificador de un recurso concreto.""}"
+2026-11-13T20:14:42,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J06,2,66.47,7.75,0.3,True,6.78,619,0.67,90,5.48,924.9,16.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.4,84.9,0.06,2.92,56.0,59.12,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un endpoint de información de sesión ('whoami') y no contiene parámetros que identifiquen un recurso específico (como un ID de usuario, pedido o documento).""}"
+2026-11-13T20:14:49,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J08,2,66.47,7.75,0.3,True,8.38,1198,1.29,123,6.69,930.4,18.4,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.42,85.0,0.06,2.92,90.0,62.34,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición es una búsqueda de productos (GET /rest/products/search?q=) y no contiene un identificador de objeto específico (como un ID de pedido o usuario). Los IDs en la respuesta son de productos, que son recursos públicos en un catálogo.""
+}"
+2026-11-13T20:14:58,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J09,2,66.47,7.75,0.3,True,6.83,952,0.8,88,5.32,1188.2,16.6,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.61,86.2,0.06,2.92,93.0,61.56,"{""contiene_identificador"": true, ""parametro"": ""6"", ""valor"": ""6"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '6' en la ruta identifica un carrito específico (BasketId: 6), y la respuesta indica que pertenece al usuario A (UserId: 25).""}"
+2026-11-13T20:15:04,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J10,2,66.47,7.75,0.3,True,8.12,1431,1.31,107,6.4,1092.2,16.7,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.63,86.3,0.06,2.92,93.0,67.44,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /api/Quantitys/ no contiene ningún identificador de objeto en la ruta, consulta o cuerpo. La respuesta muestra una lista de cantidades de productos, que es información pública (catálogo) y no está ligada a un objeto específico del usuario.""}"
+2026-11-13T20:15:13,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J11,2,66.47,7.75,0.3,True,7.18,756,0.66,104,6.01,1145.7,17.3,0,True,3,5,False,visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='A' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.79,87.4,0.06,2.92,89.0,62.06,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""La petición GET /api/Addresss no contiene parámetros de identificación de objeto. La respuesta muestra una lista de direcciones asociadas al usuario A (UserId: 25), pero la solicitud en sí no utiliza un ID específico para acceder a un recurso concreto.""}"
+2026-11-13T20:15:20,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J12,2,66.47,7.75,0.3,True,8.96,621,0.7,98,7.58,893.3,12.9,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.82,87.5,0.06,2.92,45.0,59.72,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un GET a un endpoint de historial de pedidos sin parámetros de identificación explícitos. La respuesta indica que no hay datos, lo cual es consistente con una consulta general o sin filtros de objeto específico.""}"
+2026-11-13T20:15:29,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J20,2,66.47,7.75,0.3,True,6.86,1149,1.19,87,5.16,964.1,16.9,0,True,4,5,False,ubicacion='cuerpo' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,12.97,82.1,0.05,2.92,92.0,63.12,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""cuerpo"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un login y no contiene identificadores de objetos específicos (como ID de pedido o usuario) en la solicitud. El cuerpo solo contiene credenciales.""}"
+2026-11-13T20:15:36,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J21,2,66.47,7.75,0.3,True,6.87,953,0.72,88,5.61,1315.5,15.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,12.96,82.1,0.05,2.92,93.0,61.97,"{""contiene_identificador"": true, ""parametro"": ""7"", ""valor"": ""7"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El valor '7' en la ruta identifica un carrito específico (BasketId: 7), y la respuesta indica que pertenece al usuario B (UserId: 26).""}"
+2026-11-13T20:15:42,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J26,2,66.47,7.75,0.3,True,6.2,656,0.63,97,5.17,1035.0,18.8,0,True,0,5,False,contiene_identificador=True (esperado False) | valor='8' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='B' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,12.97,82.1,0.05,2.92,88.0,61.97,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""8"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El campo 'id' en la respuesta JSON (8) identifica una tarjeta específica, y dado que la sesión es del usuario B (id 26), este objeto es privado y pertenece a la cuenta B.""}"
+2026-11-13T20:15:49,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J27,2,66.47,7.75,0.3,True,5.82,757,0.68,85,4.4,1115.9,19.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,12.99,82.3,0.05,2.92,88.0,62.06,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""7"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto (una dirección) y la respuesta indica que pertenece al usuario A (UserId: 25).""}"
+2026-11-13T20:15:54,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J29,2,66.47,7.75,0.3,True,4.85,739,0.71,72,3.71,1039.8,19.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,12.99,82.3,0.05,2.92,62.0,61.97,"{""contiene_identificador"": true, ""parametro"": ""25"", ""valor"": ""25"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '25' en la ruta identifica de forma única al usuario A.""}"
+2026-11-13T20:15:59,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J30,2,66.47,7.75,0.3,True,6.81,810,0.62,85,5.59,1300.1,15.2,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.01,82.4,0.05,2.92,92.0,62.84,"{""contiene_identificador"": true, ""parametro"": ""3"", ""valor"": ""3"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '3' en la ruta identifica un producto concreto. Dado que es un endpoint de productos, se asume que es público (catálogo).""}"
+2026-11-13T20:16:06,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J33,2,66.47,7.75,0.3,True,6.93,812,0.65,96,5.66,1242.4,17.0,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.03,82.5,0.05,2.92,91.0,62.38,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""3"", ""ubicacion"": ""consulta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El parámetro 'id' en la consulta selecciona un producto concreto (ID 3). Dado que la respuesta es un listado de productos y no se menciona ninguna propiedad de usuario, se clasifica como público.""}"
+2026-11-13T20:16:13,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J35,2,66.47,7.75,0.3,True,6.04,715,0.66,91,4.77,1089.5,19.1,0,True,4,5,False,cuenta_duena='A' (esperado 'desconocida'),0.33,0.33,0.0,100.0,4096,13.01,82.4,0.05,2.92,92.0,62.88,"{""contiene_identificador"": true, ""parametro"": ""BasketId"", ""valor"": ""6"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'BasketId' en el cuerpo de la petición identifica un carrito específico. Dado que la sesión es del usuario A, se asume que este carrito pertenece a A.""}"
+2026-11-13T20:16:19,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J36,2,66.47,7.75,0.3,True,5.98,630,0.63,91,4.76,997.9,19.1,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.03,82.5,0.05,2.9,89.0,62.25,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/captcha/ no contiene ningún parámetro que identifique un recurso específico (como un pedido, usuario o documento). El captcha es un elemento de seguridad general.""}"
+2026-11-13T20:16:25,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J40,2,66.47,7.75,0.3,True,5.9,658,0.65,85,4.81,1017.9,17.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.01,82.4,0.05,2.9,93.0,62.81,"{""contiene_identificador"": true, ""parametro"": ""8"", ""valor"": ""8"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El valor '8' en la ruta identifica una tarjeta específica (Card ID), y la respuesta confirma que pertenece al usuario B (UserId: 26).""}"
+2026-11-13T20:16:31,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J43,2,66.47,7.75,0.3,True,6.05,678,0.66,86,5.0,1020.9,17.2,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.01,82.4,0.05,2.9,88.0,62.41,"{""contiene_identificador"": true, ""parametro"": ""3"", ""valor"": ""3"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '3' en la ruta identifica un producto específico (product ID), que es un objeto concreto, aunque la reseña en sí misma sea pública.""}"
+2026-11-13T20:16:37,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J44,2,66.47,7.75,0.3,True,6.71,649,0.57,88,5.41,1147.9,16.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.02,82.5,0.05,2.9,82.0,61.0,"{""contiene_identificador"": true, ""parametro"": ""1"", ""valor"": ""1"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '1' en la ruta identifica un recurso concreto (un delivery específico). Dado que la respuesta no contiene información de usuario específica, se clasifica como público.""}"
+2026-11-13T20:16:44,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J49,2,66.47,7.75,0.3,True,6.8,754,0.64,95,5.32,1174.7,17.9,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.02,82.5,0.05,2.9,69.0,63.12,"{""contiene_identificador"": true, ""parametro"": ""UserId"", ""valor"": ""26"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'UserId' en el cuerpo de la petición contiene el ID del usuario (26), que es un identificador de objeto que selecciona un registro concreto (el usuario que realiza la acción).""}"
+2026-11-13T20:16:51,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J50,2,66.47,7.75,0.3,True,5.78,705,0.62,83,4.47,1136.0,18.5,0,True,4,5,False,cuenta_duena='B' (esperado 'desconocida'),0.33,0.33,0.0,100.0,4096,13.03,82.5,0.05,2.9,92.0,62.28,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""12"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'id' en la ruta identifica un ítem específico del carrito (BasketItem), que es un recurso privado asociado al usuario B.""}"
+2026-11-13T20:16:56,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J01,3,66.47,7.75,0.3,True,4.98,625,0.59,74,3.91,1055.2,18.9,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.01,82.4,0.05,2.9,86.0,62.06,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición no contiene ningún parámetro que seleccione un registro concreto. Es una solicitud de información general del sistema.""}"
+2026-11-13T20:17:01,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J03,3,66.47,7.75,0.3,True,7.26,1072,0.81,93,6.06,1317.9,15.4,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.02,82.5,0.05,2.9,94.0,63.0,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/languages no contiene ningún parámetro que identifique un recurso específico (como un ID de pedido, usuario, etc.). Devuelve una lista de idiomas, que es información pública.""}"
+2026-11-13T20:17:09,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J04,3,66.47,7.75,0.3,True,5.95,766,0.68,90,4.56,1128.9,19.8,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.02,82.5,0.05,2.9,88.0,62.56,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un GET a un endpoint de lista ('/api/Challenges/') y el parámetro 'name' es un filtro de búsqueda, no un identificador de un recurso concreto.""}"
+2026-11-13T20:17:14,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J06,3,66.47,7.75,0.3,True,6.98,619,0.68,90,5.72,912.6,15.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.05,82.6,0.05,2.9,36.0,60.59,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un endpoint de información de sesión ('whoami') y no contiene parámetros que identifiquen un recurso específico (como un ID de usuario, pedido o documento).""}"
+2026-11-13T20:17:21,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J08,3,66.47,7.75,0.3,True,9.47,1198,1.16,146,7.9,1034.8,18.5,0,True,3,5,False,ubicacion='consulta' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.05,82.7,0.05,2.9,95.0,64.16,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición es una búsqueda de productos (GET /rest/products/search?q=). El parámetro 'q' es un filtro de búsqueda, no un identificador de un registro concreto. Los IDs devueltos en la respuesta (1, 24, 6) son identificadores de productos, pero no están siendo utilizados para acceder a un recurso específico en la petición.""
+}"
+2026-11-13T20:17:31,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J09,3,66.47,7.75,0.3,True,6.83,952,0.85,88,5.35,1119.8,16.4,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.25,83.9,0.05,2.9,83.0,62.88,"{""contiene_identificador"": true, ""parametro"": ""6"", ""valor"": ""6"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '6' en la ruta identifica un carrito específico (BasketId: 6), y la respuesta indica que pertenece al usuario A (UserId: 25).""}"
+2026-11-13T20:17:38,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J10,3,66.47,7.75,0.3,True,8.77,1431,1.29,121,6.89,1106.4,17.5,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),0.33,0.33,0.0,100.0,4096,13.28,84.1,0.05,2.9,91.0,68.38,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición GET /api/Quantitys/ no contiene parámetros de identificación de objeto en la ruta, consulta o cuerpo. La respuesta muestra una lista de cantidades de productos, que son datos públicos o de catálogo, sin un identificador específico de un registro particular.""
+}"
+2026-11-13T20:17:47,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J11,3,66.47,7.75,0.3,True,7.25,756,0.73,104,6.1,1040.8,17.1,0,True,3,5,False,visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='A' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.48,85.4,0.05,2.9,92.0,62.69,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""La petición GET /api/Addresss no contiene parámetros de identificación de objeto. La respuesta muestra una lista de direcciones asociadas al usuario A (UserId: 25), pero la solicitud en sí no utiliza un ID específico para acceder a un recurso concreto.""}"
+2026-11-13T20:17:54,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J12,3,66.47,7.75,0.3,True,5.95,621,0.67,85,4.81,930.1,17.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.49,85.4,0.05,2.9,23.0,60.5,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/order-history no contiene parámetros que seleccionen un registro concreto. Devuelve una lista vacía de historial de pedidos.""}"
+2026-11-13T20:18:00,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J20,3,66.47,7.75,0.3,True,6.86,1149,1.2,87,5.13,957.0,16.9,0,True,4,5,False,ubicacion='cuerpo' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.5,85.5,0.05,2.9,86.0,64.66,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""cuerpo"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición es un login y no contiene identificadores de objetos específicos (como ID de pedido o usuario) en la solicitud. El cuerpo solo contiene credenciales.""}"
+2026-11-13T20:18:07,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J21,3,66.47,7.75,0.3,True,6.81,953,0.76,88,5.68,1253.6,15.5,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.42,85.0,0.05,2.9,92.0,63.25,"{""contiene_identificador"": true, ""parametro"": ""7"", ""valor"": ""7"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El valor '7' en la ruta identifica un carrito específico (BasketId: 7), y la respuesta indica que pertenece al usuario B (UserId: 26).""}"
+2026-11-13T20:18:13,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J26,3,66.47,7.75,0.3,True,6.35,656,0.57,97,5.3,1158.4,18.3,0,True,0,5,False,contiene_identificador=True (esperado False) | valor='8' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='B' (esperado 'ninguna'),0.33,0.33,0.0,100.0,4096,13.42,85.0,0.05,2.9,83.0,64.09,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""8"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El campo 'id' en la respuesta JSON (8) identifica una tarjeta específica, y dado que la sesión es del usuario B (id 26), este objeto es privado y pertenece a la cuenta B.""}"
+2026-11-13T20:18:20,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J27,3,66.47,7.75,0.3,True,5.78,757,0.76,85,4.39,989.6,19.3,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.43,85.1,0.05,2.9,94.0,62.91,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""7"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto (una dirección) y la respuesta indica que pertenece al usuario A (UserId: 25).""}"
+2026-11-13T20:18:26,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J29,3,66.47,7.75,0.3,True,4.88,739,0.72,72,3.76,1028.5,19.1,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.46,85.2,0.05,2.9,94.0,63.22,"{""contiene_identificador"": true, ""parametro"": ""25"", ""valor"": ""25"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El valor '25' en la ruta identifica de forma única al usuario A.""}"
+2026-11-13T20:18:30,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J30,3,66.47,7.75,0.3,True,6.72,810,0.65,85,5.43,1252.0,15.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.45,85.2,0.05,2.9,90.0,63.59,"{""contiene_identificador"": true, ""parametro"": ""3"", ""valor"": ""3"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '3' en la ruta identifica un producto concreto. Dado que es un endpoint de productos, se asume que es público (catálogo).""}"
+2026-11-13T20:18:37,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J33,3,66.47,7.75,0.3,True,6.81,812,0.78,96,5.66,1043.8,17.0,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.47,85.3,0.05,2.9,92.0,63.81,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""3"", ""ubicacion"": ""consulta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El parámetro 'id' en la consulta selecciona un producto concreto (ID 3). Dado que la respuesta es un listado de productos y no se menciona ninguna propiedad de usuario, se clasifica como público.""}"
+2026-11-13T20:18:44,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J35,3,66.47,7.75,0.3,True,5.76,715,0.6,91,4.5,1191.8,20.2,0,True,4,5,False,cuenta_duena='A' (esperado 'desconocida'),0.33,0.33,0.0,100.0,4096,13.45,85.2,0.05,2.9,86.0,63.25,"{""contiene_identificador"": true, ""parametro"": ""BasketId"", ""valor"": ""6"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""A"", ""justificacion"": ""El parámetro 'BasketId' en el cuerpo de la petición identifica un carrito específico. Dado que la sesión es del usuario A, se asume que este carrito pertenece a A.""}"
+2026-11-13T20:18:50,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J36,3,66.47,7.75,0.3,True,5.96,630,0.68,91,4.86,927.4,18.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.45,85.2,0.05,2.9,92.0,63.34,"{""contiene_identificador"": false, ""parametro"": null, ""valor"": null, ""ubicacion"": ""ninguna"", ""visibilidad"": ""no_aplica"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""La petición GET /rest/captcha/ no contiene ningún parámetro que identifique un recurso específico (como un pedido, usuario o documento). El captcha es un elemento de seguridad general.""}"
+2026-11-13T20:18:56,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J40,3,66.47,7.75,0.3,True,5.78,658,0.6,85,4.77,1090.1,17.8,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.43,85.1,0.05,2.9,89.0,63.81,"{""contiene_identificador"": true, ""parametro"": ""8"", ""valor"": ""8"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El valor '8' en la ruta identifica una tarjeta específica (Card ID), y la respuesta confirma que pertenece al usuario B (UserId: 26).""}"
+2026-11-13T20:19:01,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J43,3,66.47,7.75,0.3,True,6.07,678,0.53,86,5.15,1284.9,16.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.44,85.1,0.05,2.9,87.0,63.44,"{""contiene_identificador"": true, ""parametro"": ""3"", ""valor"": ""3"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '3' en la ruta identifica un producto específico (product ID), que es un objeto concreto, aunque la reseña en sí misma sea pública.""}"
+2026-11-13T20:19:08,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J44,3,66.47,7.75,0.3,True,6.27,649,0.64,88,5.26,1018.5,16.7,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.45,85.2,0.05,2.9,87.0,63.28,"{""contiene_identificador"": true, ""parametro"": ""1"", ""valor"": ""1"", ""ubicacion"": ""ruta"", ""visibilidad"": ""publico"", ""cuenta_duena"": ""ninguna"", ""justificacion"": ""El valor '1' en la ruta identifica un recurso concreto (un delivery específico). Dado que la respuesta no contiene información de usuario específica, se clasifica como público.""}"
+2026-11-13T20:19:14,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J49,3,66.47,7.75,0.3,True,6.67,754,0.63,95,5.42,1198.2,17.5,0,True,5,5,True,,0.33,0.33,0.0,100.0,4096,13.44,85.1,0.05,2.9,91.0,63.0,"{""contiene_identificador"": true, ""parametro"": ""UserId"", ""valor"": ""26"", ""ubicacion"": ""cuerpo"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'UserId' en el cuerpo de la petición contiene el ID del usuario (26), que es un identificador de objeto que selecciona un registro concreto (el usuario que realiza la acción).""}"
+2026-11-13T20:19:20,con_juice_shop,gemma4:e4b,False,gemma4,7.5B,Q4_K_M,131072,4096,J50,3,66.47,7.75,0.3,True,5.69,705,0.74,83,4.45,950.9,18.6,0,True,4,5,False,cuenta_duena='B' (esperado 'desconocida'),0.33,0.33,0.0,100.0,4096,13.44,85.1,0.05,2.9,91.0,63.28,"{""contiene_identificador"": true, ""parametro"": ""id"", ""valor"": ""12"", ""ubicacion"": ""ruta"", ""visibilidad"": ""privado"", ""cuenta_duena"": ""B"", ""justificacion"": ""El parámetro 'id' en la ruta identifica un ítem específico del carrito (BasketItem), que es un recurso privado asociado al usuario B.""}"
+2026-11-13T20:19:40,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J01,1,8.61,6.9,0.29,True,14.24,625,6.99,108,6.83,89.4,15.8,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,9.2,58.3,0.05,2.76,90.0,62.0,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs de pedidos o usuarios). La respuesta devuelve información global del sistema (versión) sin referencias a registros específicos ni datos personales.""
+}"
+2026-11-13T20:19:54,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J03,1,8.61,6.9,0.29,True,9.39,1083,1.02,117,7.67,1058.3,15.2,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,9.27,58.7,0.05,2.76,91.0,63.31,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición es un listado público de idiomas sin filtros ni paginación. No contiene parámetros que seleccionen un registro concreto (como id, orden, filtro, moneda o cantidad). Los elementos en la respuesta son objetos públicos del catálogo.""
+}"
+2026-11-13T20:20:04,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J04,1,8.61,6.9,0.29,True,8.52,770,0.5,115,7.33,1528.5,15.7,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,9.5,60.2,0.05,2.76,44.0,62.19,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs específicos). La respuesta devuelve una lista de desafíos disponibles en un catálogo público, accesible para cualquier usuario sin necesidad de autenticación específica ni selección de registro concreto.""
+}"
+2026-11-13T20:20:12,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J06,1,8.61,6.9,0.29,True,9.8,621,0.43,126,8.98,1455.4,14.0,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,9.5,60.2,0.05,2.76,46.0,59.91,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es una llamada de autenticación estándar (whoami) que no incluye parámetros para identificar un objeto específico. La respuesta devuelve información del usuario actual, pero no contiene identificadores de objetos externos ni datos sensibles que requieran análisis de IDOR/BOLA en este contexto.""
+}"
+2026-11-13T20:20:22,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J08,1,8.61,6.9,0.29,True,9.52,1185,0.77,123,8.14,1545.0,15.1,0,True,1,5,False,contiene_identificador=True (esperado False) | valor='1' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,9.55,60.5,0.05,2.76,85.0,63.25,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' con valor '1' selecciona un registro concreto (producto) dentro de la respuesta JSON. Dado que se trata de una búsqueda de productos en un catálogo, el objeto es público y no pertenece a ningún usuario específico.""
+}"
+2026-11-13T20:20:31,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J09,1,8.61,6.9,0.29,True,9.89,949,0.56,134,8.86,1700.5,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,9.78,62.0,0.05,2.76,94.0,62.84,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""6"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición contiene el parámetro 'id' con valor '6' en la ruta de la URL, seleccionando un registro concreto (carrito). Dado que la sesión actual es del usuario A y el objeto tiene UserId: 25 (usuario A), se clasifica como privado y de cuenta duena A.""
+}"
+2026-11-13T20:20:41,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J10,1,8.61,6.9,0.29,True,10.17,1423,0.9,131,8.9,1574.7,14.7,0,True,1,5,False,contiene_identificador=True (esperado False) | valor='1' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,9.83,62.3,0.05,2.76,91.0,63.81,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""ProductId"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'ProductId' en el cuerpo de la respuesta selecciona un registro concreto (producto) dentro de una lista pública. Dado que es parte de una respuesta de catálogo/lista y no hay información indicando que pertenezca exclusivamente a un usuario específico, se clasifica como público.""
+}"
+2026-11-13T20:20:51,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J11,1,8.61,6.9,0.29,True,8.53,758,0.51,117,7.54,1480.6,15.5,0,True,3,5,False,visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.07,63.8,0.05,2.76,86.0,62.78,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es una lista de direcciones (no un objeto específico) y no contiene parámetros de identificación. La respuesta muestra datos del usuario A (id 25), por lo que la visibilidad es privada y pertenece a la cuenta A.""
+}"
+2026-11-13T20:21:00,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J12,1,8.61,6.9,0.29,True,8.3,622,0.4,112,7.27,1546.7,15.4,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.07,63.8,0.05,2.76,86.0,61.59,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs de pedidos o usuarios) en la URL ni en el cuerpo. La respuesta devuelve un array vacío, por lo que no hay objetos para analizar.""
+}"
+2026-11-13T20:21:08,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J20,1,8.61,6.9,0.29,True,9.82,1182,0.83,128,8.6,1416.0,14.9,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.12,64.1,0.05,2.76,88.0,63.56,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es un login para el usuario B (bid:7), pero no contiene parámetros de identificación de objetos en la URL, consulta ni cuerpo que seleccionen registros específicos. El token devuelto confirma la sesión del usuario B, pero no representa un identificador de objeto accedible.""
+}"
+2026-11-13T20:21:18,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J21,1,8.61,6.9,0.29,True,10.63,950,0.6,138,9.28,1594.1,14.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.35,65.6,0.05,2.76,91.0,64.28,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""7"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La petición contiene el parámetro 'id' con valor '7' en la ruta de la URL, seleccionando un registro concreto (carrito). Dado que la sesión actual es del usuario B y el campo UserId en la respuesta es 26 (correspondiente al usuario B), el objeto pertenece a la cuenta duena B.""
+}"
+2026-11-13T20:21:29,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J26,1,8.61,6.9,0.29,True,9.47,661,0.42,128,8.55,1573.1,15.0,0,True,0,5,False,contiene_identificador=True (esperado False) | valor='8' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.35,65.6,0.05,2.76,87.0,61.72,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' con valor '8' en el cuerpo de la respuesta selecciona un registro concreto (tarjeta). Dado que el usuario actual es B y el UserId en la respuesta es 26, se deduce que el objeto pertenece a la cuenta B.""
+}"
+2026-11-13T20:21:38,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J27,1,8.61,6.9,0.29,True,9.02,759,0.47,126,8.16,1608.1,15.4,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.36,65.6,0.05,2.76,89.0,63.72,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""7"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro 'id' con valor '7' en la ruta selecciona un registro concreto de direcciones. La respuesta confirma que el UserId es 25, correspondiente al usuario A (a.canario@prueba.cl), indicando que el objeto pertenece a una cuenta privada.""
+}"
+2026-11-13T20:21:47,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J29,1,8.61,6.9,0.29,True,8.64,733,0.44,120,7.71,1659.6,15.6,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.36,65.6,0.05,2.76,89.0,63.53,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""25"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición solicita un usuario específico mediante el parámetro 'id' en la ruta URL. El valor '25' corresponde al ID del usuario A (a.canario@prueba.cl), por lo que es un identificador de objeto privado.""
+}"
+2026-11-13T20:21:56,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J30,1,8.61,6.9,0.29,True,10.66,811,0.54,144,9.6,1498.4,15.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.36,65.6,0.05,2.76,89.0,64.09,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un producto específico (Eggfruit Juice). Dado que es un producto listado en el catálogo y no está vinculado a una sesión de usuario privada ni a un ID de usuario específico en la petición, se considera público. El valor '3' corresponde al ID del producto, no al ID de un usuario.""
+}"
+2026-11-13T20:22:07,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J33,1,8.61,6.9,0.29,True,10.76,814,0.52,148,9.86,1572.9,15.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.37,65.7,0.05,2.76,89.0,64.5,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' con valor '3' selecciona un producto específico. Dado que la respuesta devuelve datos de un producto (Eggfruit Juice) en lugar de una lista completa o personalizada, y el usuario actual es A, se infiere que este ID pertenece al catálogo público o a un objeto accesible por todos, no siendo exclusivo de la cuenta del usuario A.""
+}"
+2026-11-13T20:22:17,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J35,1,8.61,6.9,0.29,True,10.05,716,0.5,130,9.19,1441.1,14.1,0,True,4,5,False,cuenta_duena='A' (esperado 'desconocida'),3.49,1.75,1.74,50.2,4096,10.35,65.6,0.05,2.76,89.0,62.34,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""BasketId"",
+  ""valor"": ""6"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro BasketId selecciona un registro concreto del carrito (objeto privado). El valor '6' es un identificador único. Dado que la sesión actual es del usuario A y el objeto se está modificando en su contexto, se asume pertenencia al usuario A.""
+}"
+2026-11-13T20:22:27,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J36,1,8.61,6.9,0.29,True,9.81,633,0.4,134,9.03,1580.4,14.8,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.35,65.6,0.05,2.76,43.0,61.88,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no contiene parámetros de identificación de objetos (como IDs de usuarios, pedidos o documentos). El cuerpo de la respuesta contiene un captchaId, pero este es un identificador interno del sistema para el desafío de seguridad, no un identificador de objeto de negocio que permita acceder a registros privados de un usuario específico.""
+}"
+2026-11-13T20:22:37,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J40,1,8.61,6.9,0.29,True,8.63,662,0.43,118,7.83,1554.8,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.35,65.5,0.05,2.76,88.0,62.09,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' con valor '8' en la ruta selecciona un registro concreto (tarjeta). El usuario B es el propietario de la tarjeta según su ID de usuario (26) y el campo UserId en la respuesta.""
+}"
+2026-11-13T20:22:46,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J43,1,8.61,6.9,0.29,True,9.42,680,0.42,130,8.48,1624.4,15.3,0,True,2,5,False,ubicacion='cuerpo' (esperado 'ruta') | visibilidad='privado' (esperado 'publico') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.35,65.6,0.05,2.76,85.0,62.56,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""product"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'product' con valor '3' en el cuerpo de la respuesta selecciona un producto concreto. Dado que la sesión actual es del usuario B y los productos suelen ser propiedad privada o accesibles por su dueño, se asume visibilidad privada y cuenta duena B.""
+}"
+2026-11-13T20:22:55,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J44,1,8.61,6.9,0.29,True,9.37,652,0.44,121,8.34,1477.0,14.5,0,True,3,5,False,visibilidad='privado' (esperado 'publico') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.35,65.5,0.05,2.76,87.0,61.34,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto (pedido/delivery). Dado que la sesión actual es del usuario B y el ID 1 corresponde al objeto devuelto, se asume que pertenece a la cuenta duena B.""
+}"
+2026-11-13T20:23:05,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J49,1,8.61,6.9,0.29,True,8.8,752,0.45,123,7.96,1674.5,15.5,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.35,65.6,0.05,2.76,72.0,64.59,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""UserId"",
+  ""valor"": ""26"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'UserId' con valor '26' selecciona un registro concreto de usuario. El valor 26 corresponde al ID del usuario B (b.canario@prueba.cl), por lo que es un identificador de objeto privado.""
+}"
+2026-11-13T20:23:13,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J50,1,8.61,6.9,0.29,True,8.64,706,0.43,122,7.81,1627.3,15.6,0,True,4,5,False,cuenta_duena='B' (esperado 'desconocida'),3.49,1.75,1.74,50.2,4096,10.35,65.5,0.05,2.76,36.0,64.84,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""12"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto del carrito (BasketId). Dado que la sesión actual es de usuario B y el ID coincide con el BasketId en la respuesta, se deduce que pertenece a la cuenta B.""
+}"
+2026-11-13T20:23:22,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J01,2,8.61,6.9,0.29,True,7.84,625,0.43,108,6.97,1444.2,15.5,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.34,65.5,0.05,2.76,83.0,62.03,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs de pedidos o usuarios). La respuesta devuelve información general del sistema (versión) sin referencias a registros específicos ni datos personales.""
+}"
+2026-11-13T20:23:30,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J03,2,8.61,6.9,0.29,True,8.71,1083,0.69,117,7.62,1573.4,15.4,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.35,65.5,0.05,2.76,73.0,64.84,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición es un listado público de idiomas sin filtros ni paginación. No contiene parámetros que seleccionen un registro concreto (como id, orden, filtro, moneda o cantidad). Los elementos en la respuesta son objetos públicos del catálogo.""
+}"
+2026-11-13T20:23:39,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J04,2,8.61,6.9,0.29,True,8.46,770,0.48,115,7.36,1614.0,15.6,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.34,65.5,0.05,2.76,83.0,64.28,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs específicos). La respuesta devuelve una lista de desafíos disponibles en un catálogo público, accesible para cualquier usuario sin necesidad de autenticación específica ni selección de registro concreto.""
+}"
+2026-11-13T20:23:47,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J06,2,8.61,6.9,0.29,True,9.76,621,0.42,126,8.95,1484.1,14.1,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.35,65.5,0.05,2.76,86.0,61.41,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es una llamada de autenticación estándar (whoami) que no incluye parámetros para identificar un objeto específico. La respuesta devuelve información del usuario actual, pero no contiene identificadores de objetos externos ni datos sensibles que requieran análisis de IDOR/BOLA en este contexto.""
+}"
+2026-11-13T20:23:57,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J08,2,8.61,6.9,0.29,True,9.6,1185,0.82,123,8.23,1437.2,14.9,0,True,1,5,False,contiene_identificador=True (esperado False) | valor='1' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.4,65.9,0.05,2.76,88.0,65.22,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' con valor '1' selecciona un registro concreto (producto) dentro de la respuesta JSON. Dado que se trata de una búsqueda de productos en un catálogo, el objeto es público y no pertenece a ningún usuario específico.""
+}"
+2026-11-13T20:24:06,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J09,2,8.61,6.9,0.29,True,9.86,949,0.63,134,8.85,1512.5,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.37,65.7,0.05,2.76,47.0,64.59,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""6"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición contiene el parámetro 'id' con valor '6' en la ruta de la URL, seleccionando un registro concreto (carrito). Dado que la sesión actual es del usuario A y el objeto tiene UserId: 25 (usuario A), se clasifica como privado y de cuenta duena A.""
+}"
+2026-11-13T20:24:16,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J10,2,8.61,6.9,0.29,True,10.17,1423,0.98,131,8.82,1457.2,14.9,0,True,1,5,False,contiene_identificador=True (esperado False) | valor='1' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.39,65.8,0.05,2.76,91.0,65.25,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""ProductId"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'ProductId' en el cuerpo de la respuesta selecciona un registro concreto (producto) dentro de una lista pública. Dado que es parte de una respuesta de catálogo/lista y no hay información indicando que pertenezca exclusivamente a un usuario específico, se clasifica como público.""
+}"
+2026-11-13T20:24:26,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J11,2,8.61,6.9,0.29,True,8.67,758,0.51,117,7.79,1474.4,15.0,0,True,3,5,False,visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.37,65.7,0.05,2.76,88.0,62.44,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es una lista de direcciones (no un objeto específico) y no contiene parámetros de identificación. La respuesta muestra datos del usuario A (id 25), por lo que la visibilidad es privada y pertenece a la cuenta A.""
+}"
+2026-11-13T20:24:35,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J12,2,8.61,6.9,0.29,True,8.38,622,0.39,112,7.33,1588.2,15.3,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.35,65.5,0.05,2.76,27.0,62.28,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs de pedidos o usuarios) en la URL ni en el cuerpo. La respuesta devuelve un array vacío, por lo que no hay objetos para analizar.""
+}"
+2026-11-13T20:24:43,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J20,2,8.61,6.9,0.29,True,9.75,1182,0.82,128,8.56,1436.8,15.0,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.39,65.8,0.05,2.76,86.0,65.44,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es un login para el usuario B (bid:7), pero no contiene parámetros de identificación de objetos en la URL, consulta ni cuerpo que seleccionen registros específicos. El token devuelto confirma la sesión del usuario B, pero no representa un identificador de objeto accedible.""
+}"
+2026-11-13T20:24:53,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J21,2,8.61,6.9,0.29,True,10.14,950,0.62,138,9.15,1542.3,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.37,65.7,0.05,2.76,92.0,64.5,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""7"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La petición contiene el parámetro 'id' con valor '7' en la ruta de la URL, seleccionando un registro concreto (carrito). Dado que la sesión actual es del usuario B y el campo UserId en la respuesta es 26 (correspondiente al usuario B), el objeto pertenece a la cuenta duena B.""
+}"
+2026-11-13T20:25:03,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J26,2,8.61,6.9,0.29,True,9.52,661,0.44,128,8.55,1503.0,15.0,0,True,0,5,False,contiene_identificador=True (esperado False) | valor='8' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.34,65.5,0.05,2.76,42.0,62.78,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' con valor '8' en el cuerpo de la respuesta selecciona un registro concreto (tarjeta). Dado que el usuario actual es B y el UserId en la respuesta es 26, se deduce que el objeto pertenece a la cuenta B.""
+}"
+2026-11-13T20:25:13,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J27,2,8.61,6.9,0.29,True,9.01,759,0.49,126,8.13,1552.0,15.5,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.33,65.4,0.05,2.76,38.0,65.16,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""7"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro 'id' con valor '7' en la ruta selecciona un registro concreto de direcciones. La respuesta confirma que el UserId es 25, correspondiente al usuario A (a.canario@prueba.cl), indicando que el objeto pertenece a una cuenta privada.""
+}"
+2026-11-13T20:25:22,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J29,2,8.61,6.9,0.29,True,8.63,733,0.47,120,7.7,1554.6,15.6,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.27,65.1,0.05,2.76,90.0,65.28,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""25"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición solicita un usuario específico mediante el parámetro 'id' en la ruta URL. El valor '25' corresponde al ID del usuario A (a.canario@prueba.cl), por lo que es un identificador de objeto privado.""
+}"
+2026-11-13T20:25:31,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J30,2,8.61,6.9,0.29,True,10.6,811,0.5,144,9.53,1624.5,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.28,65.1,0.05,2.76,91.0,64.66,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un producto específico (Eggfruit Juice). Dado que es un producto listado en el catálogo y no está vinculado a una sesión de usuario privada ni a un ID de usuario específico en la petición, se considera público. El valor '3' corresponde al ID del producto, no al ID de un usuario.""
+}"
+2026-11-13T20:25:41,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J33,2,8.61,6.9,0.29,True,10.74,814,0.49,148,9.89,1663.9,15.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.28,65.1,0.05,2.76,86.0,65.19,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' con valor '3' selecciona un producto específico. Dado que la respuesta devuelve datos de un producto (Eggfruit Juice) en lugar de una lista completa o personalizada, y el usuario actual es A, se infiere que este ID pertenece al catálogo público o a un objeto accesible por todos, no siendo exclusivo de la cuenta del usuario A.""
+}"
+2026-11-13T20:25:52,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J35,2,8.61,6.9,0.29,True,9.5,716,0.46,130,8.37,1566.0,15.5,0,True,4,5,False,cuenta_duena='A' (esperado 'desconocida'),3.49,1.75,1.74,50.2,4096,10.26,65.0,0.05,2.76,38.0,64.38,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""BasketId"",
+  ""valor"": ""6"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro BasketId selecciona un registro concreto del carrito (objeto privado). El valor '6' es un identificador único. Dado que la sesión actual es del usuario A y el objeto se está modificando en su contexto, se asume pertenencia al usuario A.""
+}"
+2026-11-13T20:26:01,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J36,2,8.61,6.9,0.29,True,9.82,633,0.43,134,8.97,1470.0,14.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.22,64.7,0.05,2.76,42.0,62.59,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no contiene parámetros de identificación de objetos (como IDs de usuarios, pedidos o documentos). El cuerpo de la respuesta contiene un captchaId, pero este es un identificador interno del sistema para el desafío de seguridad, no un identificador de objeto de negocio que permita acceder a registros privados de un usuario específico.""
+}"
+2026-11-13T20:26:11,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J40,2,8.61,6.9,0.29,True,8.55,662,0.44,118,7.76,1507.7,15.2,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.2,64.6,0.05,2.76,86.0,62.31,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' con valor '8' en la ruta selecciona un registro concreto (tarjeta). El usuario B es el propietario de la tarjeta según su ID de usuario (26) y el campo UserId en la respuesta.""
+}"
+2026-11-13T20:26:20,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J43,2,8.61,6.9,0.29,True,9.52,680,0.47,130,8.68,1450.0,15.0,0,True,2,5,False,ubicacion='cuerpo' (esperado 'ruta') | visibilidad='privado' (esperado 'publico') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.21,64.7,0.05,2.76,84.0,62.34,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""product"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'product' con valor '3' en el cuerpo de la respuesta selecciona un producto concreto. Dado que la sesión actual es del usuario B y los productos suelen ser propiedad privada o accesibles por su dueño, se asume visibilidad privada y cuenta duena B.""
+}"
+2026-11-13T20:26:29,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J44,2,8.61,6.9,0.29,True,8.83,652,0.4,121,8.05,1635.5,15.0,0,True,3,5,False,visibilidad='privado' (esperado 'publico') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.21,64.7,0.05,2.76,92.0,62.78,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto (pedido/delivery). Dado que la sesión actual es del usuario B y el ID 1 corresponde al objeto devuelto, se asume que pertenece a la cuenta duena B.""
+}"
+2026-11-13T20:26:38,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J49,2,8.61,6.9,0.29,True,8.8,752,0.46,123,7.97,1632.9,15.4,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.21,64.7,0.05,2.76,81.0,64.59,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""UserId"",
+  ""valor"": ""26"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'UserId' con valor '26' selecciona un registro concreto de usuario. El valor 26 corresponde al ID del usuario B (b.canario@prueba.cl), por lo que es un identificador de objeto privado.""
+}"
+2026-11-13T20:26:47,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J50,2,8.61,6.9,0.29,True,8.65,706,0.44,122,7.84,1621.8,15.6,0,True,4,5,False,cuenta_duena='B' (esperado 'desconocida'),3.49,1.75,1.74,50.2,4096,10.22,64.7,0.05,2.76,72.0,65.03,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""12"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto del carrito (BasketId). Dado que la sesión actual es de usuario B y el ID coincide con el BasketId en la respuesta, se deduce que pertenece a la cuenta B.""
+}"
+2026-11-13T20:26:56,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J01,3,8.61,6.9,0.29,True,8.3,625,0.42,108,7.4,1475.2,14.6,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.21,64.6,0.05,2.76,86.0,62.12,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs de pedidos o usuarios). La respuesta devuelve información general del sistema (versión) sin referencias a registros específicos ni datos personales.""
+}"
+2026-11-13T20:27:04,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J03,3,8.61,6.9,0.29,True,8.78,1083,0.65,117,7.74,1673.1,15.1,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.22,64.7,0.05,2.76,93.0,65.0,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición es un listado público de idiomas sin filtros ni paginación. No contiene parámetros que seleccionen un registro concreto (como id, orden, filtro, moneda o cantidad). Los elementos en la respuesta son objetos públicos del catálogo.""
+}"
+2026-11-13T20:27:13,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J04,3,8.61,6.9,0.29,True,8.5,770,0.5,115,7.37,1539.4,15.6,0,True,4,5,False,visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.22,64.8,0.05,2.76,51.0,64.66,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs específicos). La respuesta devuelve una lista de desafíos disponibles en un catálogo público, accesible para cualquier usuario sin necesidad de autenticación específica ni selección de registro concreto.""
+}"
+2026-11-13T20:27:21,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J06,3,8.61,6.9,0.29,True,9.79,621,0.42,126,8.98,1486.7,14.0,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.23,64.8,0.05,2.76,39.0,61.91,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es una llamada de autenticación estándar (whoami) que no incluye parámetros para identificar un objeto específico. La respuesta devuelve información del usuario actual, pero no contiene identificadores de objetos externos ni datos sensibles que requieran análisis de IDOR/BOLA en este contexto.""
+}"
+2026-11-13T20:27:31,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J08,3,8.61,6.9,0.29,True,9.63,1185,0.84,123,8.16,1403.5,15.1,0,True,1,5,False,contiene_identificador=True (esperado False) | valor='1' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.28,65.1,0.05,2.76,81.0,64.59,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' con valor '1' selecciona un registro concreto (producto) dentro de la respuesta JSON. Dado que se trata de una búsqueda de productos en un catálogo, el objeto es público y no pertenece a ningún usuario específico.""
+}"
+2026-11-13T20:27:41,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J09,3,8.61,6.9,0.29,True,9.88,949,0.63,134,8.87,1510.5,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.28,65.1,0.05,2.76,90.0,65.09,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""6"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición contiene el parámetro 'id' con valor '6' en la ruta de la URL, seleccionando un registro concreto (carrito). Dado que la sesión actual es del usuario A y el objeto tiene UserId: 25 (usuario A), se clasifica como privado y de cuenta duena A.""
+}"
+2026-11-13T20:27:50,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J10,3,8.61,6.9,0.29,True,10.58,1423,0.97,131,8.9,1472.0,14.7,0,True,1,5,False,contiene_identificador=True (esperado False) | valor='1' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='publico' (esperado 'no_aplica'),3.49,1.75,1.74,50.2,4096,10.29,65.2,0.05,2.76,93.0,65.41,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""ProductId"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'ProductId' en el cuerpo de la respuesta selecciona un registro concreto (producto) dentro de una lista pública. Dado que es parte de una respuesta de catálogo/lista y no hay información indicando que pertenezca exclusivamente a un usuario específico, se clasifica como público.""
+}"
+2026-11-13T20:28:01,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J11,3,8.61,6.9,0.29,True,8.55,758,0.49,117,7.46,1537.5,15.7,0,True,3,5,False,visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.28,65.1,0.05,2.76,92.0,65.0,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es una lista de direcciones (no un objeto específico) y no contiene parámetros de identificación. La respuesta muestra datos del usuario A (id 25), por lo que la visibilidad es privada y pertenece a la cuenta A.""
+}"
+2026-11-13T20:28:10,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J12,3,8.61,6.9,0.29,True,8.41,622,0.43,112,7.26,1444.6,15.4,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.24,64.9,0.05,2.76,86.0,62.81,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no incluye parámetros de identificación de objetos (como IDs de pedidos o usuarios) en la URL ni en el cuerpo. La respuesta devuelve un array vacío, por lo que no hay objetos para analizar.""
+}"
+2026-11-13T20:28:18,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J20,3,8.61,6.9,0.29,True,9.82,1182,0.81,128,8.64,1453.5,14.8,0,True,4,5,False,cuenta_duena='A' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.29,65.2,0.05,2.76,89.0,65.25,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición es un login para el usuario B (bid:7), pero no contiene parámetros de identificación de objetos en la URL, consulta ni cuerpo que seleccionen registros específicos. El token devuelto confirma la sesión del usuario B, pero no representa un identificador de objeto accedible.""
+}"
+2026-11-13T20:28:28,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J21,3,8.61,6.9,0.29,True,10.44,950,0.58,138,9.2,1637.5,15.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.27,65.0,0.05,2.76,93.0,65.38,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""7"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""La petición contiene el parámetro 'id' con valor '7' en la ruta de la URL, seleccionando un registro concreto (carrito). Dado que la sesión actual es del usuario B y el campo UserId en la respuesta es 26 (correspondiente al usuario B), el objeto pertenece a la cuenta duena B.""
+}"
+2026-11-13T20:28:38,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J26,3,8.61,6.9,0.29,True,9.41,661,0.42,128,8.35,1580.0,15.3,0,True,0,5,False,contiene_identificador=True (esperado False) | valor='8' (esperado None) | ubicacion='cuerpo' (esperado 'ninguna') | visibilidad='privado' (esperado 'no_aplica') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.24,64.9,0.05,2.76,88.0,63.31,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' con valor '8' en el cuerpo de la respuesta selecciona un registro concreto (tarjeta). Dado que el usuario actual es B y el UserId en la respuesta es 26, se deduce que el objeto pertenece a la cuenta B.""
+}"
+2026-11-13T20:28:48,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J27,3,8.61,6.9,0.29,True,9.01,759,0.46,126,8.15,1661.8,15.5,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.24,64.9,0.05,2.76,71.0,64.44,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""7"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro 'id' con valor '7' en la ruta selecciona un registro concreto de direcciones. La respuesta confirma que el UserId es 25, correspondiente al usuario A (a.canario@prueba.cl), indicando que el objeto pertenece a una cuenta privada.""
+}"
+2026-11-13T20:28:57,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J29,3,8.61,6.9,0.29,True,8.89,733,0.5,120,8.0,1455.7,15.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.24,64.8,0.05,2.76,56.0,62.72,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""25"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""La petición solicita un usuario específico mediante el parámetro 'id' en la ruta URL. El valor '25' corresponde al ID del usuario A (a.canario@prueba.cl), por lo que es un identificador de objeto privado.""
+}"
+2026-11-13T20:29:06,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J30,3,8.61,6.9,0.29,True,10.68,811,0.54,144,9.56,1506.1,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.24,64.9,0.05,2.76,91.0,65.31,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un producto específico (Eggfruit Juice). Dado que es un producto listado en el catálogo y no está vinculado a una sesión de usuario privada ni a un ID de usuario específico en la petición, se considera público. El valor '3' corresponde al ID del producto, no al ID de un usuario.""
+}"
+2026-11-13T20:29:16,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J33,3,8.61,6.9,0.29,True,10.79,814,0.49,148,9.89,1663.9,15.0,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,92.0,64.84,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""consulta"",
+  ""visibilidad"": ""publico"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""El parámetro 'id' con valor '3' selecciona un producto específico. Dado que la respuesta devuelve datos de un producto (Eggfruit Juice) en lugar de una lista completa o personalizada, y el usuario actual es A, se infiere que este ID pertenece al catálogo público o a un objeto accesible por todos, no siendo exclusivo de la cuenta del usuario A.""
+}"
+2026-11-13T20:29:27,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J35,3,8.61,6.9,0.29,True,9.5,716,0.46,130,8.41,1557.1,15.4,0,True,4,5,False,cuenta_duena='A' (esperado 'desconocida'),3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,90.0,65.09,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""BasketId"",
+  ""valor"": ""6"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""A"",
+  ""justificacion"": ""El parámetro BasketId selecciona un registro concreto del carrito (objeto privado). El valor '6' es un identificador único. Dado que la sesión actual es del usuario A y el objeto se está modificando en su contexto, se asume pertenencia al usuario A.""
+}"
+2026-11-13T20:29:37,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J36,3,8.61,6.9,0.29,True,9.83,633,0.42,134,9.0,1518.9,14.9,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,86.0,62.56,"{
+  ""contiene_identificador"": false,
+  ""parametro"": null,
+  ""valor"": null,
+  ""ubicacion"": ""ninguna"",
+  ""visibilidad"": ""no_aplica"",
+  ""cuenta_duena"": ""ninguna"",
+  ""justificacion"": ""La petición no contiene parámetros de identificación de objetos (como IDs de usuarios, pedidos o documentos). El cuerpo de la respuesta contiene un captchaId, pero este es un identificador interno del sistema para el desafío de seguridad, no un identificador de objeto de negocio que permita acceder a registros privados de un usuario específico.""
+}"
+2026-11-13T20:29:46,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J40,3,8.61,6.9,0.29,True,8.6,662,0.42,118,7.8,1573.1,15.1,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,87.0,62.69,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""8"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' con valor '8' en la ruta selecciona un registro concreto (tarjeta). El usuario B es el propietario de la tarjeta según su ID de usuario (26) y el campo UserId en la respuesta.""
+}"
+2026-11-13T20:29:55,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J43,3,8.61,6.9,0.29,True,9.57,680,0.43,130,8.75,1565.4,14.9,0,True,2,5,False,ubicacion='cuerpo' (esperado 'ruta') | visibilidad='privado' (esperado 'publico') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,87.0,62.62,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""product"",
+  ""valor"": ""3"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'product' con valor '3' en el cuerpo de la respuesta selecciona un producto concreto. Dado que la sesión actual es del usuario B y los productos suelen ser propiedad privada o accesibles por su dueño, se asume visibilidad privada y cuenta duena B.""
+}"
+2026-11-13T20:30:05,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J44,3,8.61,6.9,0.29,True,9.22,652,0.43,121,8.07,1531.3,15.0,0,True,3,5,False,visibilidad='privado' (esperado 'publico') | cuenta_duena='B' (esperado 'ninguna'),3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,87.0,61.97,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""1"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto (pedido/delivery). Dado que la sesión actual es del usuario B y el ID 1 corresponde al objeto devuelto, se asume que pertenece a la cuenta duena B.""
+}"
+2026-11-13T20:30:14,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J49,3,8.61,6.9,0.29,True,8.92,752,0.48,123,8.02,1563.7,15.3,0,True,5,5,True,,3.49,1.75,1.74,50.2,4096,10.26,65.0,0.05,2.76,89.0,64.94,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""UserId"",
+  ""valor"": ""26"",
+  ""ubicacion"": ""cuerpo"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'UserId' con valor '26' selecciona un registro concreto de usuario. El valor 26 corresponde al ID del usuario B (b.canario@prueba.cl), por lo que es un identificador de objeto privado.""
+}"
+2026-11-13T20:30:23,con_juice_shop,qwen3.5:4b,False,qwen35,4.2B,Q4_K_M,262144,4096,J50,3,8.61,6.9,0.29,True,9.02,706,0.48,122,8.11,1466.3,15.0,0,True,4,5,False,cuenta_duena='B' (esperado 'desconocida'),3.49,1.75,1.74,50.2,4096,10.25,64.9,0.05,2.76,39.0,62.44,"{
+  ""contiene_identificador"": true,
+  ""parametro"": ""id"",
+  ""valor"": ""12"",
+  ""ubicacion"": ""ruta"",
+  ""visibilidad"": ""privado"",
+  ""cuenta_duena"": ""B"",
+  ""justificacion"": ""El parámetro 'id' en la ruta selecciona un registro concreto del carrito (BasketId). Dado que la sesión actual es de usuario B y el ID coincide con el BasketId en la respuesta, se deduce que pertenece a la cuenta B.""
+}"

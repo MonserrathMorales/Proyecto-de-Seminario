@@ -1,0 +1,560 @@
+{
+  "ejecucion": "20261114_125342",
+  "fecha": "2026-11-14T14:16:50.601461",
+  "modo": "reglas_llm",
+  "modelo": "gemma4:e4b",
+  "endpoints": [
+    {
+      "clave": "GET /rest/admin/application-version",
+      "metodo": "GET",
+      "plantilla": "/rest/admin/application-version",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0013",
+        "B-0088",
+        "anonima-0163"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /rest/admin/application-configuration",
+      "metodo": "GET",
+      "plantilla": "/rest/admin/application-configuration",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0015",
+        "B-0090",
+        "anonima-0165"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /rest/languages",
+      "metodo": "GET",
+      "plantilla": "/rest/languages",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0025",
+        "B-0098",
+        "anonima-0173"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /api/Challenges?name",
+      "metodo": "GET",
+      "plantilla": "/api/Challenges",
+      "parametros_consulta": [
+        "name"
+      ],
+      "peticiones": [
+        "A-0027",
+        "B-0102",
+        "anonima-0176"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /rest/user/whoami?fields",
+      "metodo": "GET",
+      "plantilla": "/rest/user/whoami",
+      "parametros_consulta": [
+        "fields"
+      ],
+      "peticiones": [
+        "A-0029",
+        "A-0067",
+        "B-0103",
+        "B-0142",
+        "anonima-0206"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /rest/user/whoami",
+      "metodo": "GET",
+      "plantilla": "/rest/user/whoami",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0030",
+        "B-0104"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "POST /rest/user/login",
+      "metodo": "POST",
+      "plantilla": "/rest/user/login",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0031",
+        "B-0105"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /rest/products/search?q",
+      "metodo": "GET",
+      "plantilla": "/rest/products/search",
+      "parametros_consulta": [
+        "q"
+      ],
+      "peticiones": [
+        "A-0035",
+        "B-0110",
+        "anonima-0175"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /rest/basket/{id}",
+      "metodo": "GET",
+      "plantilla": "/rest/basket/{id}",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0036",
+        "B-0109"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /api/Quantitys",
+      "metodo": "GET",
+      "plantilla": "/api/Quantitys",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0037",
+        "B-0112",
+        "anonima-0177"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /api/Addresss",
+      "metodo": "GET",
+      "plantilla": "/api/Addresss",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0056",
+        "B-0131"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /api/Addresss/{id}",
+      "metodo": "GET",
+      "plantilla": "/api/Addresss/{id}",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0058",
+        "B-0133"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /rest/order-history",
+      "metodo": "GET",
+      "plantilla": "/rest/order-history",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0060",
+        "B-0135",
+        "anonima-0197"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /api/Cards",
+      "metodo": "GET",
+      "plantilla": "/api/Cards",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0063",
+        "B-0138",
+        "anonima-0202"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /rest/wallet/balance",
+      "metodo": "GET",
+      "plantilla": "/rest/wallet/balance",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0066",
+        "B-0141",
+        "anonima-0204"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /rest/captcha",
+      "metodo": "GET",
+      "plantilla": "/rest/captcha",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0069",
+        "B-0144",
+        "anonima-0208"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /api/Feedbacks",
+      "metodo": "GET",
+      "plantilla": "/api/Feedbacks",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0073",
+        "B-0148",
+        "anonima-0212"
+      ],
+      "sesiones": [
+        "A",
+        "B",
+        "anonima"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /rest/continue-code",
+      "metodo": "GET",
+      "plantilla": "/rest/continue-code",
+      "parametros_consulta": [],
+      "peticiones": [
+        "anonima-0200"
+      ],
+      "sesiones": [
+        "anonima"
+      ],
+      "autenticada": false
+    }
+  ],
+  "candidatos": [
+    {
+      "peticion": "A-0036",
+      "endpoint": "GET /rest/basket/{id}",
+      "sesion": "A",
+      "parametro": "basket",
+      "valor": "6",
+      "ubicacion": "ruta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "A",
+      "objeto": "canasta",
+      "justificacion": "canasta sembrado en la cuenta A"
+    },
+    {
+      "peticion": "A-0058",
+      "endpoint": "GET /api/Addresss/{id}",
+      "sesion": "A",
+      "parametro": "Addresss",
+      "valor": "7",
+      "ubicacion": "ruta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "A",
+      "objeto": "direccion",
+      "justificacion": "direccion sembrado en la cuenta A"
+    },
+    {
+      "peticion": "B-0109",
+      "endpoint": "GET /rest/basket/{id}",
+      "sesion": "B",
+      "parametro": "basket",
+      "valor": "7",
+      "ubicacion": "ruta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "B",
+      "objeto": "canasta",
+      "justificacion": "canasta sembrado en la cuenta B"
+    },
+    {
+      "peticion": "B-0133",
+      "endpoint": "GET /api/Addresss/{id}",
+      "sesion": "B",
+      "parametro": "Addresss",
+      "valor": "8",
+      "ubicacion": "ruta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "B",
+      "objeto": "direccion",
+      "justificacion": "direccion sembrado en la cuenta B"
+    }
+  ],
+  "hipotesis": [
+    {
+      "id": "H-001",
+      "tipo": "horizontal",
+      "endpoint": "GET /rest/basket/{id}",
+      "peticion_origen": "A-0036",
+      "sesion_origen": "A",
+      "sesion_prueba": "B",
+      "cuenta_duena": "A",
+      "parametro": "basket",
+      "valor": "6",
+      "ubicacion": "ruta",
+      "objeto": "canasta",
+      "origen": "inventario",
+      "verificacion": "inventario",
+      "canario": null,
+      "marca_dueno": "25"
+    },
+    {
+      "id": "H-002",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /rest/basket/{id}",
+      "peticion_origen": "A-0036",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": "basket",
+      "valor": "6",
+      "ubicacion": "ruta",
+      "objeto": "canasta",
+      "origen": "inventario",
+      "verificacion": "inventario",
+      "canario": null,
+      "marca_dueno": "25"
+    },
+    {
+      "id": "H-003",
+      "tipo": "horizontal",
+      "endpoint": "GET /api/Addresss/{id}",
+      "peticion_origen": "A-0058",
+      "sesion_origen": "A",
+      "sesion_prueba": "B",
+      "cuenta_duena": "A",
+      "parametro": "Addresss",
+      "valor": "7",
+      "ubicacion": "ruta",
+      "objeto": "direccion",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-A-DADB33B3",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-004",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Addresss/{id}",
+      "peticion_origen": "A-0058",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": "Addresss",
+      "valor": "7",
+      "ubicacion": "ruta",
+      "objeto": "direccion",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-A-DADB33B3",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-005",
+      "tipo": "horizontal",
+      "endpoint": "GET /rest/basket/{id}",
+      "peticion_origen": "B-0109",
+      "sesion_origen": "B",
+      "sesion_prueba": "A",
+      "cuenta_duena": "B",
+      "parametro": "basket",
+      "valor": "7",
+      "ubicacion": "ruta",
+      "objeto": "canasta",
+      "origen": "inventario",
+      "verificacion": "inventario",
+      "canario": null,
+      "marca_dueno": "26"
+    },
+    {
+      "id": "H-006",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /rest/basket/{id}",
+      "peticion_origen": "B-0109",
+      "sesion_origen": "B",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "B",
+      "parametro": "basket",
+      "valor": "7",
+      "ubicacion": "ruta",
+      "objeto": "canasta",
+      "origen": "inventario",
+      "verificacion": "inventario",
+      "canario": null,
+      "marca_dueno": "26"
+    },
+    {
+      "id": "H-007",
+      "tipo": "horizontal",
+      "endpoint": "GET /api/Addresss/{id}",
+      "peticion_origen": "B-0133",
+      "sesion_origen": "B",
+      "sesion_prueba": "A",
+      "cuenta_duena": "B",
+      "parametro": "Addresss",
+      "valor": "8",
+      "ubicacion": "ruta",
+      "objeto": "direccion",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-B-59E9A886",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-008",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Addresss/{id}",
+      "peticion_origen": "B-0133",
+      "sesion_origen": "B",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "B",
+      "parametro": "Addresss",
+      "valor": "8",
+      "ubicacion": "ruta",
+      "objeto": "direccion",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-B-59E9A886",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-009",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /rest/user/whoami?fields",
+      "peticion_origen": "A-0067",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": null,
+      "valor": null,
+      "ubicacion": null,
+      "objeto": null,
+      "origen": "regla",
+      "verificacion": "inventario",
+      "canario": null,
+      "marca_dueno": "a.canario@prueba.cl"
+    },
+    {
+      "id": "H-010",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Addresss",
+      "peticion_origen": "A-0056",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": null,
+      "valor": null,
+      "ubicacion": null,
+      "objeto": null,
+      "origen": "regla",
+      "verificacion": "canario",
+      "canario": "Canario-A-DADB33B3",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-011",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Cards",
+      "peticion_origen": "A-0063",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": null,
+      "valor": null,
+      "ubicacion": null,
+      "objeto": null,
+      "origen": "regla",
+      "verificacion": "canario",
+      "canario": "Canario-A-9A36497B",
+      "marca_dueno": null
+    }
+  ],
+  "omitidas": {
+    "sin_datos_propios": 6
+  },
+  "consultas_llm": 0,
+  "duracion_s": 0.0
+}

@@ -1,0 +1,18 @@
+{
+  "A": {
+    "correo": "a.canario@prueba.cl",
+    "id": 25,
+    "canasta_id": 6,
+    "direccion_id": 7,
+    "canario": "Canario-A-8B06B4",
+    "tarjeta_id": 7
+  },
+  "B": {
+    "correo": "b.canario@prueba.cl",
+    "id": 26,
+    "canasta_id": 7,
+    "direccion_id": 8,
+    "canario": "Canario-B-425A7B",
+    "tarjeta_id": 8
+  }
+}

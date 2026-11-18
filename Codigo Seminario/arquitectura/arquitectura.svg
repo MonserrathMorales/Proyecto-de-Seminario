@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2020" height="960" viewBox="0 0 2020 960" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+  <title>Arquitectura del prototipo: diagnóstico de fallas de control de acceso</title>
+  <desc>Flujo de trabajo multiagente con LangGraph: Explorador, Analista y el agente de Validación y Remediación en el Seminario; aprobación humana y Redactor en el Proyecto de Título. Cada etapa lee y escribe archivos de evidencia. Todo corre en localhost.</desc>
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#444441"/></marker>
+    <marker id="fg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#888780"/></marker>
+    <style>
+      .titulo { font-size: 26px; font-weight: 600; fill: #2C2C2A; }
+      .sub { font-size: 15px; fill: #5F5E5A; }
+      .n { font-size: 18px; font-weight: 600; }
+      .tipo { font-size: 12.5px; }
+      .p { font-size: 13.5px; fill: #2C2C2A; }
+      .e { font-size: 12.5px; font-weight: 600; fill: #444441; }
+      .d { font-size: 12.5px; fill: #444441; }
+      .m { font-size: 12.5px; font-family: Consolas, 'Courier New', monospace; fill: #2C2C2A; }
+      .s { font-size: 14px; fill: #2C2C2A; }
+      .sb { font-size: 14px; font-weight: 600; fill: #2C2C2A; }
+      .det { fill: #E1F5EE; stroke: #0F6E56; stroke-width: 1.5; }
+      .llm { fill: #EEEDFE; stroke: #534AB7; stroke-width: 1.5; }
+      .hum { fill: #F1EFE8; stroke: #5F5E5A; stroke-width: 1.5; }
+      .srv { fill: #F1EFE8; stroke: #888780; stroke-width: 1; }
+      .fut { stroke-dasharray: 7 5; }
+      .tdet { fill: #085041; }
+      .tllm { fill: #3C3489; }
+      .thum { fill: #444441; }
+      .sep { stroke: #B4B2A9; stroke-width: 0.75; }
+      .fl { stroke: #444441; stroke-width: 1.5; fill: none; }
+      .err { stroke: #888780; stroke-width: 1.25; fill: none; stroke-dasharray: 4 4; }
+    </style>
+  </defs>
+  <rect width="2020" height="960" fill="#FFFFFF"/>
+
+  <text class="titulo" x="40" y="52">Arquitectura del prototipo: diagnóstico de fallas de control de acceso (IDOR/BOLA)</text>
+  <text class="sub" x="40" y="80">Flujo de trabajo multiagente con LangGraph. Todo se ejecuta en el equipo de desarrollo (localhost); ningún dato sale de él.</text>
+
+  <rect class="srv" x="280" y="110" width="825" height="50" rx="6"/>
+  <text class="s" x="692" y="135" text-anchor="middle" dominant-baseline="central">Aplicación objetivo · OWASP Juice Shop en Docker · http://localhost:3000 (única URL del alcance)</text>
+
+  <rect class="srv" x="280" y="185" width="255" height="50" rx="6"/>
+  <text class="sb" x="407" y="203" text-anchor="middle" dominant-baseline="central">Chromium (Playwright)</text>
+  <text class="d" x="407" y="222" text-anchor="middle" dominant-baseline="central">a través del proxy mitmdump :8080</text>
+
+  <rect class="srv" x="565" y="185" width="255" height="50" rx="6"/>
+  <text class="sb" x="692" y="203" text-anchor="middle" dominant-baseline="central">Ollama :11434</text>
+  <text class="d" x="692" y="222" text-anchor="middle" dominant-baseline="central">gemma4:e4b, salida con esquema JSON</text>
+
+  <rect class="srv" x="1420" y="185" width="255" height="50" rx="6"/>
+  <text class="sb" x="1547" y="203" text-anchor="middle" dominant-baseline="central">Revisor humano</text>
+  <text class="d" x="1547" y="222" text-anchor="middle" dominant-baseline="central">aprueba cada hallazgo (RF07)</text>
+
+  <rect class="srv" x="1705" y="185" width="255" height="50" rx="6"/>
+  <text class="sb" x="1832" y="203" text-anchor="middle" dominant-baseline="central">Titular de la aplicación</text>
+  <text class="d" x="1832" y="222" text-anchor="middle" dominant-baseline="central">recibe el reporte (RF08)</text>
+
+  <line class="fl" x1="407" y1="185" x2="407" y2="163" marker-end="url(#f)"/>
+  <line class="fl" x1="407" y1="290" x2="407" y2="238" marker-end="url(#f)"/>
+  <line class="fl" x1="692" y1="290" x2="692" y2="238" marker-end="url(#f)"/>
+  <line class="fl" x1="977" y1="290" x2="977" y2="163" marker-end="url(#f)"/>
+  <text class="d" x="990" y="204">solo peticiones GET observadas,</text>
+  <text class="d" x="990" y="222">repetidas con otra sesión</text>
+  <line class="fl" x1="1547" y1="235" x2="1547" y2="287" marker-end="url(#f)"/>
+  <line class="fl" x1="1832" y1="290" x2="1832" y2="238" marker-end="url(#f)"/>
+
+  <rect x="260" y="265" width="1720" height="480" rx="12" fill="none" stroke="#5F5E5A" stroke-width="1.25" stroke-dasharray="3 5"/>
+
+  <rect class="srv" x="40" y="330" width="190" height="50" rx="6"/>
+  <text class="sb" x="135" y="355" text-anchor="middle" dominant-baseline="central">Operador</text>
+  <line class="fl" x1="135" y1="380" x2="135" y2="407" marker-end="url(#f)"/>
+  <rect class="srv" x="40" y="410" width="190" height="130" rx="6"/>
+  <text class="m" x="56" y="434" font-weight="600">alcance.json</text>
+  <text class="d" x="56" y="458">url_base (lista cerrada)</text>
+  <text class="d" x="56" y="478">prefijos_api, pantallas</text>
+  <text class="d" x="56" y="498">cuentas de prueba A y B</text>
+  <text class="d" x="56" y="518">vigencia (RF01)</text>
+  <line class="fl" x1="230" y1="455" x2="277" y2="455" marker-end="url(#f)"/>
+
+  <rect class="det" x="280" y="290" width="255" height="330" rx="8"/>
+  <text class="n tdet" x="296" y="318">Explorador</text>
+  <text class="tipo tdet" x="296" y="338">Determinista · Seminario (hecho)</text>
+  <line class="sep" x1="280" y1="352" x2="535" y2="352"/>
+  <text class="p" x="296" y="378">1. Prepara las cuentas A y B</text>
+  <text class="p" x="296" y="402">2. Siembra objetos con canario</text>
+  <text class="p" x="296" y="426">3. Navega como A, B y sin sesión</text>
+  <text class="p" x="296" y="450">4. Captura el tráfico por sesión</text>
+  <text class="p" x="296" y="474">5. Filtra y oculta secretos</text>
+  <line class="sep" x1="280" y1="492" x2="535" y2="492"/>
+  <text class="e" x="296" y="513">Tecnología</text>
+  <text class="d" x="296" y="532">Playwright · mitmproxy · requests</text>
+  <line class="sep" x1="280" y1="548" x2="535" y2="548"/>
+  <text class="e" x="296" y="571">Lee</text><text class="m" x="356" y="571">alcance.json</text>
+  <text class="e" x="296" y="595">Escribe</text><text class="m" x="356" y="595">exploracion.json</text>
+
+  <rect class="llm" x="565" y="290" width="255" height="330" rx="8"/>
+  <text class="n tllm" x="581" y="318">Analista</text>
+  <text class="tipo tllm" x="581" y="338">Con LLM · Seminario (hecho)</text>
+  <line class="sep" x1="565" y1="352" x2="820" y2="352"/>
+  <text class="p" x="581" y="378">1. Agrupa por endpoint</text>
+  <text class="p" x="581" y="402">2. Extrae candidatos con reglas</text>
+  <text class="p" x="581" y="426">3. Asigna dueño con el inventario</text>
+  <text class="p" x="581" y="450">4. LLM decide solo los pendientes</text>
+  <text class="p" x="581" y="474">5. Genera hipótesis de lectura</text>
+  <line class="sep" x1="565" y1="492" x2="820" y2="492"/>
+  <text class="e" x="581" y="513">Tecnología</text>
+  <text class="d" x="581" y="532">Reglas · Pydantic · langchain-ollama</text>
+  <line class="sep" x1="565" y1="548" x2="820" y2="548"/>
+  <text class="e" x="581" y="571">Lee</text><text class="m" x="641" y="571">exploracion.json</text>
+  <text class="e" x="581" y="595">Escribe</text><text class="m" x="641" y="595">analisis.json</text>
+
+  <rect class="det" x="850" y="290" width="540" height="330" rx="8"/>
+  <text class="n tdet" x="866" y="318">Validación y Remediación</text>
+  <text class="tipo tdet" x="866" y="338">Determinista · Seminario (implementado; falta la corrida en Juice Shop)</text>
+  <line class="sep" x1="850" y1="352" x2="1390" y2="352"/>
+  <text class="p" x="866" y="378">1. Guardia: alcance vigente y solo GET</text>
+  <text class="p" x="866" y="402">2. Línea base: repite con el dueño</text>
+  <text class="p" x="883" y="426">Cruce: con la otra cuenta o sin sesión</text>
+  <text class="p" x="883" y="450">Guarda los pares sin tokens</text>
+  <text class="p" x="1136" y="378">3. Veredicto del oráculo:</text>
+  <text class="p" x="1153" y="402">canario o marca por campo JSON</text>
+  <text class="p" x="1153" y="426">confirmado, dudoso o descartado</text>
+  <text class="p" x="1136" y="450">4. Corrección sugerida por CWE</text>
+  <text class="d" x="1136" y="474">Proyecto: LLM de respaldo para los dudosos</text>
+  <line class="sep" x1="850" y1="492" x2="1390" y2="492"/>
+  <text class="e" x="866" y="513">Tecnología</text>
+  <text class="d" x="866" y="532">requests · Python (json) · plantillas fijas · sin modelo ni navegador · sesiones solo en memoria</text>
+  <line class="sep" x1="850" y1="548" x2="1390" y2="548"/>
+  <text class="e" x="866" y="571">Lee</text><text class="m" x="926" y="571">analisis.json</text>
+  <text class="e" x="866" y="595">Escribe</text><text class="m" x="926" y="595">validacion.json</text>
+
+  <rect class="hum fut" x="1420" y="290" width="255" height="330" rx="8"/>
+  <text class="n thum" x="1436" y="318">Aprobación humana</text>
+  <text class="tipo thum" x="1436" y="338">Persona · Proyecto de Título</text>
+  <line class="sep" x1="1420" y1="352" x2="1675" y2="352"/>
+  <text class="p" x="1436" y="378">1. interrupt() pausa el grafo</text>
+  <text class="p" x="1436" y="402">2. El revisor ve la evidencia</text>
+  <text class="p" x="1436" y="426">3. Aprueba o rechaza el hallazgo</text>
+  <text class="p" x="1436" y="450">4. El grafo se reanuda</text>
+  <line class="sep" x1="1420" y1="492" x2="1675" y2="492"/>
+  <text class="e" x="1436" y="513">Tecnología</text>
+  <text class="d" x="1436" y="532">LangGraph: interrupt y checkpointer</text>
+  <line class="sep" x1="1420" y1="548" x2="1675" y2="548"/>
+  <text class="e" x="1436" y="571">Lee</text><text class="m" x="1496" y="571">validacion.json</text>
+  <text class="e" x="1436" y="595">Escribe</text><text class="m" x="1496" y="595">aprobaciones.json</text>
+
+  <rect class="llm fut" x="1705" y="290" width="255" height="330" rx="8"/>
+  <text class="n tllm" x="1721" y="318">Redactor</text>
+  <text class="tipo tllm" x="1721" y="338">Con LLM · Proyecto de Título</text>
+  <line class="sep" x1="1705" y1="352" x2="1960" y2="352"/>
+  <text class="p" x="1721" y="378">1. Toma los hallazgos aprobados</text>
+  <text class="p" x="1721" y="402">2. Clasifica CWE y CVSS 4.0</text>
+  <text class="p" x="1721" y="426">3. Sugiere la corrección</text>
+  <text class="p" x="1721" y="450">4. Enmascara datos personales</text>
+  <line class="sep" x1="1705" y1="492" x2="1960" y2="492"/>
+  <text class="e" x="1721" y="513">Tecnología</text>
+  <text class="d" x="1721" y="532">Plantilla · LLM local (Ollama)</text>
+  <line class="sep" x1="1705" y1="548" x2="1960" y2="548"/>
+  <text class="e" x="1721" y="571">Lee</text><text class="m" x="1781" y="571">aprobaciones.json</text>
+  <text class="e" x="1721" y="595">Escribe</text><text class="m" x="1781" y="595">reporte.md</text>
+
+  <line class="fl" x1="537" y1="455" x2="562" y2="455" marker-end="url(#f)"/>
+  <line class="fl" x1="822" y1="455" x2="847" y2="455" marker-end="url(#f)"/>
+  <line class="fl" x1="1392" y1="455" x2="1417" y2="455" marker-end="url(#f)"/>
+  <line class="fl" x1="1677" y1="455" x2="1702" y2="455" marker-end="url(#f)"/>
+
+  <line class="err" x1="407" y1="620" x2="407" y2="647" marker-end="url(#fg)"/>
+  <line class="err" x1="692" y1="620" x2="692" y2="647" marker-end="url(#fg)"/>
+  <line class="err" x1="1120" y1="620" x2="1120" y2="647" marker-end="url(#fg)"/>
+  <line class="err" x1="1547" y1="620" x2="1547" y2="647" marker-end="url(#fg)"/>
+  <line class="err" x1="1832" y1="620" x2="1832" y2="647" marker-end="url(#fg)"/>
+
+  <rect class="det" x="280" y="650" width="1680" height="46" rx="8"/>
+  <text class="s tdet" x="1120" y="673" text-anchor="middle" dominant-baseline="central"><tspan font-weight="600">cerrar</tspan> · guarda registro.json y libera las sesiones de la memoria · si una etapa falla, el flujo salta aquí con el error registrado</text>
+
+  <text class="d" x="280" y="724">Orquestador (LangGraph StateGraph). El estado guarda solo rutas, conteos y el registro de etapas; los tokens viven en memoria y nunca se escriben. En el Seminario el flujo termina en Validación y Remediación → cerrar.</text>
+
+  <rect class="srv" x="260" y="770" width="1720" height="90" rx="8"/>
+  <text class="sb" x="280" y="798">Evidencia de cada ejecución · datos/&lt;ejecucion&gt;/ · JSON validado con Pydantic, sin claves ni tokens (RNF04, RNF06)</text>
+  <text class="m" x="280" y="832">exploracion.json  →  analisis.json  →  validacion.json (pares, veredictos y correcciones)      |      registro.json (etapas y duración)      |      entorno.json (pendiente)</text>
+
+  <rect class="det" x="260" y="895" width="26" height="18" rx="3"/>
+  <text class="d" x="296" y="904" dominant-baseline="central">Componente determinista</text>
+  <rect class="llm" x="500" y="895" width="26" height="18" rx="3"/>
+  <text class="d" x="536" y="904" dominant-baseline="central">Usa el LLM local</text>
+  <rect class="hum fut" x="690" y="895" width="26" height="18" rx="3"/>
+  <text class="d" x="726" y="904" dominant-baseline="central">Borde punteado: se implementa en el Proyecto de Título</text>
+  <rect class="srv" x="1090" y="895" width="26" height="18" rx="3"/>
+  <text class="d" x="1126" y="904" dominant-baseline="central">Servicio local, persona o archivo</text>
+  <line class="fl" x1="1370" y1="904" x2="1410" y2="904" marker-end="url(#f)"/>
+  <text class="d" x="1420" y="904" dominant-baseline="central">Flujo o uso</text>
+  <line class="err" x1="1530" y1="904" x2="1570" y2="904" marker-end="url(#fg)"/>
+  <text class="d" x="1580" y="904" dominant-baseline="central">Paso a cerrar (fin o error de la etapa)</text>
+</svg>

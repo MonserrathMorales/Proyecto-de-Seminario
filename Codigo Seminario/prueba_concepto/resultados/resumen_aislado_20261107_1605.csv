@@ -1,0 +1,4 @@
+﻿modelo,razonamiento,parametros,cuantizacion,llamadas,exactitud_pct,aciertos_campos_pct,json_valido_pct,tiempo_medio_s,tiempo_desv_s,tokens_por_s_salida_media,tokens_por_s_salida_desv,carga_inicial_s,modelo_mem_total_gb,modelo_mem_gpu_gb,pct_en_gpu,ram_sistema_max_gb,ram_sistema_max_pct,ram_ollama_max_gb,vram_usada_max_gb,gpu_temp_max_c,casos_fallidos
+gemma4:e4b,False,7.5B,Q4_K_M,18,83.3,96.7,100.0,6.12,1.66,19.5,0.96,16.56,0.33,0.33,100.0,14.44,91.4,0.05,2.62,62.31,C3_sin_identificador
+qwen3.5:4b,False,4.2B,Q4_K_M,18,77.8,94.4,100.0,8.89,0.71,15.97,0.25,7.65,3.49,1.75,50.2,7.14,45.2,0.05,2.48,67.97,"C1_ruta_privado, C3_sin_identificador"
+qwen3.5:9b,False,9.0B,Q4_K_M,18,83.3,93.3,100.0,27.6,5.79,5.4,0.19,12.83,5.83,1.55,26.6,13.64,86.4,0.06,2.51,68.09,C3_sin_identificador

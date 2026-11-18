@@ -1,0 +1,19 @@
+{
+  "ejecucion": "20261113_224120_fallida",
+  "error": "Explorador: No se pudo contactar a http://localhost:3999. ¿Está corriendo el contenedor de Juice Shop?",
+  "etapas": [
+    {
+      "etapa": "explorador",
+      "inicio": "2026-11-13T22:41:16",
+      "duracion_s": 4.1,
+      "resultado": "error",
+      "detalle": "No se pudo contactar a http://localhost:3999. ¿Está corriendo el contenedor de Juice Shop?"
+    },
+    {
+      "etapa": "cerrar",
+      "inicio": "2026-11-13T22:41:20",
+      "duracion_s": 0.0,
+      "resultado": "error"
+    }
+  ]
+}
