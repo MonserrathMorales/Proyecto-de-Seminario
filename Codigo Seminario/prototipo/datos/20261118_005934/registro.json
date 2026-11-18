@@ -1,0 +1,57 @@
+{
+  "ejecucion": "20261118_005934",
+  "error": null,
+  "etapas": [
+    {
+      "etapa": "explorador",
+      "inicio": "2026-11-18T00:59:34",
+      "duracion_s": 111.0,
+      "resultado": "ok",
+      "conservadas": 20,
+      "descartadas": {
+        "fuera_del_alcance": 2,
+        "recurso_estatico": 87,
+        "duplicada": 7
+      },
+      "por_sesion": {
+        "A": 10,
+        "B": 10,
+        "anonima": 0
+      },
+      "inventario": 4
+    },
+    {
+      "etapa": "analista",
+      "inicio": "2026-11-18T01:01:25",
+      "duracion_s": 39.6,
+      "resultado": "ok",
+      "modo": "reglas_llm",
+      "endpoints": 10,
+      "candidatos": 4,
+      "por_inventario": 2,
+      "consultas_llm": 2,
+      "hipotesis": 5,
+      "omitidas": {
+        "sin_datos_propios": 5
+      }
+    },
+    {
+      "etapa": "validacion",
+      "inicio": "2026-11-18T01:02:04",
+      "duracion_s": 21.4,
+      "resultado": "ok",
+      "hipotesis": 5,
+      "enviadas": 8,
+      "omitidas": {},
+      "confirmado": 2,
+      "dudoso": 0,
+      "descartado": 3
+    },
+    {
+      "etapa": "cerrar",
+      "inicio": "2026-11-18T01:02:26",
+      "duracion_s": 0.0,
+      "resultado": "ok"
+    }
+  ]
+}

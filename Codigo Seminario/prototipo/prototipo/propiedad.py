@@ -6,10 +6,12 @@ propiedad en la respuesta, los modelos asumían como dueña a la cuenta de la se
 
 La búsqueda usa el endpoint y no solo el número, porque el mismo id puede ser objetos distintos
 (en Juice Shop, el 7 es la dirección de A y también la canasta de B).
+Los nombres de parámetros y las plantillas de cada aplicación vienen de su adaptador, que se elige con
+el campo "adaptador" de la evidencia del Explorador (por defecto Juice Shop).
 """
 import re
 
-from prototipo import juice_shop as adaptador
+from prototipo.adaptadores import adaptador_de
 from prototipo.modelos import Candidato, ObjetoSembrado
 
 
@@ -21,14 +23,16 @@ def _plantilla(clave_endpoint: str) -> str:
 class Inventario:
     """Índices del inventario: por (endpoint, id) para la ruta, y por (tipo, id) para consulta y cuerpo."""
 
-    def __init__(self, objetos: list[ObjetoSembrado]):
+    def __init__(self, objetos: list[ObjetoSembrado], adaptador: str = "juice_shop"):
+        modulo = adaptador_de(adaptador)
+        self.parametros: dict[str, str] = modulo.PARAMETROS
         self.por_endpoint: dict[tuple[str, str], ObjetoSembrado] = {}
         self.por_tipo: dict[tuple[str, str], ObjetoSembrado] = {}
         self.uso_respaldo = False  # True si algún objeto no traía su endpoint (evidencia anterior al cambio)
         for o in objetos:
             endpoint = o.endpoint
             if endpoint is None:
-                endpoint = adaptador.ENDPOINTS.get(o.tipo)
+                endpoint = modulo.ENDPOINTS.get(o.tipo)
                 self.uso_respaldo = True
             if endpoint:
                 self.por_endpoint[(endpoint, o.id)] = o
@@ -38,7 +42,7 @@ class Inventario:
         if c.ubicacion == "ruta":
             return self.por_endpoint.get((_plantilla(c.endpoint), c.valor))
         nombre = re.split(r"[.\[]", c.parametro)[-1].lower()   # "orden.BasketId" -> "basketid"
-        tipo = adaptador.PARAMETROS.get(nombre)
+        tipo = self.parametros.get(nombre)
         return self.por_tipo.get((tipo, c.valor)) if tipo else None
 
 

@@ -1,0 +1,319 @@
+{
+  "ejecucion": "20261118_005934",
+  "fecha": "2026-11-18T01:02:04.962494",
+  "modo": "reglas_llm",
+  "modelo": "gemma4:e4b",
+  "endpoints": [
+    {
+      "clave": "POST /identity/api/auth/login",
+      "metodo": "POST",
+      "plantilla": "/identity/api/auth/login",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0008",
+        "B-0053"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /identity/api/v2/user/dashboard",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/user/dashboard",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0009",
+        "B-0054"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "POST /identity/api/auth/verify",
+      "metodo": "POST",
+      "plantilla": "/identity/api/auth/verify",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0011",
+        "B-0056"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /identity/api/v2/vehicle/vehicles",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/vehicle/vehicles",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0019",
+        "B-0059"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /identity/api/v2/user/videos/{id}",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/user/videos/{id}",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0022",
+        "B-0068"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/merchant/service_requests/null",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/merchant/service_requests/null",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0026",
+        "B-0072"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/mechanic/mechanic_report",
+      "parametros_consulta": [
+        "report_id"
+      ],
+      "peticiones": [
+        "A-0031",
+        "B-0077"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/shop/orders/all?limit&offset",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/shop/orders/all",
+      "parametros_consulta": [
+        "limit",
+        "offset"
+      ],
+      "peticiones": [
+        "A-0035",
+        "B-0081"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/shop/products?limit&offset",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/shop/products",
+      "parametros_consulta": [
+        "limit",
+        "offset"
+      ],
+      "peticiones": [
+        "A-0039",
+        "B-0085"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /community/api/v2/community/posts/recent?limit&offset",
+      "metodo": "GET",
+      "plantilla": "/community/api/v2/community/posts/recent",
+      "parametros_consulta": [
+        "limit",
+        "offset"
+      ],
+      "peticiones": [
+        "A-0044",
+        "B-0090"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    }
+  ],
+  "candidatos": [
+    {
+      "peticion": "A-0022",
+      "endpoint": "GET /identity/api/v2/user/videos/{id}",
+      "sesion": "A",
+      "parametro": "videos",
+      "valor": "0",
+      "ubicacion": "ruta",
+      "decidido_por": "llm",
+      "es_identificador": false,
+      "visibilidad": null,
+      "cuenta_duena": null,
+      "objeto": null,
+      "justificacion": "El parámetro 'nombre=videos' con valor '0' en la ruta no identifica un registro concreto de usuario, sino que parece ser un índice o un identificador de recurso que no se encuentra (404). No cumple con la definición de identificador de registro."
+    },
+    {
+      "peticion": "A-0031",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "sesion": "A",
+      "parametro": "report_id",
+      "valor": "18",
+      "ubicacion": "consulta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "A",
+      "objeto": "reporte",
+      "justificacion": "reporte sembrado en la cuenta A"
+    },
+    {
+      "peticion": "B-0068",
+      "endpoint": "GET /identity/api/v2/user/videos/{id}",
+      "sesion": "B",
+      "parametro": "videos",
+      "valor": "0",
+      "ubicacion": "ruta",
+      "decidido_por": "llm",
+      "es_identificador": false,
+      "visibilidad": null,
+      "cuenta_duena": null,
+      "objeto": null,
+      "justificacion": "El parámetro 'nombre=videos' con valor '0' en la ruta no identifica un registro concreto de usuario, pedido o entidad específica. La respuesta 404 indica que el recurso no existe, no que se accedió a un recurso específico de un usuario."
+    },
+    {
+      "peticion": "B-0077",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "sesion": "B",
+      "parametro": "report_id",
+      "valor": "19",
+      "ubicacion": "consulta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "B",
+      "objeto": "reporte",
+      "justificacion": "reporte sembrado en la cuenta B"
+    }
+  ],
+  "hipotesis": [
+    {
+      "id": "H-001",
+      "tipo": "horizontal",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "A-0031",
+      "sesion_origen": "A",
+      "sesion_prueba": "B",
+      "cuenta_duena": "A",
+      "parametro": "report_id",
+      "valor": "18",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-A-5C7778F9",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-002",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "A-0031",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": "report_id",
+      "valor": "18",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-A-5C7778F9",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-003",
+      "tipo": "horizontal",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "B-0077",
+      "sesion_origen": "B",
+      "sesion_prueba": "A",
+      "cuenta_duena": "B",
+      "parametro": "report_id",
+      "valor": "19",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-B-8B9DFC76",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-004",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "B-0077",
+      "sesion_origen": "B",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "B",
+      "parametro": "report_id",
+      "valor": "19",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-B-8B9DFC76",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-005",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /identity/api/v2/user/dashboard",
+      "peticion_origen": "A-0009",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": null,
+      "valor": null,
+      "ubicacion": null,
+      "objeto": null,
+      "origen": "regla",
+      "verificacion": "canario",
+      "canario": "Canario-A-C9702320",
+      "marca_dueno": null
+    }
+  ],
+  "omitidas": {
+    "sin_datos_propios": 5
+  },
+  "consultas_llm": 2,
+  "duracion_s": 39.6
+}

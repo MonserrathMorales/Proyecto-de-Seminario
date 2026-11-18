@@ -17,10 +17,9 @@ from urllib.parse import urlsplit
 
 import requests
 
-from prototipo import juice_shop as adaptador
 from prototipo.filtro import OCULTO, ocultar_secretos
-from prototipo.juice_shop import SesionPreparada
 from prototipo.modelos import Alcance, Hipotesis, ParCruzado, PeticionCapturada, Respuesta
+from prototipo.sesion import SesionPreparada, cabeceras
 
 METODOS_PERMITIDOS = {"GET"}
 TIEMPO_ESPERA = 10      # segundos por petición
@@ -63,7 +62,8 @@ def enviar(url: str, sesion: SesionPreparada | None, secretos: list[str], http=r
         return round((time.perf_counter() - inicio) * 1000)
 
     try:
-        r = http.get(url, headers=adaptador.cabeceras(sesion), timeout=TIEMPO_ESPERA, allow_redirects=False)
+        # Las cabeceras las fijó el adaptador al preparar la sesión; sin sesión no va ninguna credencial
+        r = http.get(url, headers=cabeceras(sesion), timeout=TIEMPO_ESPERA, allow_redirects=False)
     except requests.RequestException as e:
         return Respuesta(duracion_ms=ms(), error=f"{type(e).__name__}: {e}"[:200])
     cuerpo = ocultar_secretos(r.text or "")

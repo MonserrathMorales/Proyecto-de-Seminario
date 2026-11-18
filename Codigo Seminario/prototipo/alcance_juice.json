@@ -17,5 +17,8 @@
     {"nombre": "A", "correo": "a.canario@prueba.cl", "clave": "Prueba-2026!"},
     {"nombre": "B", "correo": "b.canario@prueba.cl", "clave": "Prueba-2026!"}
   ],
-  "proxy": "http://127.0.0.1:8080"
+  "proxy": "http://127.0.0.1:8080",
+  "vigencia_desde": "2026-11-01",
+  "vigencia_hasta": "2026-12-31",
+  "autorizado_por": "Laboratorio local del Seminario"
 }

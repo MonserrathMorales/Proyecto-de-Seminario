@@ -1,0 +1,398 @@
+{
+  "ejecucion": "20261117_162744",
+  "fecha": "2026-11-17T16:29:32.123307",
+  "pares": [
+    {
+      "hipotesis": "H-001",
+      "metodo": "GET",
+      "ruta": "/rest/basket/6",
+      "sesion_base": "A",
+      "sesion_prueba": "B",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"id\": 6, \"coupon\": null, \"UserId\": 25, \"createdAt\": \"2026-11-17T19:27:44.876Z\", \"updatedAt\": \"2026-11-17T19:27:44.876Z\", \"Products\": [{\"id\": 1, \"name\": \"Apple Juice (1000ml)\", \"description\": \"The all-time classic.\", \"price\": 1.99, \"deluxePrice\": 0.99, \"image\": \"apple_juice.jpg\", \"alternateImages\": [{\"file\": \"apple_juice-1x.avif\", \"format\": \"image/avif\", \"density\": \"1x\"}, {\"file\": \"apple_juice-2x.avif\", \"format\": \"image/avif\", \"density\": \"2x\"}, {\"file\": \"apple_juice-3x.avif\", \"format\": \"image/avif\", \"density\": \"3x\"}], \"createdAt\": \"2026-11-17T19:23:13.947Z\", \"updatedAt\": \"2026-11-17T19:23:13.947Z\", \"deletedAt\": null, \"BasketItem\": {\"ProductId\": 1, \"BasketId\": 6, \"id\": 9, \"quantity\": 1, \"createdAt\": \"2026-11-17T19:27:44.995Z\", \"updatedAt\": \"2026-11-17T19:27:44.995Z\"}}]}}",
+        "recortado": false,
+        "duracion_ms": 32,
+        "error": null
+      },
+      "cruce": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"id\": 6, \"coupon\": null, \"UserId\": 25, \"createdAt\": \"2026-11-17T19:27:44.876Z\", \"updatedAt\": \"2026-11-17T19:27:44.876Z\", \"Products\": [{\"id\": 1, \"name\": \"Apple Juice (1000ml)\", \"description\": \"The all-time classic.\", \"price\": 1.99, \"deluxePrice\": 0.99, \"image\": \"apple_juice.jpg\", \"alternateImages\": [{\"file\": \"apple_juice-1x.avif\", \"format\": \"image/avif\", \"density\": \"1x\"}, {\"file\": \"apple_juice-2x.avif\", \"format\": \"image/avif\", \"density\": \"2x\"}, {\"file\": \"apple_juice-3x.avif\", \"format\": \"image/avif\", \"density\": \"3x\"}], \"createdAt\": \"2026-11-17T19:23:13.947Z\", \"updatedAt\": \"2026-11-17T19:23:13.947Z\", \"deletedAt\": null, \"BasketItem\": {\"ProductId\": 1, \"BasketId\": 6, \"id\": 9, \"quantity\": 1, \"createdAt\": \"2026-11-17T19:27:44.995Z\", \"updatedAt\": \"2026-11-17T19:27:44.995Z\"}}]}}",
+        "recortado": false,
+        "duracion_ms": 32,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-002",
+      "metodo": "GET",
+      "ruta": "/rest/basket/6",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"id\": 6, \"coupon\": null, \"UserId\": 25, \"createdAt\": \"2026-11-17T19:27:44.876Z\", \"updatedAt\": \"2026-11-17T19:27:44.876Z\", \"Products\": [{\"id\": 1, \"name\": \"Apple Juice (1000ml)\", \"description\": \"The all-time classic.\", \"price\": 1.99, \"deluxePrice\": 0.99, \"image\": \"apple_juice.jpg\", \"alternateImages\": [{\"file\": \"apple_juice-1x.avif\", \"format\": \"image/avif\", \"density\": \"1x\"}, {\"file\": \"apple_juice-2x.avif\", \"format\": \"image/avif\", \"density\": \"2x\"}, {\"file\": \"apple_juice-3x.avif\", \"format\": \"image/avif\", \"density\": \"3x\"}], \"createdAt\": \"2026-11-17T19:23:13.947Z\", \"updatedAt\": \"2026-11-17T19:23:13.947Z\", \"deletedAt\": null, \"BasketItem\": {\"ProductId\": 1, \"BasketId\": 6, \"id\": 9, \"quantity\": 1, \"createdAt\": \"2026-11-17T19:27:44.995Z\", \"updatedAt\": \"2026-11-17T19:27:44.995Z\"}}]}}",
+        "recortado": false,
+        "duracion_ms": 32,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "text/html; charset=utf-8",
+        "cuerpo": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>UnauthorizedError: No Authorization header was found</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font-smoothing: antialiased;\n}\nh1, h2 {\n  font-size: 22px;\n  color: #343434;\n}\nh1 em, h2 em {\n  padding: 0 5px;\n  font-weight: normal;\n}\nh1 {\n  font-size: 60px;\n}\nh2 {\n  margin-top: 10px;\n}\nul li {\n  list-style: none;\n}\n#stacktrace {\n  margin-left: 60px;\n}\n</style>\n  </head>\n  <body>\n    <div id=\"wrapper\">\n      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>\n      <h2><em>401</em> UnauthorizedError: No Authorization header was found</h2>\n      <ul id=\"stacktrace\"></ul>\n    </div>\n  </body>\n</html>\n",
+        "recortado": false,
+        "duracion_ms": 22,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-003",
+      "metodo": "GET",
+      "ruta": "/api/Addresss/7",
+      "sesion_base": "A",
+      "sesion_prueba": "B",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"UserId\": 25, \"id\": 7, \"fullName\": \"Titular Canario-A-3E5914F0\", \"mobileNum\": 912345678, \"zipCode\": \"2340000\", \"streetAddress\": \"Calle Canario-A-3E5914F0\", \"city\": \"Valparaíso\", \"state\": \"Valparaíso\", \"country\": \"Chile\", \"createdAt\": \"2026-11-17T19:27:44.897Z\", \"updatedAt\": \"2026-11-17T19:27:44.897Z\"}}",
+        "recortado": false,
+        "duracion_ms": 27,
+        "error": null
+      },
+      "cruce": {
+        "estado": 400,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"error\", \"data\": \"Malicious activity detected.\"}",
+        "recortado": false,
+        "duracion_ms": 25,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-004",
+      "metodo": "GET",
+      "ruta": "/api/Addresss/7",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"UserId\": 25, \"id\": 7, \"fullName\": \"Titular Canario-A-3E5914F0\", \"mobileNum\": 912345678, \"zipCode\": \"2340000\", \"streetAddress\": \"Calle Canario-A-3E5914F0\", \"city\": \"Valparaíso\", \"state\": \"Valparaíso\", \"country\": \"Chile\", \"createdAt\": \"2026-11-17T19:27:44.897Z\", \"updatedAt\": \"2026-11-17T19:27:44.897Z\"}}",
+        "recortado": false,
+        "duracion_ms": 27,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"error\", \"message\": \"Cannot read properties of undefined (reading 'data')\"}",
+        "recortado": false,
+        "duracion_ms": 9,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-005",
+      "metodo": "GET",
+      "ruta": "/rest/basket/7",
+      "sesion_base": "B",
+      "sesion_prueba": "A",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"id\": 7, \"coupon\": null, \"UserId\": 26, \"createdAt\": \"2026-11-17T19:27:45.048Z\", \"updatedAt\": \"2026-11-17T19:27:45.048Z\", \"Products\": [{\"id\": 1, \"name\": \"Apple Juice (1000ml)\", \"description\": \"The all-time classic.\", \"price\": 1.99, \"deluxePrice\": 0.99, \"image\": \"apple_juice.jpg\", \"alternateImages\": [{\"file\": \"apple_juice-1x.avif\", \"format\": \"image/avif\", \"density\": \"1x\"}, {\"file\": \"apple_juice-2x.avif\", \"format\": \"image/avif\", \"density\": \"2x\"}, {\"file\": \"apple_juice-3x.avif\", \"format\": \"image/avif\", \"density\": \"3x\"}], \"createdAt\": \"2026-11-17T19:23:13.947Z\", \"updatedAt\": \"2026-11-17T19:23:13.947Z\", \"deletedAt\": null, \"BasketItem\": {\"ProductId\": 1, \"BasketId\": 7, \"id\": 10, \"quantity\": 1, \"createdAt\": \"2026-11-17T19:27:45.153Z\", \"updatedAt\": \"2026-11-17T19:27:45.153Z\"}}]}}",
+        "recortado": false,
+        "duracion_ms": 42,
+        "error": null
+      },
+      "cruce": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"id\": 7, \"coupon\": null, \"UserId\": 26, \"createdAt\": \"2026-11-17T19:27:45.048Z\", \"updatedAt\": \"2026-11-17T19:27:45.048Z\", \"Products\": [{\"id\": 1, \"name\": \"Apple Juice (1000ml)\", \"description\": \"The all-time classic.\", \"price\": 1.99, \"deluxePrice\": 0.99, \"image\": \"apple_juice.jpg\", \"alternateImages\": [{\"file\": \"apple_juice-1x.avif\", \"format\": \"image/avif\", \"density\": \"1x\"}, {\"file\": \"apple_juice-2x.avif\", \"format\": \"image/avif\", \"density\": \"2x\"}, {\"file\": \"apple_juice-3x.avif\", \"format\": \"image/avif\", \"density\": \"3x\"}], \"createdAt\": \"2026-11-17T19:23:13.947Z\", \"updatedAt\": \"2026-11-17T19:23:13.947Z\", \"deletedAt\": null, \"BasketItem\": {\"ProductId\": 1, \"BasketId\": 7, \"id\": 10, \"quantity\": 1, \"createdAt\": \"2026-11-17T19:27:45.153Z\", \"updatedAt\": \"2026-11-17T19:27:45.153Z\"}}]}}",
+        "recortado": false,
+        "duracion_ms": 40,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-006",
+      "metodo": "GET",
+      "ruta": "/rest/basket/7",
+      "sesion_base": "B",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"id\": 7, \"coupon\": null, \"UserId\": 26, \"createdAt\": \"2026-11-17T19:27:45.048Z\", \"updatedAt\": \"2026-11-17T19:27:45.048Z\", \"Products\": [{\"id\": 1, \"name\": \"Apple Juice (1000ml)\", \"description\": \"The all-time classic.\", \"price\": 1.99, \"deluxePrice\": 0.99, \"image\": \"apple_juice.jpg\", \"alternateImages\": [{\"file\": \"apple_juice-1x.avif\", \"format\": \"image/avif\", \"density\": \"1x\"}, {\"file\": \"apple_juice-2x.avif\", \"format\": \"image/avif\", \"density\": \"2x\"}, {\"file\": \"apple_juice-3x.avif\", \"format\": \"image/avif\", \"density\": \"3x\"}], \"createdAt\": \"2026-11-17T19:23:13.947Z\", \"updatedAt\": \"2026-11-17T19:23:13.947Z\", \"deletedAt\": null, \"BasketItem\": {\"ProductId\": 1, \"BasketId\": 7, \"id\": 10, \"quantity\": 1, \"createdAt\": \"2026-11-17T19:27:45.153Z\", \"updatedAt\": \"2026-11-17T19:27:45.153Z\"}}]}}",
+        "recortado": false,
+        "duracion_ms": 42,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "text/html; charset=utf-8",
+        "cuerpo": "<html>\n  <head>\n    <meta charset='utf-8'> \n    <title>UnauthorizedError: No Authorization header was found</title>\n    <style>* {\n  margin: 0;\n  padding: 0;\n  outline: 0;\n}\n\nbody {\n  padding: 80px 100px;\n  font: 13px \"Helvetica Neue\", \"Lucida Grande\", \"Arial\";\n  background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));\n  background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);\n  background-repeat: no-repeat;\n  color: #555;\n  -webkit-font-smoothing: antialiased;\n}\nh1, h2 {\n  font-size: 22px;\n  color: #343434;\n}\nh1 em, h2 em {\n  padding: 0 5px;\n  font-weight: normal;\n}\nh1 {\n  font-size: 60px;\n}\nh2 {\n  margin-top: 10px;\n}\nul li {\n  list-style: none;\n}\n#stacktrace {\n  margin-left: 60px;\n}\n</style>\n  </head>\n  <body>\n    <div id=\"wrapper\">\n      <h1>OWASP Juice Shop (Express ^4.22.1)</h1>\n      <h2><em>401</em> UnauthorizedError: No Authorization header was found</h2>\n      <ul id=\"stacktrace\"></ul>\n    </div>\n  </body>\n</html>\n",
+        "recortado": false,
+        "duracion_ms": 27,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-007",
+      "metodo": "GET",
+      "ruta": "/api/Addresss/8",
+      "sesion_base": "B",
+      "sesion_prueba": "A",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"UserId\": 26, \"id\": 8, \"fullName\": \"Titular Canario-B-43F95720\", \"mobileNum\": 912345678, \"zipCode\": \"2340000\", \"streetAddress\": \"Calle Canario-B-43F95720\", \"city\": \"Valparaíso\", \"state\": \"Valparaíso\", \"country\": \"Chile\", \"createdAt\": \"2026-11-17T19:27:45.065Z\", \"updatedAt\": \"2026-11-17T19:27:45.065Z\"}}",
+        "recortado": false,
+        "duracion_ms": 28,
+        "error": null
+      },
+      "cruce": {
+        "estado": 400,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"error\", \"data\": \"Malicious activity detected.\"}",
+        "recortado": false,
+        "duracion_ms": 23,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-008",
+      "metodo": "GET",
+      "ruta": "/api/Addresss/8",
+      "sesion_base": "B",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": {\"UserId\": 26, \"id\": 8, \"fullName\": \"Titular Canario-B-43F95720\", \"mobileNum\": 912345678, \"zipCode\": \"2340000\", \"streetAddress\": \"Calle Canario-B-43F95720\", \"city\": \"Valparaíso\", \"state\": \"Valparaíso\", \"country\": \"Chile\", \"createdAt\": \"2026-11-17T19:27:45.065Z\", \"updatedAt\": \"2026-11-17T19:27:45.065Z\"}}",
+        "recortado": false,
+        "duracion_ms": 28,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"error\", \"message\": \"Cannot read properties of undefined (reading 'data')\"}",
+        "recortado": false,
+        "duracion_ms": 25,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-009",
+      "metodo": "GET",
+      "ruta": "/rest/user/whoami?fields=id,email",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"user\": {\"id\": 25, \"email\": \"a.canario@prueba.cl\"}}",
+        "recortado": false,
+        "duracion_ms": 29,
+        "error": null
+      },
+      "cruce": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"user\": {}}",
+        "recortado": false,
+        "duracion_ms": 24,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-010",
+      "metodo": "GET",
+      "ruta": "/api/Addresss",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": [{\"UserId\": 25, \"id\": 7, \"fullName\": \"Titular Canario-A-3E5914F0\", \"mobileNum\": 912345678, \"zipCode\": \"2340000\", \"streetAddress\": \"Calle Canario-A-3E5914F0\", \"city\": \"Valparaíso\", \"state\": \"Valparaíso\", \"country\": \"Chile\", \"createdAt\": \"2026-11-17T19:27:44.897Z\", \"updatedAt\": \"2026-11-17T19:27:44.897Z\"}]}",
+        "recortado": false,
+        "duracion_ms": 27,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"error\", \"message\": \"Cannot read properties of undefined (reading 'data')\"}",
+        "recortado": false,
+        "duracion_ms": 26,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-011",
+      "metodo": "GET",
+      "ruta": "/api/Cards",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"success\", \"data\": [{\"UserId\": 25, \"id\": 7, \"fullName\": \"Titular Canario-A-688DFB18\", \"cardNum\": \"************4368\", \"expMonth\": 12, \"expYear\": 2090}]}",
+        "recortado": false,
+        "duracion_ms": 31,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "application/json; charset=utf-8",
+        "cuerpo": "{\"status\": \"error\", \"message\": \"Cannot read properties of undefined (reading 'data')\"}",
+        "recortado": false,
+        "duracion_ms": 18,
+        "error": null
+      },
+      "omitida": null
+    }
+  ],
+  "veredictos": [
+    {
+      "hipotesis": "H-001",
+      "tipo": "horizontal",
+      "endpoint": "GET /rest/basket/{id}",
+      "clase": "confirmado",
+      "motivo": "marca_del_dueno_en_el_mismo_campo",
+      "evidencia": "data.UserId = 25",
+      "decidido_por": "inventario",
+      "remediacion": {
+        "cwe": "CWE-639",
+        "debilidad": "Authorization Bypass Through User-Controlled Key",
+        "recomendacion": "Comprobar en el servidor, en cada petición, que el objeto solicitado pertenece al usuario autenticado: buscarlo filtrando por el usuario de la sesión además del identificador recibido, y responder 403 o 404 cuando no le pertenece. Aplicar la misma comprobación a todos los endpoints que reciben ese identificador y agregar una prueba automatizada con dos cuentas que verifique que una no puede leer los objetos de la otra."
+      }
+    },
+    {
+      "hipotesis": "H-002",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /rest/basket/{id}",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "inventario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-003",
+      "tipo": "horizontal",
+      "endpoint": "GET /api/Addresss/{id}",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 400",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-004",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Addresss/{id}",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-005",
+      "tipo": "horizontal",
+      "endpoint": "GET /rest/basket/{id}",
+      "clase": "confirmado",
+      "motivo": "marca_del_dueno_en_el_mismo_campo",
+      "evidencia": "data.UserId = 26",
+      "decidido_por": "inventario",
+      "remediacion": {
+        "cwe": "CWE-639",
+        "debilidad": "Authorization Bypass Through User-Controlled Key",
+        "recomendacion": "Comprobar en el servidor, en cada petición, que el objeto solicitado pertenece al usuario autenticado: buscarlo filtrando por el usuario de la sesión además del identificador recibido, y responder 403 o 404 cuando no le pertenece. Aplicar la misma comprobación a todos los endpoints que reciben ese identificador y agregar una prueba automatizada con dos cuentas que verifique que una no puede leer los objetos de la otra."
+      }
+    },
+    {
+      "hipotesis": "H-006",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /rest/basket/{id}",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "inventario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-007",
+      "tipo": "horizontal",
+      "endpoint": "GET /api/Addresss/{id}",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 400",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-008",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Addresss/{id}",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-009",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /rest/user/whoami?fields",
+      "clase": "descartado",
+      "motivo": "respuesta_sin_datos_del_dueno",
+      "evidencia": "la sesión de prueba recibió 200",
+      "decidido_por": "inventario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-010",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Addresss",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-011",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /api/Cards",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "canario",
+      "remediacion": null
+    }
+  ],
+  "resumen": {
+    "confirmado": 2,
+    "dudoso": 0,
+    "descartado": 9
+  },
+  "enviadas": 18,
+  "omitidas": {},
+  "duracion_s": 9.5
+}

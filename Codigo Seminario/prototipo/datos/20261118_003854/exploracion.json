@@ -1,0 +1,106 @@
+{
+  "ejecucion": "20261118_003854",
+  "fecha": "2026-11-18T00:38:54.613940",
+  "aplicacion": "OWASP crAPI",
+  "adaptador": "crapi",
+  "cuentas": [
+    {
+      "nombre": "A",
+      "correo": "a.canario@example.com",
+      "id_usuario": "8"
+    },
+    {
+      "nombre": "B",
+      "correo": "b.canario@example.com",
+      "id_usuario": "9"
+    }
+  ],
+  "inventario": [
+    {
+      "cuenta": "A",
+      "tipo": "vehiculo",
+      "id": "74c9555b-9905-46e0-a3c5-3b68ce589322",
+      "canario": "Canario-A-C9702320",
+      "endpoint": "/identity/api/v2/vehicle/{id}/location"
+    },
+    {
+      "cuenta": "A",
+      "tipo": "reporte",
+      "id": "10",
+      "canario": "Canario-A-8D065C65",
+      "endpoint": "/workshop/api/mechanic/mechanic_report"
+    },
+    {
+      "cuenta": "B",
+      "tipo": "vehiculo",
+      "id": "4cd00fc3-bcab-4c79-88a9-d96f46bb0919",
+      "canario": "Canario-B-725ED706",
+      "endpoint": "/identity/api/v2/vehicle/{id}/location"
+    },
+    {
+      "cuenta": "B",
+      "tipo": "reporte",
+      "id": "11",
+      "canario": "Canario-B-C4D3F823",
+      "endpoint": "/workshop/api/mechanic/mechanic_report"
+    }
+  ],
+  "peticiones": [
+    {
+      "id": "A-0008",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "POST",
+      "ruta": "/identity/api/auth/login",
+      "consulta": "",
+      "cuerpo_peticion": "{\"email\": \"a.canario@example.com\", \"password\": \"***\"}",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"token\": \"***\", \"type\": \"Bearer\", \"message\": \"Login successful\", \"mfaRequired\": false}",
+      "autenticada": false
+    },
+    {
+      "id": "A-0009",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/dashboard",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"id\": 8, \"name\": \"Titular Canario-A-C9702320\", \"email\": \"a.canario@example.com\", \"number\": \"9100130274\", \"picture_url\": null, \"video_url\": null, \"video_name\": null, \"available_credit\": 100.0, \"video_id\": 0, \"role\": \"ROLE_USER\"}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0039",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "POST",
+      "ruta": "/identity/api/auth/login",
+      "consulta": "",
+      "cuerpo_peticion": "{\"email\": \"b.canario@example.com\", \"password\": \"***\"}",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"token\": \"***\", \"type\": \"Bearer\", \"message\": \"Login successful\", \"mfaRequired\": false}",
+      "autenticada": false
+    },
+    {
+      "id": "B-0040",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/dashboard",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"id\": 9, \"name\": \"Titular Canario-B-725ED706\", \"email\": \"b.canario@example.com\", \"number\": \"9262773184\", \"picture_url\": null, \"video_url\": null, \"video_name\": null, \"available_credit\": 100.0, \"video_id\": 0, \"role\": \"ROLE_USER\"}",
+      "autenticada": true
+    }
+  ],
+  "descartadas": {
+    "fuera_del_alcance": 2,
+    "recurso_estatico": 79
+  }
+}

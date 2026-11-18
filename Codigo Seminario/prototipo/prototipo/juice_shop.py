@@ -1,17 +1,17 @@
-"""Adaptador de OWASP Juice Shop: registro, inicio de sesión y siembra de datos canario.
+"""Adaptador de OWASP Juice Shop: registro, inicio de sesión, siembra de datos canario y navegación.
 
-Es la única parte del Explorador que depende de la aplicación evaluada. Para otra aplicación
-(p. ej. crAPI) se escribe otro adaptador con las mismas funciones.
-Estas peticiones no pasan por el proxy: preparan el ambiente y no forman parte de la captura.
+Junto con crapi.py, es la única parte del sistema que depende de la aplicación evaluada; la interfaz
+común está descrita en adaptadores.py.
+Las peticiones de preparación no pasan por el proxy: preparan el ambiente y no forman parte de la captura.
 """
 import base64
 import json
-import secrets
-from dataclasses import dataclass, field
 
 import requests
 
 from prototipo.modelos import Alcance, CuentaExplorada, CuentaPrueba, ObjetoSembrado
+# Se reexportan para que el código y los verificadores que los importan desde aquí sigan funcionando
+from prototipo.sesion import SesionPreparada, cabeceras, nuevo_canario  # noqa: F401
 
 TIEMPO_ESPERA = 10  # segundos por petición
 
@@ -26,35 +26,11 @@ PARAMETROS = {"basketid": "canasta", "bid": "canasta", "userid": "usuario", "add
               "paymentid": "tarjeta", "cardid": "tarjeta", "basketitemid": "item_canasta"}
 
 
-@dataclass
-class SesionPreparada:
-    """Cuenta lista para explorar. El token vive solo en memoria y nunca se guarda en disco."""
-    cuenta: CuentaExplorada
-    token: str
-    inventario: list[ObjetoSembrado] = field(default_factory=list)
-
-
-def cabeceras(sesion: SesionPreparada | None) -> dict[str, str]:
-    """Cabeceras con que una sesión se autentica al repetir una petición; vacío si no hay sesión.
-
-    Juice Shop recibe el mismo token en la cabecera Authorization y en la cookie "token", igual que
-    lo envía el navegador después de iniciar sesión.
-    """
-    if sesion is None:
-        return {}
-    return {"Authorization": f"Bearer {sesion.token}", "Cookie": f"token={sesion.token}"}
-
-
 def verificar_disponible(url_base: str) -> None:
     try:
         requests.get(f"{url_base}/rest/admin/application-version", timeout=TIEMPO_ESPERA).raise_for_status()
     except requests.RequestException as e:
         raise RuntimeError(f"No se pudo contactar a {url_base}. ¿Está corriendo el contenedor de Juice Shop?") from e
-
-
-def nuevo_canario(nombre: str) -> str:
-    """Prefijo fijo y sufijo aleatorio, para que no pueda aparecer por casualidad (sección 7.3)."""
-    return f"Canario-{nombre}-{secrets.token_hex(4).upper()}"
 
 
 def _id_desde_token(token: str) -> str:
@@ -79,7 +55,10 @@ def preparar_cuenta(alcance: Alcance, c: CuentaPrueba) -> SesionPreparada:
     aut = _iniciar_sesion(url, c)
     token, id_usuario = aut["token"], _id_desde_token(aut["token"])
     cab = {"Authorization": f"Bearer {token}"}
-    sesion = SesionPreparada(CuentaExplorada(nombre=c.nombre, correo=c.correo, id_usuario=id_usuario), token)
+    # Juice Shop recibe el mismo token en la cabecera Authorization y en la cookie "token", igual que
+    # lo envía el navegador después de iniciar sesión. Así se repiten las peticiones en la validación.
+    sesion = SesionPreparada(CuentaExplorada(nombre=c.nombre, correo=c.correo, id_usuario=id_usuario), token,
+                             cabeceras_auth={"Authorization": f"Bearer {token}", "Cookie": f"token={token}"})
     inv = sesion.inventario
 
     inv.append(ObjetoSembrado(cuenta=c.nombre, tipo="usuario", id=id_usuario))
@@ -111,3 +90,23 @@ def preparar_cuenta(alcance: Alcance, c: CuentaPrueba) -> SesionPreparada:
 def preparar(alcance: Alcance) -> dict[str, SesionPreparada]:
     verificar_disponible(alcance.url_base)
     return {c.nombre: preparar_cuenta(alcance, c) for c in alcance.cuentas}
+
+
+# ---------- Navegador (Explorador, paso 3) ----------
+def preparar_contexto(ctx, alcance: Alcance) -> None:
+    """Cierra de antemano el aviso de bienvenida y el de cookies, que tapan el formulario de inicio de sesión."""
+    ctx.add_cookies([{"name": n, "value": "dismiss", "url": alcance.url_base}
+                     for n in ("welcomebanner_status", "cookieconsent_status")])
+
+
+def iniciar_sesion_navegador(pagina, alcance: Alcance, cuenta: CuentaPrueba) -> None:
+    """Inicia sesión en la interfaz. Si no llega a la página principal, avisa y la exploración sigue."""
+    from playwright.sync_api import TimeoutError as PlaywrightTimeout  # solo se necesita al navegar
+    pagina.goto(f"{alcance.url_base}/#/login")
+    pagina.fill("#email", cuenta.correo)
+    pagina.fill("#password", cuenta.clave)
+    pagina.click("#loginButton")
+    try:
+        pagina.wait_for_url("**/#/search", timeout=10000)
+    except PlaywrightTimeout:
+        print(f"   AVISO: la sesión {cuenta.nombre} no llegó a la página principal; revisa el inicio de sesión.")

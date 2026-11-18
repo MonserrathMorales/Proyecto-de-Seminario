@@ -1,0 +1,194 @@
+{
+  "ejecucion": "20261118_005934",
+  "fecha": "2026-11-18T01:02:26.373075",
+  "pares": [
+    {
+      "hipotesis": "H-001",
+      "metodo": "GET",
+      "ruta": "/workshop/api/mechanic/mechanic_report?report_id=18",
+      "sesion_base": "A",
+      "sesion_prueba": "B",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 18, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 52, \"vin\": \"TS62SL366MGHSL9B4\", \"owner\": {\"email\": \"a.canario@example.com\", \"number\": \"9100130274\"}}, \"problem_details\": \"Revisión Canario-A-5C7778F9\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 03:59:52\", \"updated_on\": null, \"comments\": []}",
+        "recortado": false,
+        "duracion_ms": 2203,
+        "error": null
+      },
+      "cruce": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 18, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 52, \"vin\": \"TS62SL366MGHSL9B4\", \"owner\": {\"email\": \"a.canario@example.com\", \"number\": \"9100130274\"}}, \"problem_details\": \"Revisión Canario-A-5C7778F9\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 03:59:52\", \"updated_on\": null, \"comments\": []}",
+        "recortado": false,
+        "duracion_ms": 2289,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-002",
+      "metodo": "GET",
+      "ruta": "/workshop/api/mechanic/mechanic_report?report_id=18",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 18, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 52, \"vin\": \"TS62SL366MGHSL9B4\", \"owner\": {\"email\": \"a.canario@example.com\", \"number\": \"9100130274\"}}, \"problem_details\": \"Revisión Canario-A-5C7778F9\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 03:59:52\", \"updated_on\": null, \"comments\": []}",
+        "recortado": false,
+        "duracion_ms": 2203,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"message\": \"JWT Token required!\"}",
+        "recortado": false,
+        "duracion_ms": 2062,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-003",
+      "metodo": "GET",
+      "ruta": "/workshop/api/mechanic/mechanic_report?report_id=19",
+      "sesion_base": "B",
+      "sesion_prueba": "A",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 19, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 53, \"vin\": \"4056GDAPJA50VH2C7\", \"owner\": {\"email\": \"b.canario@example.com\", \"number\": \"9262773184\"}}, \"problem_details\": \"Revisión Canario-B-8B9DFC76\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 04:00:05\", \"updated_on\": null, \"comments\": []}",
+        "recortado": false,
+        "duracion_ms": 2323,
+        "error": null
+      },
+      "cruce": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 19, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 53, \"vin\": \"4056GDAPJA50VH2C7\", \"owner\": {\"email\": \"b.canario@example.com\", \"number\": \"9262773184\"}}, \"problem_details\": \"Revisión Canario-B-8B9DFC76\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 04:00:05\", \"updated_on\": null, \"comments\": []}",
+        "recortado": false,
+        "duracion_ms": 2310,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-004",
+      "metodo": "GET",
+      "ruta": "/workshop/api/mechanic/mechanic_report?report_id=19",
+      "sesion_base": "B",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 19, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 53, \"vin\": \"4056GDAPJA50VH2C7\", \"owner\": {\"email\": \"b.canario@example.com\", \"number\": \"9262773184\"}}, \"problem_details\": \"Revisión Canario-B-8B9DFC76\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 04:00:05\", \"updated_on\": null, \"comments\": []}",
+        "recortado": false,
+        "duracion_ms": 2323,
+        "error": null
+      },
+      "cruce": {
+        "estado": 401,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"message\": \"JWT Token required!\"}",
+        "recortado": false,
+        "duracion_ms": 2063,
+        "error": null
+      },
+      "omitida": null
+    },
+    {
+      "hipotesis": "H-005",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/dashboard",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 8, \"name\": \"Titular Canario-A-C9702320\", \"email\": \"a.canario@example.com\", \"number\": \"9100130274\", \"picture_url\": null, \"video_url\": null, \"video_name\": null, \"available_credit\": 100.0, \"video_id\": 0, \"role\": \"ROLE_USER\"}",
+        "recortado": false,
+        "duracion_ms": 2072,
+        "error": null
+      },
+      "cruce": {
+        "estado": 404,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"message\": \"Given Email is not registered! \", \"status\": 404}",
+        "recortado": false,
+        "duracion_ms": 2077,
+        "error": null
+      },
+      "omitida": null
+    }
+  ],
+  "veredictos": [
+    {
+      "hipotesis": "H-001",
+      "tipo": "horizontal",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "clase": "confirmado",
+      "motivo": "canario_del_dueno",
+      "evidencia": "Canario-A-5C7778F9",
+      "decidido_por": "canario",
+      "remediacion": {
+        "cwe": "CWE-639",
+        "debilidad": "Authorization Bypass Through User-Controlled Key",
+        "recomendacion": "Comprobar en el servidor, en cada petición, que el objeto solicitado pertenece al usuario autenticado: buscarlo filtrando por el usuario de la sesión además del identificador recibido, y responder 403 o 404 cuando no le pertenece. Aplicar la misma comprobación a todos los endpoints que reciben ese identificador y agregar una prueba automatizada con dos cuentas que verifique que una no puede leer los objetos de la otra."
+      }
+    },
+    {
+      "hipotesis": "H-002",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-003",
+      "tipo": "horizontal",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "clase": "confirmado",
+      "motivo": "canario_del_dueno",
+      "evidencia": "Canario-B-8B9DFC76",
+      "decidido_por": "canario",
+      "remediacion": {
+        "cwe": "CWE-639",
+        "debilidad": "Authorization Bypass Through User-Controlled Key",
+        "recomendacion": "Comprobar en el servidor, en cada petición, que el objeto solicitado pertenece al usuario autenticado: buscarlo filtrando por el usuario de la sesión además del identificador recibido, y responder 403 o 404 cuando no le pertenece. Aplicar la misma comprobación a todos los endpoints que reciben ese identificador y agregar una prueba automatizada con dos cuentas que verifique que una no puede leer los objetos de la otra."
+      }
+    },
+    {
+      "hipotesis": "H-004",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 401",
+      "decidido_por": "canario",
+      "remediacion": null
+    },
+    {
+      "hipotesis": "H-005",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /identity/api/v2/user/dashboard",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 404",
+      "decidido_por": "canario",
+      "remediacion": null
+    }
+  ],
+  "resumen": {
+    "confirmado": 2,
+    "dudoso": 0,
+    "descartado": 3
+  },
+  "enviadas": 8,
+  "omitidas": {},
+  "duracion_s": 21.4
+}

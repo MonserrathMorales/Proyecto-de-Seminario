@@ -21,6 +21,9 @@ class CuentaPrueba(BaseModel):
 class Alcance(BaseModel):
     """Lista cerrada de lo que el sistema puede tocar. Se lee de un archivo y no se modifica durante la ejecución."""
     aplicacion: str
+    # Módulo que sabe preparar las cuentas y navegar esta aplicación (adaptadores.py). Por defecto Juice Shop,
+    # para que los alcances anteriores a crAPI sigan siendo válidos sin editarlos.
+    adaptador: Literal["juice_shop", "crapi"] = "juice_shop"
     url_base: str                              # p. ej. http://localhost:3000
     prefijos_api: list[str]                    # solo se analizan peticiones a estas rutas
     pantallas: list[str]                       # rutas de la interfaz que recorre el navegador
@@ -73,6 +76,8 @@ class ResultadoExploracion(BaseModel):
     ejecucion: str                             # identificador de la ejecución, p. ej. 20261114_1530
     fecha: datetime
     aplicacion: str
+    adaptador: str = "juice_shop"              # el Analista lo usa para leer ENDPOINTS y PARAMETROS; con este
+                                               # valor por defecto la evidencia anterior se sigue leyendo
     cuentas: list[CuentaExplorada]
     inventario: list[ObjetoSembrado]
     peticiones: list[PeticionCapturada]

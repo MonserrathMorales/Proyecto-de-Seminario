@@ -1,0 +1,315 @@
+{
+  "ejecucion": "20261118_005934",
+  "fecha": "2026-11-18T00:59:34.302741",
+  "aplicacion": "OWASP crAPI",
+  "adaptador": "crapi",
+  "cuentas": [
+    {
+      "nombre": "A",
+      "correo": "a.canario@example.com",
+      "id_usuario": "8"
+    },
+    {
+      "nombre": "B",
+      "correo": "b.canario@example.com",
+      "id_usuario": "9"
+    }
+  ],
+  "inventario": [
+    {
+      "cuenta": "A",
+      "tipo": "vehiculo",
+      "id": "74c9555b-9905-46e0-a3c5-3b68ce589322",
+      "canario": "Canario-A-C9702320",
+      "endpoint": "/identity/api/v2/vehicle/{id}/location"
+    },
+    {
+      "cuenta": "A",
+      "tipo": "reporte",
+      "id": "18",
+      "canario": "Canario-A-5C7778F9",
+      "endpoint": "/workshop/api/mechanic/mechanic_report"
+    },
+    {
+      "cuenta": "B",
+      "tipo": "vehiculo",
+      "id": "4cd00fc3-bcab-4c79-88a9-d96f46bb0919",
+      "canario": "Canario-B-725ED706",
+      "endpoint": "/identity/api/v2/vehicle/{id}/location"
+    },
+    {
+      "cuenta": "B",
+      "tipo": "reporte",
+      "id": "19",
+      "canario": "Canario-B-8B9DFC76",
+      "endpoint": "/workshop/api/mechanic/mechanic_report"
+    }
+  ],
+  "peticiones": [
+    {
+      "id": "A-0008",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "POST",
+      "ruta": "/identity/api/auth/login",
+      "consulta": "",
+      "cuerpo_peticion": "{\"email\": \"a.canario@example.com\", \"password\": \"***\"}",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"token\": \"***\", \"type\": \"Bearer\", \"message\": \"Login successful\", \"mfaRequired\": false}",
+      "autenticada": false
+    },
+    {
+      "id": "A-0009",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/dashboard",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"id\": 8, \"name\": \"Titular Canario-A-C9702320\", \"email\": \"a.canario@example.com\", \"number\": \"9100130274\", \"picture_url\": null, \"video_url\": null, \"video_name\": null, \"available_credit\": 100.0, \"video_id\": 0, \"role\": \"ROLE_USER\"}",
+      "autenticada": true
+    },
+    {
+      "id": "A-0011",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "POST",
+      "ruta": "/identity/api/auth/verify",
+      "consulta": "",
+      "cuerpo_peticion": "{\"token\": \"***\"}",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"message\": \"The token is a valid JWT token\", \"status\": 200}",
+      "autenticada": false
+    },
+    {
+      "id": "A-0019",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/vehicle/vehicles",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "[{\"id\": 52, \"uuid\": \"74c9555b-9905-46e0-a3c5-3b68ce589322\", \"pincode\": \"0696\", \"vin\": \"TS62SL366MGHSL9B4\", \"year\": 2026, \"status\": \"INACTIVE\", \"previousOwners\": [], \"model\": {\"id\": 4, \"model\": \"5 Series\", \"fuel_type\": \"PETROL\", \"vehicle_img\": \"images/bmw-5.jpg\", \"vehiclecompany\": {\"id\": 4, \"name\": \"BMW\"}}, \"vehicleLocation\": {\"id\": 3, \"latitude\": \"37.746880\", \"longitude\": \"-84.301460\"}, \"owner\": null}]",
+      "autenticada": true
+    },
+    {
+      "id": "A-0022",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/videos/0",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 404,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"message\": \"Video not found.\", \"status\": 404}",
+      "autenticada": true
+    },
+    {
+      "id": "A-0026",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/merchant/service_requests/null",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"service_requests\": [], \"next_offset\": null, \"previous_offset\": null, \"count\": 0}",
+      "autenticada": true
+    },
+    {
+      "id": "A-0031",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/mechanic/mechanic_report",
+      "consulta": "report_id=18",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"id\": 18, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 52, \"vin\": \"TS62SL366MGHSL9B4\", \"owner\": {\"email\": \"a.canario@example.com\", \"number\": \"9100130274\"}}, \"problem_details\": \"Revisión Canario-A-5C7778F9\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 03:59:52\", \"updated_on\": null, \"comments\": []}",
+      "autenticada": true
+    },
+    {
+      "id": "A-0035",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/shop/orders/all",
+      "consulta": "limit=30&offset=0",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"orders\": [], \"next_offset\": null, \"previous_offset\": null, \"count\": 0}",
+      "autenticada": true
+    },
+    {
+      "id": "A-0039",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/shop/products",
+      "consulta": "limit=30&offset=0",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"products\": [{\"id\": 2, \"name\": \"Wheel\", \"price\": \"10.00\", \"image_url\": \"images/wheel.svg\"}, {\"id\": 1, \"name\": \"Seat\", \"price\": \"10.00\", \"image_url\": \"images/seat.svg\"}], \"credit\": 100.0, \"next_offset\": null, \"previous_offset\": null, \"count\": 2}",
+      "autenticada": true
+    },
+    {
+      "id": "A-0044",
+      "sesion": "A",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/community/api/v2/community/posts/recent",
+      "consulta": "limit=30&offset=0",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"posts\": [{\"id\": \"mfgKSTMb9MRAvjNmJKvQTd\", \"title\": \"Title 3\", \"content\": \"Hello world 3\", \"author\": {\"nickname\": \"Robot\", \"email\": \"robot001@example.com\", \"vehicleid\": \"4bae9968-ec7f-4de3-a3a0-ba1b2ab5e5e5\", \"profile_pic_url\": \"\", \"created_at\": \"2026-11-03T18:41:44.632Z\"}, \"comments\": [], \"authorid\": 3, \"CreatedAt\": \"2026-11-03T18:41:44.632Z\"}, {\"id\": \"mBsRYYhHTLAnqTehjg6xCT\", \"title\": \"Title 2\", \"content\": \"Hello world 2\", \"author\": {\"nickname\": \"Pogba\", \"email\": \"pogba006@example.com\", \"vehicleid\": \"cd515c12-0fc1-48ae-8b61-9230b70a845b\", \"profile_pic_url\": \"\", \"created_at\": \"2026-11-03T18:41:44.631Z\"}, \"comments\": [], \"authorid\": 2, \"CreatedAt\": \"2026-11-03T18:41:44.631Z\"}, {\"id\": \"duRnYpaZ6AgebHBFhaA8UE\", \"title\": \"Title 1\", \"content\": \"Hello world 1\", \"author\": {\"nickname\": \"Adam\", \"email\": \"adam007@example.com\", \"vehicleid\": \"f89b5f21-7829-45cb-a650-299a61090378\", \"profile_pic_url\": \"\", \"created_at\": \"2026-11-03T18:41:44.609Z\"}, \"comments\": [], \"authorid\": 1, \"CreatedAt\": \"2026-11-03T18:41:44.609Z\"}], \"next_offset\": null, \"previous_offset\": null, \"total\": 3}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0053",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "POST",
+      "ruta": "/identity/api/auth/login",
+      "consulta": "",
+      "cuerpo_peticion": "{\"email\": \"b.canario@example.com\", \"password\": \"***\"}",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"token\": \"***\", \"type\": \"Bearer\", \"message\": \"Login successful\", \"mfaRequired\": false}",
+      "autenticada": false
+    },
+    {
+      "id": "B-0054",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/dashboard",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"id\": 9, \"name\": \"Titular Canario-B-725ED706\", \"email\": \"b.canario@example.com\", \"number\": \"9262773184\", \"picture_url\": null, \"video_url\": null, \"video_name\": null, \"available_credit\": 100.0, \"video_id\": 0, \"role\": \"ROLE_USER\"}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0056",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "POST",
+      "ruta": "/identity/api/auth/verify",
+      "consulta": "",
+      "cuerpo_peticion": "{\"token\": \"***\"}",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"message\": \"The token is a valid JWT token\", \"status\": 200}",
+      "autenticada": false
+    },
+    {
+      "id": "B-0059",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/vehicle/vehicles",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "[{\"id\": 53, \"uuid\": \"4cd00fc3-bcab-4c79-88a9-d96f46bb0919\", \"pincode\": \"7594\", \"vin\": \"4056GDAPJA50VH2C7\", \"year\": 2026, \"status\": \"INACTIVE\", \"previousOwners\": [], \"model\": {\"id\": 4, \"model\": \"5 Series\", \"fuel_type\": \"PETROL\", \"vehicle_img\": \"images/bmw-5.jpg\", \"vehiclecompany\": {\"id\": 4, \"name\": \"BMW\"}}, \"vehicleLocation\": {\"id\": 2, \"latitude\": \"31.284788\", \"longitude\": \"-92.471176\"}, \"owner\": null}]",
+      "autenticada": true
+    },
+    {
+      "id": "B-0068",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/videos/0",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 404,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"message\": \"Video not found.\", \"status\": 404}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0072",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/merchant/service_requests/null",
+      "consulta": "",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"service_requests\": [], \"next_offset\": null, \"previous_offset\": null, \"count\": 0}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0077",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/mechanic/mechanic_report",
+      "consulta": "report_id=19",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"id\": 19, \"mechanic\": {\"id\": 1, \"mechanic_code\": \"TRAC_JHN\", \"user\": {\"email\": \"jhon@example.com\", \"number\": \"\"}}, \"vehicle\": {\"id\": 53, \"vin\": \"4056GDAPJA50VH2C7\", \"owner\": {\"email\": \"b.canario@example.com\", \"number\": \"9262773184\"}}, \"problem_details\": \"Revisión Canario-B-8B9DFC76\", \"status\": \"pending\", \"created_on\": \"18 November, 2026, 04:00:05\", \"updated_on\": null, \"comments\": []}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0081",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/shop/orders/all",
+      "consulta": "limit=30&offset=0",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"orders\": [], \"next_offset\": null, \"previous_offset\": null, \"count\": 0}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0085",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/workshop/api/shop/products",
+      "consulta": "limit=30&offset=0",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"products\": [{\"id\": 2, \"name\": \"Wheel\", \"price\": \"10.00\", \"image_url\": \"images/wheel.svg\"}, {\"id\": 1, \"name\": \"Seat\", \"price\": \"10.00\", \"image_url\": \"images/seat.svg\"}], \"credit\": 100.0, \"next_offset\": null, \"previous_offset\": null, \"count\": 2}",
+      "autenticada": true
+    },
+    {
+      "id": "B-0090",
+      "sesion": "B",
+      "host": "localhost:8888",
+      "metodo": "GET",
+      "ruta": "/community/api/v2/community/posts/recent",
+      "consulta": "limit=30&offset=0",
+      "cuerpo_peticion": "",
+      "estado": 200,
+      "tipo_contenido": "application/json",
+      "cuerpo_respuesta": "{\"posts\": [{\"id\": \"mfgKSTMb9MRAvjNmJKvQTd\", \"title\": \"Title 3\", \"content\": \"Hello world 3\", \"author\": {\"nickname\": \"Robot\", \"email\": \"robot001@example.com\", \"vehicleid\": \"4bae9968-ec7f-4de3-a3a0-ba1b2ab5e5e5\", \"profile_pic_url\": \"\", \"created_at\": \"2026-11-03T18:41:44.632Z\"}, \"comments\": [], \"authorid\": 3, \"CreatedAt\": \"2026-11-03T18:41:44.632Z\"}, {\"id\": \"mBsRYYhHTLAnqTehjg6xCT\", \"title\": \"Title 2\", \"content\": \"Hello world 2\", \"author\": {\"nickname\": \"Pogba\", \"email\": \"pogba006@example.com\", \"vehicleid\": \"cd515c12-0fc1-48ae-8b61-9230b70a845b\", \"profile_pic_url\": \"\", \"created_at\": \"2026-11-03T18:41:44.631Z\"}, \"comments\": [], \"authorid\": 2, \"CreatedAt\": \"2026-11-03T18:41:44.631Z\"}, {\"id\": \"duRnYpaZ6AgebHBFhaA8UE\", \"title\": \"Title 1\", \"content\": \"Hello world 1\", \"author\": {\"nickname\": \"Adam\", \"email\": \"adam007@example.com\", \"vehicleid\": \"f89b5f21-7829-45cb-a650-299a61090378\", \"profile_pic_url\": \"\", \"created_at\": \"2026-11-03T18:41:44.609Z\"}, \"comments\": [], \"authorid\": 1, \"CreatedAt\": \"2026-11-03T18:41:44.609Z\"}], \"next_offset\": null, \"previous_offset\": null, \"total\": 3}",
+      "autenticada": true
+    }
+  ],
+  "descartadas": {
+    "fuera_del_alcance": 2,
+    "recurso_estatico": 87,
+    "duplicada": 7
+  }
+}

@@ -1,0 +1,99 @@
+﻿
+
+===== Comprobaciones previas =====
+mitmdump: C:\Seminario\prototipo\.venv\Scripts\mitmdump.EXE
+(código de salida: 0)
+
+===== Ollama =====
+Ollama responde. Modelos: gemma4:e4b, qwen3.5:9b, qwen3.5:4b
+
+===== python probar_crapi.py --grafo --modo reglas_llm =====
+Parte 1. Preparación de cuentas en http://localhost:8888 (MailHog en http://localhost:8025)
+
+   crAPI, cuenta A: ya existía, id 8, vehículo 74c9555b-9905-46e0-a3c5-3b68ce589322, reporte 16
+   crAPI, cuenta B: ya existía, id 9, vehículo 4cd00fc3-bcab-4c79-88a9-d96f46bb0919, reporte 17
+
+ Peticiones de preparación (no pasan por el proxy):
+   GET  /identity/health_check                                                  200  {"message": "Okay", "status": 200}
+   GET  /workshop/health_check/                                                 200  <html> <head> <title>System status</title> <meta name="viewport" content="width=device-width, initial-scale=1"
+   GET  /api/v2/messages?limit=1                                                200  {"total": 2, "count": 1, "start": 0, "items": [{"ID": "6U_EdXxBcHZOjG5q8TZOT1fGdvQVSlJWZAI33i6nRKg=@mailhog.ex
+   POST /identity/api/auth/signup                                               403  {"message": "Number already registered! Number: 9100130274", "status": 403}
+   POST /identity/api/auth/login                                                200  {"token": "***", "type": "Bearer", "message": "Login successful", "mfaRequired": false}
+   GET  /identity/api/v2/user/dashboard                                         200  {"id": 8, "name": "Titular Canario-A-C9702320", "email": "a.canario@example.com", "number": "9100130274", "pic
+   GET  /identity/api/v2/vehicle/vehicles                                       200  [{"id": 52, "uuid": "74c9555b-9905-46e0-a3c5-3b68ce589322", "pincode": "0696", "vin": "TS62SL366MGHSL9B4", "ye
+   GET  /workshop/api/mechanic/                                                 200  {"mechanics": [{"id": 1, "mechanic_code": "TRAC_JHN", "user": {"email": "jhon@example.com", "number": ""}}, {"
+   POST /workshop/api/merchant/contact_mechanic                                 200  {"response_from_mechanic_api": {"id": 16, "sent": true, "report_link": "http://localhost:8888/workshop/api/mec
+   POST /identity/api/auth/signup                                               403  {"message": "Number already registered! Number: 9262773184", "status": 403}
+   POST /identity/api/auth/login                                                200  {"token": "***", "type": "Bearer", "message": "Login successful", "mfaRequired": false}
+   GET  /identity/api/v2/user/dashboard                                         200  {"id": 9, "name": "Titular Canario-B-725ED706", "email": "b.canario@example.com", "number": "9262773184", "pic
+   GET  /identity/api/v2/vehicle/vehicles                                       200  [{"id": 53, "uuid": "4cd00fc3-bcab-4c79-88a9-d96f46bb0919", "pincode": "7594", "vin": "4056GDAPJA50VH2C7", "ye
+   GET  /workshop/api/mechanic/                                                 200  {"mechanics": [{"id": 1, "mechanic_code": "TRAC_JHN", "user": {"email": "jhon@example.com", "number": ""}}, {"
+   POST /workshop/api/merchant/contact_mechanic                                 200  {"response_from_mechanic_api": {"id": 17, "sent": true, "report_link": "http://localhost:8888/workshop/api/mec
+
+ Inventario sembrado:
+   A  vehiculo 74c9555b-9905-46e0-a3c5-3b68ce589322  Canario-A-C9702320   /identity/api/v2/vehicle/{id}/location
+   A  reporte  16                                    Canario-A-3D491FD4   /workshop/api/mechanic/mechanic_report
+   B  vehiculo 4cd00fc3-bcab-4c79-88a9-d96f46bb0919  Canario-B-725ED706   /identity/api/v2/vehicle/{id}/location
+   B  reporte  17                                    Canario-B-BD9C8070   /workshop/api/mechanic/mechanic_report
+
+ Valores reales (Datos que hay que confirmar):
+   Dashboard: campos ['available_credit', 'email', 'id', 'name', 'number', 'picture_url', 'role', 'video_id', 'video_name', 'video_url']; id = 8; name = 'Titular Canario-A-C9702320'
+   ¿El nombre aceptó el canario?: sí
+   Correo del VIN: asunto Welcome to crAPI, codificación quoted-printable; texto: ...VIN: TS62SL366MGHSL9B4 and Pincode: 0696 We're here to help ...
+   contact_mechanic -> 200: {"response_from_mechanic_api":{"id":16,"sent":true,"report_link":"http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=16"},"status":200}
+   contact_mechanic -> 200: {"response_from_mechanic_api":{"id":17,"sent":true,"report_link":"http://localhost:8888/workshop/api/mechanic/mechanic_report?report_id=17"},"status":200}
+   mechanic_report de A pedido por A -> 200; campos ['comments', 'created_on', 'id', 'mechanic', 'problem_details', 'status', 'updated_on', 'vehicle']; ¿trae el canario?: sí
+
+[OK] crAPI, identity, workshop y MailHog responden
+[OK] A y B tienen vehículo y reporte en el inventario
+[OK] El reporte guarda su canario y crAPI lo devuelve en mechanic_report
+[OK] Ningún token aparece en lo impreso
+
+Parte 2. Grafo completo con alcance_crapi.json, modo reglas_llm (se abre el navegador)...
+   crAPI, cuenta A: ya existía, id 8, vehículo 74c9555b-9905-46e0-a3c5-3b68ce589322, reporte 18
+   crAPI, cuenta B: ya existía, id 9, vehículo 4cd00fc3-bcab-4c79-88a9-d96f46bb0919, reporte 19
+   Sesión A: 7 pantallas recorridas
+   Sesión B: 7 pantallas recorridas
+   Sesión anonima: 6 pantallas recorridas
+   explorador  ok      111.0 s  {'conservadas': 20, 'descartadas': {'fuera_del_alcance': 2, 'recurso_estatico': 87, 'duplicada': 7}, 'por_sesion': {'A': 10, 'B': 10, 'anonima': 0}, 'inventario': 4}
+   analista    ok       39.6 s  {'modo': 'reglas_llm', 'endpoints': 10, 'candidatos': 4, 'por_inventario': 2, 'consultas_llm': 2, 'hipotesis': 5, 'omitidas': {'sin_datos_propios': 5}}
+   validacion  ok       21.4 s  {'hipotesis': 5, 'enviadas': 8, 'omitidas': {}, 'confirmado': 2, 'dudoso': 0, 'descartado': 3}
+   cerrar      ok        0.0 s  {}
+
+ Endpoints observados:
+   POST /identity/api/auth/login                                                A,B
+   GET /identity/api/v2/user/dashboard                                          A,B
+   POST /identity/api/auth/verify                                               A,B
+   GET /identity/api/v2/vehicle/vehicles                                        A,B
+   GET /identity/api/v2/user/videos/{id}                                        A,B
+   GET /workshop/api/merchant/service_requests/null                             A,B
+   GET /workshop/api/mechanic/mechanic_report?report_id                         A,B
+   GET /workshop/api/shop/orders/all?limit&offset                               A,B
+   GET /workshop/api/shop/products?limit&offset                                 A,B
+   GET /community/api/v2/community/posts/recent?limit&offset                    A,B
+
+ Id    Tipo       Endpoint                                            Objeto    Prueba   Veredicto   Motivo
+ H-001 horizontal GET /workshop/api/mechanic/mechanic_report?report_i reporte   B        confirmado  canario_del_dueno  [Canario-A-5C7778F9]
+ H-002 sin_sesion GET /workshop/api/mechanic/mechanic_report?report_i reporte   anonima  descartado  acceso_denegado
+ H-003 horizontal GET /workshop/api/mechanic/mechanic_report?report_i reporte   A        confirmado  canario_del_dueno  [Canario-B-8B9DFC76]
+ H-004 sin_sesion GET /workshop/api/mechanic/mechanic_report?report_i reporte   anonima  descartado  acceso_denegado
+ H-005 sin_sesion GET /identity/api/v2/user/dashboard                 -         anonima  descartado  acceso_denegado
+
+ Resumen: {'confirmado': 2, 'dudoso': 0, 'descartado': 3}   Peticiones enviadas: 8   Omitidas: ninguna
+ Analista: modo reglas_llm, modelo gemma4:e4b, consultas al modelo 2, 39.6 s
+   candidato A GET /identity/api/v2/user/videos/{id}                    videos=0                     llm        -  El parámetro 'nombre=videos' con valor '0' en la ruta no identifica un
+   candidato A GET /workshop/api/mechanic/mechanic_report?report_id     report_id=18                    inventario A  reporte sembrado en la cuenta A
+   candidato B GET /identity/api/v2/user/videos/{id}                    videos=0                     llm        -  El parámetro 'nombre=videos' con valor '0' en la ruta no identifica un
+   candidato B GET /workshop/api/mechanic/mechanic_report?report_id     report_id=19                    inventario B  reporte sembrado en la cuenta B
+ Ubicación del vehículo (BOLA 1) en la evidencia: 0 peticiones (esperable: solo se pide al pulsar Refresh Location)
+
+[OK] El grafo ejecutó explorador, analista, validacion y cerrar
+[OK] El reporte de mecánico de una cuenta, pedido por la otra, queda confirmado (BOLA 2)
+[OK] Las pruebas sin sesión del reporte quedan descartadas
+[OK] Ni datos/<ejecucion>/ ni el estado del grafo contienen tokens (Bearer <token> ni eyJ)
+[OK] Las sesiones se liberaron de la memoria al cerrar
+
+Evidencia en datos\20261118_005934
+(código de salida: 0)
+
+===== FIN =====

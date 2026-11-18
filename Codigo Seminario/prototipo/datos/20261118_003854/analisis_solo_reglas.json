@@ -1,0 +1,61 @@
+{
+  "ejecucion": "20261118_003854",
+  "fecha": "2026-11-18T00:40:51.314645",
+  "modo": "solo_reglas",
+  "modelo": null,
+  "endpoints": [
+    {
+      "clave": "POST /identity/api/auth/login",
+      "metodo": "POST",
+      "plantilla": "/identity/api/auth/login",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0008",
+        "B-0039"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /identity/api/v2/user/dashboard",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/user/dashboard",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0009",
+        "B-0040"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    }
+  ],
+  "candidatos": [],
+  "hipotesis": [
+    {
+      "id": "H-001",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /identity/api/v2/user/dashboard",
+      "peticion_origen": "A-0009",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": null,
+      "valor": null,
+      "ubicacion": null,
+      "objeto": null,
+      "origen": "regla",
+      "verificacion": "canario",
+      "canario": "Canario-A-C9702320",
+      "marca_dueno": null
+    }
+  ],
+  "omitidas": {},
+  "consultas_llm": 0,
+  "duracion_s": 0.0
+}

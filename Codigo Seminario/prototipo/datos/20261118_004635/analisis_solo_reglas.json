@@ -1,0 +1,319 @@
+{
+  "ejecucion": "20261118_004635",
+  "fecha": "2026-11-18T00:48:27.722278",
+  "modo": "solo_reglas",
+  "modelo": null,
+  "endpoints": [
+    {
+      "clave": "POST /identity/api/auth/login",
+      "metodo": "POST",
+      "plantilla": "/identity/api/auth/login",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0009",
+        "B-0055"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /identity/api/v2/user/dashboard",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/user/dashboard",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0010",
+        "B-0056"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "POST /identity/api/auth/verify",
+      "metodo": "POST",
+      "plantilla": "/identity/api/auth/verify",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0012",
+        "B-0058"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": false
+    },
+    {
+      "clave": "GET /identity/api/v2/vehicle/vehicles",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/vehicle/vehicles",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0020",
+        "B-0060"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /identity/api/v2/user/videos/{id}",
+      "metodo": "GET",
+      "plantilla": "/identity/api/v2/user/videos/{id}",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0023",
+        "B-0070"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/merchant/service_requests/null",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/merchant/service_requests/null",
+      "parametros_consulta": [],
+      "peticiones": [
+        "A-0027",
+        "B-0074"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/mechanic/mechanic_report",
+      "parametros_consulta": [
+        "report_id"
+      ],
+      "peticiones": [
+        "A-0032",
+        "B-0079"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/shop/orders/all?limit&offset",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/shop/orders/all",
+      "parametros_consulta": [
+        "limit",
+        "offset"
+      ],
+      "peticiones": [
+        "A-0036",
+        "B-0083"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /workshop/api/shop/products?limit&offset",
+      "metodo": "GET",
+      "plantilla": "/workshop/api/shop/products",
+      "parametros_consulta": [
+        "limit",
+        "offset"
+      ],
+      "peticiones": [
+        "A-0040",
+        "B-0087"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    },
+    {
+      "clave": "GET /community/api/v2/community/posts/recent?limit&offset",
+      "metodo": "GET",
+      "plantilla": "/community/api/v2/community/posts/recent",
+      "parametros_consulta": [
+        "limit",
+        "offset"
+      ],
+      "peticiones": [
+        "A-0046",
+        "B-0092"
+      ],
+      "sesiones": [
+        "A",
+        "B"
+      ],
+      "autenticada": true
+    }
+  ],
+  "candidatos": [
+    {
+      "peticion": "A-0023",
+      "endpoint": "GET /identity/api/v2/user/videos/{id}",
+      "sesion": "A",
+      "parametro": "videos",
+      "valor": "0",
+      "ubicacion": "ruta",
+      "decidido_por": "regla",
+      "es_identificador": false,
+      "visibilidad": null,
+      "cuenta_duena": null,
+      "objeto": null,
+      "justificacion": "fuera del inventario; sin LLM no se puede decidir"
+    },
+    {
+      "peticion": "A-0032",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "sesion": "A",
+      "parametro": "report_id",
+      "valor": "14",
+      "ubicacion": "consulta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "A",
+      "objeto": "reporte",
+      "justificacion": "reporte sembrado en la cuenta A"
+    },
+    {
+      "peticion": "B-0070",
+      "endpoint": "GET /identity/api/v2/user/videos/{id}",
+      "sesion": "B",
+      "parametro": "videos",
+      "valor": "0",
+      "ubicacion": "ruta",
+      "decidido_por": "regla",
+      "es_identificador": false,
+      "visibilidad": null,
+      "cuenta_duena": null,
+      "objeto": null,
+      "justificacion": "fuera del inventario; sin LLM no se puede decidir"
+    },
+    {
+      "peticion": "B-0079",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "sesion": "B",
+      "parametro": "report_id",
+      "valor": "15",
+      "ubicacion": "consulta",
+      "decidido_por": "inventario",
+      "es_identificador": true,
+      "visibilidad": "privado",
+      "cuenta_duena": "B",
+      "objeto": "reporte",
+      "justificacion": "reporte sembrado en la cuenta B"
+    }
+  ],
+  "hipotesis": [
+    {
+      "id": "H-001",
+      "tipo": "horizontal",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "A-0032",
+      "sesion_origen": "A",
+      "sesion_prueba": "B",
+      "cuenta_duena": "A",
+      "parametro": "report_id",
+      "valor": "14",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-A-81FED5AF",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-002",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "A-0032",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": "report_id",
+      "valor": "14",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-A-81FED5AF",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-003",
+      "tipo": "horizontal",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "B-0079",
+      "sesion_origen": "B",
+      "sesion_prueba": "A",
+      "cuenta_duena": "B",
+      "parametro": "report_id",
+      "valor": "15",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-B-CBD2B907",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-004",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /workshop/api/mechanic/mechanic_report?report_id",
+      "peticion_origen": "B-0079",
+      "sesion_origen": "B",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "B",
+      "parametro": "report_id",
+      "valor": "15",
+      "ubicacion": "consulta",
+      "objeto": "reporte",
+      "origen": "inventario",
+      "verificacion": "canario",
+      "canario": "Canario-B-CBD2B907",
+      "marca_dueno": null
+    },
+    {
+      "id": "H-005",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /identity/api/v2/user/dashboard",
+      "peticion_origen": "A-0010",
+      "sesion_origen": "A",
+      "sesion_prueba": "anonima",
+      "cuenta_duena": "A",
+      "parametro": null,
+      "valor": null,
+      "ubicacion": null,
+      "objeto": null,
+      "origen": "regla",
+      "verificacion": "canario",
+      "canario": "Canario-A-C9702320",
+      "marca_dueno": null
+    }
+  ],
+  "omitidas": {
+    "sin_datos_propios": 5
+  },
+  "consultas_llm": 0,
+  "duracion_s": 0.0
+}

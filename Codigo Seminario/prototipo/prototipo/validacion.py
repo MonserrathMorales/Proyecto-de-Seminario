@@ -15,11 +15,11 @@ from pathlib import Path
 import requests
 
 from prototipo.cruce import PAUSA, cruzar
-from prototipo.juice_shop import SesionPreparada
 from prototipo.modelos import (Alcance, Hipotesis, ParCruzado, ResultadoAnalisis, ResultadoExploracion,
                                ResultadoValidacion, Veredicto)
 from prototipo.oraculo import juzgar
 from prototipo.remediacion import sugerir
+from prototipo.sesion import SesionPreparada
 
 CLASES = ("confirmado", "dudoso", "descartado")
 

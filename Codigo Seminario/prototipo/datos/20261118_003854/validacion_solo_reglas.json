@@ -1,0 +1,50 @@
+{
+  "ejecucion": "20261118_003854",
+  "fecha": "2026-11-18T00:40:56.455347",
+  "pares": [
+    {
+      "hipotesis": "H-001",
+      "metodo": "GET",
+      "ruta": "/identity/api/v2/user/dashboard",
+      "sesion_base": "A",
+      "sesion_prueba": "anonima",
+      "base": {
+        "estado": 200,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"id\": 8, \"name\": \"Titular Canario-A-C9702320\", \"email\": \"a.canario@example.com\", \"number\": \"9100130274\", \"picture_url\": null, \"video_url\": null, \"video_name\": null, \"available_credit\": 100.0, \"video_id\": 0, \"role\": \"ROLE_USER\"}",
+        "recortado": false,
+        "duracion_ms": 2064,
+        "error": null
+      },
+      "cruce": {
+        "estado": 404,
+        "tipo_contenido": "application/json",
+        "cuerpo": "{\"message\": \"Given Email is not registered! \", \"status\": 404}",
+        "recortado": false,
+        "duracion_ms": 2072,
+        "error": null
+      },
+      "omitida": null
+    }
+  ],
+  "veredictos": [
+    {
+      "hipotesis": "H-001",
+      "tipo": "sin_sesion",
+      "endpoint": "GET /identity/api/v2/user/dashboard",
+      "clase": "descartado",
+      "motivo": "acceso_denegado",
+      "evidencia": "la sesión de prueba recibió 404",
+      "decidido_por": "canario",
+      "remediacion": null
+    }
+  ],
+  "resumen": {
+    "confirmado": 0,
+    "dudoso": 0,
+    "descartado": 1
+  },
+  "enviadas": 2,
+  "omitidas": {},
+  "duracion_s": 5.1
+}

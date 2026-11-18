@@ -18,8 +18,8 @@ from langgraph.graph import END, START, StateGraph
 from prototipo import analista as mod_analista
 from prototipo import explorador as mod_explorador
 from prototipo import validacion as mod_validacion
-from prototipo.juice_shop import SesionPreparada
 from prototipo.modelos import Alcance
+from prototipo.sesion import SesionPreparada
 
 SESIONES: dict[str, dict[str, SesionPreparada]] = {}  # ejecucion -> sesiones (solo en memoria)
 

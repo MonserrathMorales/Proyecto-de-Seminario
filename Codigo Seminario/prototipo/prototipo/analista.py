@@ -23,7 +23,7 @@ def analizar(ruta_exploracion: str | Path, modo: Modo = "reglas_llm") -> Resulta
     ruta_exploracion = Path(ruta_exploracion)
     r = ResultadoExploracion.model_validate_json(ruta_exploracion.read_text(encoding="utf-8"))
 
-    candidatos = resolver(extraer(r.peticiones), Inventario(r.inventario))   # pasos 2 y 3
+    candidatos = resolver(extraer(r.peticiones), Inventario(r.inventario, r.adaptador))   # pasos 2 y 3
     pendientes = [c for c in candidatos if c.decidido_por is None]
     clasificador = None
     if modo == "reglas_llm" and pendientes:                                    # paso 4, solo si hace falta

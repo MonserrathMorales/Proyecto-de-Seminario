@@ -3,6 +3,7 @@
 A diferencia de la prueba de concepto, aquí el propio Explorador arranca y detiene la captura,
 etiqueta cada petición con su sesión y entrega las peticiones como objetos PeticionCapturada.
 La combinación de Playwright y mitmproxy es la validada por A2CT (Schlaubitz et al., 2025).
+Lo propio de cada aplicación (cookies, formulario de inicio de sesión) lo hace su adaptador (adaptadores.py).
 """
 import shutil
 import subprocess
@@ -11,11 +12,11 @@ import time
 from pathlib import Path
 
 from mitmproxy import http, io
-from playwright.sync_api import TimeoutError as PlaywrightTimeout
 from playwright.sync_api import sync_playwright
 
-from prototipo.juice_shop import SesionPreparada
+from prototipo.adaptadores import adaptador_de
 from prototipo.modelos import Alcance, PeticionCapturada
+from prototipo.sesion import SesionPreparada
 
 ESPERA_PANTALLA = 3000  # ms por pantalla, para que termine sus llamadas a la API
 CABECERA_SESION = "X-Sesion"  # etiqueta que agrega el navegador; no la envía la aplicación
@@ -52,7 +53,8 @@ def _arrancar_proxy(puerto: int, archivo: Path) -> subprocess.Popen:
 
 
 def pantallas_de(alcance: Alcance, preparada: SesionPreparada | None) -> list[str]:
-    """Completa las pantallas con ids del inventario, p. ej. /#/address/edit/{direccion} -> /#/address/edit/7.
+    """Completa las pantallas con ids del inventario, p. ej. /#/address/edit/{direccion} -> /#/address/edit/7,
+    o /service-report?id={reporte} -> /service-report?id=5 (el "?" no afecta a str.format).
 
     Las pantallas con un id que la sesión no tiene (o la sesión anónima) se omiten.
     """
@@ -68,19 +70,12 @@ def pantallas_de(alcance: Alcance, preparada: SesionPreparada | None) -> list[st
 
 def _navegar(navegador, alcance: Alcance, sesion: str, cuenta, preparada: SesionPreparada | None = None) -> None:
     """Recorre las pantallas del alcance con una sesión. cuenta es None para la sesión anónima."""
+    adaptador = adaptador_de(alcance.adaptador)
     ctx = navegador.new_context(extra_http_headers={CABECERA_SESION: sesion})
-    ctx.add_cookies([{"name": n, "value": "dismiss", "url": alcance.url_base}
-                     for n in ("welcomebanner_status", "cookieconsent_status")])  # tapan el formulario
+    adaptador.preparar_contexto(ctx, alcance)
     pagina = ctx.new_page()
     if cuenta is not None:
-        pagina.goto(f"{alcance.url_base}/#/login")
-        pagina.fill("#email", cuenta.correo)
-        pagina.fill("#password", cuenta.clave)
-        pagina.click("#loginButton")
-        try:
-            pagina.wait_for_url("**/#/search", timeout=10000)
-        except PlaywrightTimeout:
-            print(f"   AVISO: la sesión {sesion} no llegó a la página principal; revisa el inicio de sesión.")
+        adaptador.iniciar_sesion_navegador(pagina, alcance, cuenta)
     rutas = pantallas_de(alcance, preparada)
     for ruta in rutas:
         pagina.goto(f"{alcance.url_base}{ruta}")

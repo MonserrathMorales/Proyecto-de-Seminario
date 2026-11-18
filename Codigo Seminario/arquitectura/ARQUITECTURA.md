@@ -18,28 +18,28 @@ El Seminario implementa tres agentes, coordinados por un orquestador:
 
 Quedan para el Proyecto de Título: el LLM de respaldo para los resultados dudosos, la aprobación humana (RF07), el Redactor del reporte (RF08), las pruebas verticales (BFLA), las escrituras, crAPI y la aplicación propia. Su pseudocódigo (sección 8) es una propuesta.
 
-**Nombres antiguos y actuales.** Los nombres del código son los oficiales. El informe v9 y la primera versión de este documento hablaban de un Ejecutor y un Juez, y el informe v10, de un Agente de Remediación / Validación y un Juez. En el código son un solo agente, Validación y Remediación, que además entrega la corrección sugerida de cada hallazgo confirmado. "Juez" se reserva para el concepto de LLM como juez (sección 4.4 del informe); la parte determinista se llama oráculo.
+**Nombres antiguos y actuales.** El informe v9 y la primera versión de este documento hablaban de un Ejecutor y un Juez. En el código ya no existen con esos nombres: son un solo agente, Validación y Remediación, que además entrega la corrección sugerida de cada hallazgo confirmado.
 
 | Nombre antiguo | Nombre actual | Archivo |
 |---|---|---|
-| Ejecutor; Agente de Remediación / Validación (informe v10) | Validación y Remediación, pasos 1 y 2 (guardia y cruce) | `cruce.py` |
+| Ejecutor | Validación y Remediación, pasos 1 y 2 (guardia y cruce) | `cruce.py` |
 | Juez (etapa determinista) | Validación y Remediación, paso 3 (oráculo) | `oraculo.py` |
 | — | Validación y Remediación, paso 4 (corrección sugerida) | `remediacion.py` |
 | `ejecucion.json` y `veredictos.json` | `validacion.json` | — |
 | Nodos `ejecutor` y `juez` | Nodo `validacion` | `grafo.py` |
-| Juez con LLM (Proyecto) | LLM de respaldo del agente de Validación y Remediación | — |
+| Juez con LLM (Proyecto) | LLM de respaldo para los dudosos | — |
 
-El informe v11 ya usa estos nombres: la Tabla 6.1 tiene una sola fila para el Agente de Validación y Remediación, y las secciones 3.3, 6.1, 6.2, 7.4, 8.3, 8.4 y 9, la Tabla 7.1, las Figuras 6.1, 7.1 y 8.1 y el Anexo A se actualizaron.
+La Tabla 6.1 y la sección 8.4 del informe deben actualizarse con estos nombres.
 
 ## 2. Principios de diseño
 
 1. **Flujo de trabajo, no agente autónomo.** El orden de las etapas está fijado en el código; el LLM solo decide donde hay que interpretar la aplicación.
 2. **El LLM nunca confirma una fuga.** La confirmación la hace un oráculo determinista con datos canario o con el inventario; lo que el oráculo no puede decidir queda como "dudoso".
-3. **Lista cerrada.** Toda petición se construye a partir de `url_base` del archivo de alcance. Ningún componente acepta una URL de otra fuente (RNF10).
-4. **Solo lectura sobre lo observado.** Solo se repiten peticiones GET que el Explorador ya observó, sin alterar identificadores, sin enumerar y sin recorrer rutas nuevas (RNF02, RNF11).
+3. **Lista cerrada.** Toda petición se construye a partir de `url_base` del archivo de alcance. Ningún componente acepta una URL de otra fuente.
+4. **Solo lectura sobre lo observado.** Solo se repiten peticiones GET que el Explorador ya observó, sin alterar identificadores, sin enumerar y sin recorrer rutas nuevas.
 5. **Secretos fuera del disco.** Tokens y claves viven solo en memoria; la evidencia y el estado del grafo no los contienen (RNF06).
 6. **Etapas en secuencia.** El navegador, el modelo y las peticiones cruzadas nunca coinciden en memoria (RNF03).
-7. **Cada etapa deja evidencia.** Todo resultado se guarda como JSON validado, de modo que cualquier métrica pueda recalcularse (RNF09).
+7. **Cada etapa deja evidencia.** Todo resultado se guarda como JSON validado, de modo que cualquier métrica pueda recalcularse (RNF04).
 8. **Las respuestas son datos.** El contenido de la aplicación evaluada nunca se interpreta como instrucción (RNF05).
 
 ## 3. Componentes
@@ -473,7 +473,7 @@ función sin_fuga(cruce):
 
 ## 8. Componentes del Proyecto de Título (propuesta)
 
-### 8.1 LLM de respaldo para los dudosos (RF14)
+### 8.1 LLM de respaldo para los dudosos
 
 ```text
 para cada veredicto "dudoso" con motivo "requiere_llm" o "respuesta_no_json":
@@ -493,20 +493,20 @@ nodo aprobacion:
 
 Requiere reemplazar `InMemorySaver` por un checkpointer persistente y volver a iniciar sesión si el grafo se reanuda en otro proceso, porque los tokens no sobreviven al cierre.
 
-### 8.3 Redactor (RF08, RNF07)
+### 8.3 Redactor (RF08)
 
 ```text
 para cada hallazgo aprobado:
     datos fijos ← endpoint, tipo, par de petición y respuesta, veredicto, CWE y corrección de la plantilla
     texto ← LLM(<datos> hallazgo </datos>) con esquema {descripcion, vector_cvss4, correccion_adaptada}
-    enmascarar datos personales y canarios en la evidencia                   # RNF07
+    enmascarar datos personales y canarios en la evidencia                   # RNF06
 escribir reporte.md con plantilla: resumen ejecutivo, hallazgos, cobertura alcanzada, lo no probado
 ```
 
 ### 8.4 Lo que queda fuera del Seminario
 
-- Pruebas verticales (BFLA) con una cuenta de administrador (RF13).
-- Escrituras en el ambiente de pruebas (RNF02).
+- Pruebas verticales (BFLA) con una cuenta de administrador.
+- Escrituras en el ambiente de pruebas.
 - Importar la especificación OpenAPI (RF03).
 - Repetir el cruce tras una corrección (RF09).
 - Adaptadores de crAPI y de la aplicación propia.
@@ -534,49 +534,30 @@ Ningún archivo contiene claves ni tokens. Los verificadores comprueban que no a
 
 ## 11. Trazabilidad con los requerimientos
 
-Los identificadores y estados son los del Anexo A del informe v11 (17 de noviembre de 2026), donde está el texto completo de cada requerimiento, su criterio de verificación y su origen.
-
 | Requerimiento | Dónde se cumple | Estado |
 |---|---|---|
-| RF01 Alcance autorizado y vigencia | `Alcance.comprobar_vigencia()` en el Explorador y en Validación y Remediación | Parcial: faltan las fechas en `alcance_juice.json` |
-| RF02 Explorar con cada cuenta y sin sesión | Explorador (`captura.py`) | Hecho |
-| RF03 Importar OpenAPI | Analista | Proyecto (opcional) |
-| RF04 Inventariar endpoints, identificadores y dueños | Analista, pasos 1 a 4 | Hecho |
-| RF05 Pruebas cruzadas horizontales y sin sesión | Validación y Remediación, pasos 1 y 2 (`cruce.py`) | Parcial: falta la corrida contra Juice Shop |
-| RF06 Clasificar con el oráculo determinista | Validación y Remediación, paso 3 (`oraculo.py`) | Parcial: falta la corrida contra Juice Shop |
-| RF07 Revisión humana | Orquestador (nodo de aprobación) | Proyecto |
-| RF08 Reporte | Redactor | Proyecto |
-| RF09 Repetir tras la corrección | Validación y Remediación | Proyecto |
+| RF01 Alcance autorizado | `Alcance`; guardia del cruce | Hecho; faltan las fechas en `alcance_juice.json` |
+| RF02 Explorar con cada cuenta y sin sesión | Explorador | Hecho |
+| RF03 Importar OpenAPI | Analista | Proyecto |
+| RF04 Inventariar endpoints, identificadores y dueños | Analista | Hecho |
+| RF05 Pruebas cruzadas | Validación y Remediación, pasos 1 y 2 | Horizontal y sin sesión implementadas; vertical en el Proyecto |
+| RF06 Clasificar confirmado, dudoso o descartado | Validación y Remediación, paso 3 | Oráculo determinista implementado; LLM de respaldo en el Proyecto |
+| RF07 Revisión humana | Orquestador | Proyecto |
+| RF08 Reporte con corrección sugerida | Validación y Remediación, paso 4; Redactor | Corrección por plantilla implementada; reporte en el Proyecto |
+| RF09 Repetir tras la corrección | Orquestador | Proyecto |
 | RF10 Filtrar el tráfico | Explorador (`filtro.py`) | Hecho |
-| RF11 Cuentas A y B con datos canario e inventario | Explorador (`juice_shop.py`) | Hecho |
-| RF12 Generar hipótesis | Analista, paso 5 (`hipotesis.py`) | Hecho |
-| RF13 Pruebas verticales (BFLA) | Validación y Remediación | Proyecto |
-| RF14 LLM de respaldo para los dudosos | Validación y Remediación (sección 8.1) | Proyecto |
-| RF15 CWE y corrección sugerida | Validación y Remediación, paso 4 (`remediacion.py`) | Hecho |
-| RF16 Etapas en orden, registro y cierre ordenado | Orquestador (`grafo.py`) | Hecho |
-| RF17 Variante solo con reglas (H3) | Analista, modo `solo_reglas` | Hecho |
-| RF18 Variante sin canario (H2) | Validación y Remediación | Proyecto |
-| RF19 Objetos declarados públicos | Analista | Proyecto (opcional) |
 | RNF01 LLM local | Analista (Ollama en localhost) | Hecho |
 | RNF02 Escrituras solo en ambientes de prueba | Guardia del cruce: solo GET | Hecho |
-| RNF03 Equipo de referencia y etapas en secuencia | Orquestador; liberación del modelo | Hecho |
-| RNF04 Registrar el entorno de cada ejecución | `entorno.json` | Pendiente |
-| RNF05 Respuestas como dato | Prompt con `<datos>` (`clasificador.py`) | Hecho |
-| RNF06 Sin claves ni tokens en la evidencia ni en el estado | `filtro.py`; sesiones en memoria; borrado de la captura | Parcial: falta ocultar secretos en formularios y en la consulta |
-| RNF07 Enmascarar datos en el reporte | Redactor | Proyecto |
-| RNF08 Temperatura 0, semilla fija y esquema JSON | `clasificador.py` | Hecho |
-| RNF09 Evidencia JSON validada y recalculable | Modelos de `modelos.py`; carpeta `datos/<ejecucion>/` | Hecho |
-| RNF10 Solo la URL base y los prefijos del alcance | Guardia del cruce (`url_de`, `guardia`) | Hecho |
-| RNF11 Repetir sin cambios lo observado | Guardia y cruce | Hecho |
-| RNF12 Pausa, tiempo de espera y tope de hipótesis | Constantes de `cruce.py` | Hecho |
-| RNF13 Captura HTTPS | Explorador | Proyecto |
-| RNF14 Eliminar la evidencia del piloto | Orquestador | Proyecto |
+| RNF03 Etapas en secuencia | Orquestador; liberación del modelo | Hecho |
+| RNF04 Registrar modelo, versión y configuración | `entorno.json` | Falta |
+| RNF05 Respuestas como dato | Prompt con `<datos>`; esquema fijo | Hecho |
+| RNF06 Sin claves ni tokens en la evidencia | `filtro.py`; sesiones en memoria; borrado de la captura | Hecho; falta ocultar secretos en formularios y en la consulta |
 
 ## 12. Pendientes y decisiones abiertas
 
 1. **Corrida real del agente de Validación y Remediación.** Falta ejecutar `python verificar_validacion.py --completo` contra Juice Shop. Es el criterio de término de la sección 8.4 del informe.
 2. **Uso del LLM en la corrida integrada.** Con la evidencia actual de Juice Shop el modelo no se consulta (`consultas_llm = 0`), porque los cuatro candidatos se resuelven con el inventario. Hay que decidir si se amplían las pantallas del alcance para que aparezca un objeto fuera del inventario, o si se declara como resultado.
-3. **Actualizar el informe con la corrida real.** Los nombres ya están al día en el informe v11. Falta que la sección 8.4 describa el Analista y el agente de Validación y Remediación con sus resultados (hoy dice que el Analista es "el siguiente componente en construcción") y actualizar la sección 9.
+3. **Actualizar el informe.** La Tabla 6.1 y la sección 8.4 usan los nombres antiguos (ver la tabla de la sección 1); el código tiene un solo agente de Validación y Remediación.
 4. **Fechas de autorización** en `alcance_juice.json` (RF01).
 5. **`entorno.json`** por ejecución (RNF04) y un `requirements.txt` propio en `prototipo`.
 6. **Nombres de los archivos del Proyecto** (`aprobaciones.json`, `reporte.md`): son una propuesta.
